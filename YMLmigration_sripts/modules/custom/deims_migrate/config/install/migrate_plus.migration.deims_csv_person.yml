@@ -1,0 +1,85 @@
+# Migration for person Nodes.
+# run query personExport with quotation marks around text
+# pull into Excel,
+# define format of create and update fields to number
+# define format for postal code to '0000#' to keep leading zeros
+# clean up the role column. There are several LPIs and XPI needs to be removed entirely.
+# the information in 'list in directory' is strange, can be edited in Excel to '=IF(ISBLANK(role),0,list_in_directory)'
+# then save again to get the correct quotation marks
+
+id: deims_csv_person
+label: Deims Person Nodes Export
+ 
+source:
+  plugin: csv
+ # the full path to the csv file
+  path: C:/Users/cgries/Dropbox/Corinna/datamanagement/NTLwebsite/deims7/personExport.csv
+ # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # The column(s) to use as a key. Each column specified will 
+  # create an index in the migration table and too many columns 
+  # may throw an index size error.
+  keys:
+    - nid 
+    
+
+process:
+  type:
+    plugin: default_value
+    default_value: person
+    
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      und: en
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+    
+  status: status
+  created: created
+  changed: changed
+  comment: comment
+  promote: promote
+  sticky: sticky
+  
+  field_name_given: field_name_given
+  field_name_middle: field_name_middle
+  field_name_family: field_name_family
+  field_person_email: field_email_email
+  field_person_phone: field_phone_value
+  field_address_premise: field_address_premise
+  field_address_street: field_address_thoroughfare
+  field_person_department: field_person_department_value
+  field_address_locality: field_address_locality
+  field_address_admin_area: field_address_administrative_area
+  field_address_postal_code: field_address_postal_code
+  field_address_country: field_address_country
+  field_person_list_in_directory: field_list_in_directory_value
+  field_person_project_role: field_person_role_value
+  field_person_specialty: field_person_specialty_value
+  field_person_orcid/uri: field_orcid_value
+  field_person_orcid/title: field_orcid_title
+
+  field_organization:
+    plugin: migration_lookup
+    source: field_organization_target_id
+    migration: deims_nodes_organization
+    no_stub: true
+
+destination:
+  plugin: entity:node
+  default_bundle: person
+
+migration_dependencies:
+  required:
+    - deims_nodes_organization
+
+dependencies: { }

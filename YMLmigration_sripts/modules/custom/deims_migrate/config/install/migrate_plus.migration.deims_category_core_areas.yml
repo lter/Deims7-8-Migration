@@ -1,0 +1,42 @@
+# Migration for category taxonomy
+id: deims_category_core_areas
+label: Category Taxonomy terms
+migration_group: deims_general
+deriver: Drupal\taxonomy\Plugin\migrate\D7TaxonomyTermDeriver
+ 
+source:
+  plugin: d7_taxonomy_term
+  bundle: core_areas
+ 
+destination:
+  plugin: entity:taxonomy_term
+ 
+process:
+  tid: tid
+  vid:
+    plugin: default_value
+    default_value: core_areas
+ 
+  name: name
+  weight: weight
+ 
+  'description/value': description
+  'description/format': format
+ 
+  # Only attempt to stub real (non-zero) parents.
+  parent_id:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: parent
+    -
+      plugin: migration_lookup
+      migration: deims_category_core_areas
+  parent:
+    plugin: default_value
+    default_value: 0
+    source: '@parent_id'
+ 
+  changed: timestamp
+ 
+migration_dependencies: {}

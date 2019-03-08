@@ -1,0 +1,62 @@
+# Migration for Research Highlight Nodes.
+id: deims_nodes_highlights
+label: Deims Research Highlight Nodes
+ 
+source:
+  key: migration_source_db
+  plugin: d7_node
+  node_type: research_highlight
+ 
+destination:
+  plugin: entity:node
+  default_bundle: research_highlight
+
+process:
+  nid: nid
+  vid: vid
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      und: en
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+    
+  status: status
+  created: created
+  changed: changed
+  comment: comment
+  promote: promote
+  sticky: sticky
+  
+  body: body
+  
+  field_core_areas:
+    plugin: migration_lookup
+    source: field_core_areas
+    migration: deims_category_core_areas
+    no_stub: true
+  
+  field_ntl_keyword:
+    plugin: migration_lookup
+    source: field_ntl_keywords
+    migration: deims_category_ntl
+    no_stub: true
+
+  field_lter_keywords:
+    plugin: migration_lookup
+    source: field_keywords
+    migration: deims_category_lter
+    no_stub: true
+
+migration_dependencies:
+  required:
+    - deims_category_ntl
+    - deims_category_core_areas
+    - deims_category_lter
+
+dependencies: { }

@@ -1,0 +1,38 @@
+# Migration for Example Nodes.
+id: deims_nodes_organization
+label: Deims Organization Nodes
+ 
+source:
+  key: migration_source_db
+  plugin: d7_node
+  node_type: organization
+ 
+destination:
+  plugin: entity:node
+  default_bundle: organization
+
+process:
+  nid: nid
+  vid: vid
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      und: en
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+    
+  status: status
+  created: created
+  changed: changed
+  comment: comment
+  promote: promote
+  sticky: sticky
+  
+migration_dependencies: { }
+
+dependencies: { }
