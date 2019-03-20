@@ -21,5 +21,3 @@ We recommend the following set up:
   
 On the command line, navigate to your web root folder (e.g., ../xampp/htdocs/deims8). Everything in working well if the command <drush config:status> returns all migrate commands. On Windows that can be a little tricky and will involve various changes to the Path Environment Variable or diving into .dll hell.
 
-
-
