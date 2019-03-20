@@ -13,7 +13,7 @@ We recommend the following set up:
   1. If done on a Windows desk/lap top it works well with XAMPP https://www.apachefriends.org/index.html
 1. Follow instruction for installing composer and drush
 
-1. Install and enable the Drupal migration modules, but don't enable the migration examples, they only clutter up the database:
+1. Use Composer to install the Drupal migration modules and enable them, but don't enable the migration examples, they only clutter up the database:
   1. Migrate Upgrade https://www.drupal.org/project/migrate_upgrade
   1. Migrate Plus https://www.drupal.org/project/migrate_plus
   1. Migrate Tools https://www.drupal.org/project/migrate_tools
