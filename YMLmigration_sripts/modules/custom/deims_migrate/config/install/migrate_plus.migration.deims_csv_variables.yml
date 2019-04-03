@@ -1,0 +1,80 @@
+# Migration for Variables Nodes. Variables were not part of the original DEIMS7, this is a new content type.
+# the standard units file has some special character for square, cubic, and micro that need to be replaced before upload
+
+id: deims_csv_variables
+label: Deims Variable Nodes
+ 
+source:
+  plugin: csv
+ # the full path to the csv file
+  path: ../complete/path/to/file/uploadVariablesNode.csv
+ # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # The column(s) to use as a key. Each column specified will 
+  # create an index in the migration table and too many columns 
+  # may throw an index size error.
+  keys:
+    - field_variables_id 
+ 
+destination:
+  plugin: entity:node
+  default_bundle: variable
+
+process:
+  #uploading this relies on you managing the nid. If duplicates happen records will be overwritten.
+  nid: field_variables_id
+  type: 
+    plugin: default_value
+    default_value: "variable"
+  langcode:
+    plugin: default_value
+    default_value: en
+  title: field_variables_name
+  uid:
+    plugin: default_value
+    default_value: 1
+  status: 
+    plugin: default_value
+    default_value: 1
+  promote: 
+    plugin: default_value
+    default_value: 0
+  sticky: 
+    plugin: default_value
+    default_value: 0
+  
+
+  
+  field_variables_date_time_format: dateFormat  
+  field_variables_definition: field_variables_definition
+  field_variables_label: field_variables_label
+  field_variables_maximum: maximum
+  field_variables_minimum: minimum
+  field_variables_missing_value/value: mv_definition
+  field_variables_missing_value/key: mv_code
+  field_variables_precision: precision
+  field_variables_type: field_variables_type
+  
+  field_variables_code_definition:
+    plugin: migration_lookup
+    source: code_id
+    migration: deims_csv_varcodedef
+    no_stub: true
+    
+  field_variables_unit:
+    plugin: migration_lookup
+    source: unit_id
+    migration: deims_csv_units
+    no_stub: true
+
+
+migration_dependencies:
+  required:
+    - deims_csv_varcodedef
+    - deims_csv_units
+
+dependencies: { }

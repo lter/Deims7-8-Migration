@@ -1,0 +1,37 @@
+# Migration for variable code definitions.
+id: deims_csv_varcodedef
+label: Deims variable code definitions nodes
+ 
+source:
+  plugin: csv
+ # the full path to the csv file
+  path: ../complete/path/to/file/upload_code_def_node.csv
+ # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # The column(s) to use as a key. Each column specified will 
+  # create an index in the migration table and too many columns 
+  # may throw an index size error.
+  keys:
+    - nid 
+ 
+destination:
+  plugin: entity:node
+  default_bundle: variable_codes
+
+process:
+  nid: nid
+  type: type
+  langcode: langcode
+  title: title
+  uid: uid
+  status: status
+  promote: promore
+  sticky: sticky
+
+migration_dependencies: { }
+
+dependencies: { }
