@@ -1,0 +1,199 @@
+id,name,unitType,parentSI,multiplierToSI,constantToSI,abbreviation,description
+dimensionless,dimensionless,dimensionless,NA,NA,NA,NA,a designation asserting the absence of an associated unit
+second,second,time,NA,1,NA,sec,SI unit of time
+meter,meter,length,NA,1,NA,m,SI unit of length
+kilogram,kilogram,mass,NA,1,NA,kg,SI unit of mass
+kelvin,kelvin,temperature,NA,1,NA,K,SI unit of temperature
+coulomb,coulomb,charge,NA,1,NA,C,SI unit of charge
+ampere,ampere,current,NA,1,NA,A,SI unit of electrical current
+mole,mole,amount,NA,1,NA,mol,SI unit of substance amount
+candela,candela,luminosity,NA,1,NA,cd,SI unit of luminosity
+number,number,dimensionless,NA,NA,NA,NA,a number
+cubicMeter,cubicMeter,volume,NA,1,NA,m³,cubic meter
+nominalMinute,nominalMinute,time,second,60,NA,NA,"one minute excluding leap seconds, 60 seconds"
+nominalHour,nominalHour,time,second,3600,NA,NA,"one hour excluding leap seconds, 3600 seconds"
+nominalDay,nominalDay,time,second,86400,NA,NA,"one day excluding leap seconds, 86400 seconds"
+nominalWeek,nominalWeek,time,second,604800,NA,NA,"one day excluding leap seconds, 604800 seconds"
+nominalYear,nominalYear,time,second,31536000,NA,NA,"one year excluding leap seconds and leap days, 31536000 seconds"
+nominalLeapYear,nominalLeapYear,time,second,31622400,NA,NA,"one 366 day year excluding leap seconds, 31622400 seconds"
+nanogram,nanogram,mass,kilogram,1E-12,NA,ng,0.000000000001 kg
+microgram,microgram,mass,kilogram,0.000000001,NA,µg,0.000000001 kg
+milligram,milligram,mass,kilogram,0.000001,NA,mg,0.000001 kg
+centigram,centigram,mass,kilogram,0.00001,NA,cg,0.00001 kg
+decigram,decigram,mass,kilogram,0.0001,NA,dg,0.0001 kg
+gram,gram,mass,kilogram,0.001,NA,g,0.001 kg
+dekagram,dekagram,mass,kilogram,0.01,NA,dag,.01 kg
+hectogram,hectogram,mass,kilogram,0.1,NA,hg,.1 kg
+megagram,megagram,mass,kilogram,1000,NA,Mg,1000 kg
+tonne,tonne,mass,kilogram,1000,NA,T,metric ton or tonne
+pound,pound,NA,kilogram,0.4536,NA,lbs,1 pound in the Avoirdupois (commerce) scale
+ton,ton,NA,kilogram,907.1999,NA,ton,standard US (short) ton = 2000 lbs
+celsius,celsius,NA,kelvin,1,273.18,C,A common unit of temperature
+fahrenheit,fahrenheit,NA,kelvin,0.556,255.402,F,An obsolescent unit of temperature still used in popular meteorology
+nanometer,nanometer,NA,meter,0.000000001,NA,nm,.000000001 meters
+micrometer,micrometer,NA,meter,0.000001,NA,µm,.000001 meters
+micron,micron,NA,meter,0.000001,NA,µ,.000001 meters
+millimeter,millimeter,NA,meter,0.001,NA,mm,.001 meters
+centimeter,centimeter,NA,meter,0.01,NA,cm,.01 meters
+decimeter,decimeter,NA,meter,0.1,NA,dm,.1 meters
+dekameter,dekameter,NA,meter,10,NA,dam,10 meters
+hectometer,hectometer,NA,meter,100,NA,hm,100 meters
+kilometer,kilometer,NA,meter,1000,NA,km,1000 meters
+megameter,megameter,NA,meter,1000000,NA,Mm,1000000 meters
+angstrom,angstrom,NA,meter,1E-10,NA,Å,1/10000000000 meter
+inch,inch,NA,meter,0.0254,NA,in,An imperial measure of length
+Foot_US,Foot_US,NA,meter,0.3048,NA,usft,12 inches
+foot,foot,NA,meter,0.3048,NA,ft,12 inches
+Foot_Gold_Coast,Foot_Gold_Coast,NA,meter,0.3047997,NA,gcft,12 inches
+fathom,fathom,NA,meter,1.8288,NA,NA,6 feet
+nauticalMile,nauticalMile,NA,meter,1852,NA,NA,nautical mile
+yard,yard,NA,meter,0.9144,NA,yard,3 feet
+Yard_Indian,Yard_Indian,NA,meter,0.914398531,NA,NA,"This is an ESRI unit and the multiplier comes from ESRI.  It
+    may not be accurate."
+Link_Clarke,Link_Clarke,NA,meter,0.201166195,NA,NA,"This is an ESRI unit and the multiplier comes from ESRI.  It
+    may not be accurate."
+Yard_Sears,Yard_Sears,NA,meter,0.914398415,NA,NA,"This is an ESRI unit and the multiplier comes from ESRI.  It
+    may not be accurate."
+mile,mile,NA,meter,1609.344,NA,mile,5280 ft or 1609.344 meters
+nanosecond,nanosecond,NA,second,0.000000001,NA,nsec,1/1000000 of a second
+microsecond,microsecond,NA,second,0.000001,NA,µsec,1/100000 of a second
+millisecond,millisecond,NA,second,0.001,NA,msec,1/1000 of a second
+centisecond,centisecond,NA,second,0.01,NA,csec,1/100 of a second
+decisecond,decisecond,NA,second,0.1,NA,dsec,1/10 of a second
+dekasecond,dekasecond,NA,second,10,NA,dasec,10 seconds
+hectosecond,hectosecond,NA,second,100,NA,hsec,100 seconds
+kilosecond,kilosecond,NA,second,1000,NA,ksec,1000 seconds
+megasecond,megasecond,NA,second,1000000,NA,Msec,1000000 seconds
+minute,minute,NA,second,60,NA,min,60 seconds
+hour,hour,NA,second,3600,NA,hr,3600 seconds
+kiloliter,kiloliter,volume,cubicMeter,1,NA,kL,1 cubic meter
+microliter,microliter,volume,cubicMeter,0.000000001,NA,µl,1/1000000 of a liter
+milliliter,milliliter,volume,cubicMeter,0.000001,NA,ml,1/1000 of a liter
+liter,liter,volume,cubicMeter,0.001,NA,L,1000 cm^3
+gallon,gallon,NA,liter,3.785412,NA,gal,US liquid gallon
+quart,quart,NA,liter,0.946353,NA,qt,US liquid quart
+bushel,bushel,volume,liter,0.035239,NA,b,1 bushel = 35.23907 liters
+cubicInch,cubicInch,volume,liter,1.63871E-05,NA,in³,cubic inch
+pint,pint,NA,liter,0.473176,NA,pint,US liquid pint
+radian,radian,angle,NA,1,NA,rad,2 pi radians comprise a unit circle.
+degree,degree,angle,radian,0.017453292,NA,º,360 degrees comprise a unit circle
+grad,grad,angle,radian,0.015707,NA,grad,a plane angle equivalent to 1/400 of a full circle
+megahertz,megahertz,frequency,hertz,1000000,NA,MHz,megahertz
+kilohertz,kilohertz,frequency,hertz,1000,NA,KHz,kilohertz
+hertz,hertz,frequency,NA,1,NA,Hz,hertz
+millihertz,millihertz,frequency,hertz,0.000001,NA,mHz,millihertz
+newton,newton,force,NA,1,NA,N,newton
+joule,joule,energy,NA,1,NA,J,joule = N*m
+calorie,calorie,energy,joule,4.1868,NA,cal,1 cal = 4.1868 J
+britishThermalUnit,britishThermalUnit,energy,joule,1055.0559,NA,btu,1 btu = 1055.0559 J
+footPound,footPound,energy,joule,1.355818,NA,NA,1 ft-lbs = 1.355818 J
+lumen,lumen,luminosity,NA,1,NA,lm,lumen
+lux,lux,illuminance,NA,1,NA,lx,lux
+becquerel,becquerel,radionucleotideActivity,NA,1,NA,Bq,becquerel
+gray,gray,specificEnergy,NA,1,NA,Gy,gray
+sievert,sievert,doseEquivalent,NA,1,NA,Sv,sievert
+katal,katal,catalyticActivity,NA,1,NA,kat,katal
+henry,henry,inductance,NA,1,NA,H,henry
+megawatt,megawatt,power,watt,1000000,NA,MW,megawatt
+kilowatt,kilowatt,power,watt,1000,NA,kW,kilowatt
+watt,watt,power,NA,1,NA,W,watt = J/s
+milliwatt,milliwatt,power,watt,0.001,NA,mW,milliwatt
+megavolt,megavolt,potentialDifference,volt,1000000,NA,MV,megavolt
+kilovolt,kilovolt,potentialDifference,volt,1000,NA,kV,kilovolt
+volt,volt,potentialDifference,NA,1,NA,V,volt
+millivolt,millivolt,potentialDifference,volt,0.001,NA,mV,millivolt
+farad,farad,capacitance,NA,1,NA,F,farad
+ohm,ohm,resistance,NA,1,NA,O,ohm
+ohmMeter,ohmMeter,resistivity,NA,1,NA,Om,ohm meters
+siemen,siemen,conductance,NA,1,NA,S,siemen
+weber,weber,magneticFlux,NA,1,NA,Wb,weber
+tesla,tesla,magneticFluxDensity,NA,1,NA,T,tesla
+pascal,pascal,pressure,NA,1,NA,Pa,pascal
+megapascal,megapascal,pressure,pascal,1000000,NA,MPa,megapascal
+kilopascal,kilopascal,pressure,pascal,1000,NA,kPa,kilopascal
+atmosphere,atmosphere,pressure,pascal,101325,NA,atm,1 atmosphere = 101325 pascals 
+bar,bar,pressure,pascal,100000,NA,bar,1 bar = 100000 pascals
+millibar,millibar,pressure,pascal,100,NA,mbar,millibar
+kilogramsPerSquareMeter,kilogramsPerSquareMeter,arealMassDensity,NA,1,NA,kg/m²,kilograms per square meter
+gramsPerSquareMeter,gramsPerSquareMeter,arealMassDensity,kilogramsPerSquareMeter,0.001,NA,g/m²,grams per square meter
+milligramsPerSquareMeter,milligramsPerSquareMeter,arealMassDensity,kilogramsPerSquareMeter,0.000001,NA,mg/m²,milligrams Per Square Meter
+kilogramsPerHectare,kilogramsPerHectare,arealMassDensity,kilogramsPerSquareMeter,0.0001,NA,NA,kilograms per hectare
+tonnePerHectare,tonnePerHectare,arealMassDensity,kilogramsPerSquareMeter,0.1,NA,NA,metric ton or tonne per hectare
+poundsPerSquareInch,poundsPerSquareInch,arealMassDensity,kilogramsPerSquareMeter,17.85,NA,lbs/in²,lbs/square inch
+kilogramPerCubicMeter,kilogramPerCubicMeter,massDensity,NA,1,NA,NA,kilogram per cubic meter
+milliGramsPerMilliLiter,milliGramsPerMilliLiter,massDensity,kilogramsPerCubicMeter,1,NA,kg/m³,milligrams per milliliter
+gramsPerLiter,gramsPerLiter,massDensity,kilogramsPerCubicMeter,1,NA,g/l,grams per liter
+milligramsPerCubicMeter,milligramsPerCubicMeter,massDensity,kilogramsPerCubicMeter,0.000001,NA,mg/m³,milligrams Per Cubic Meter
+microgramsPerLiter,microgramsPerLiter,massDensity,kilogramsPerCubicMeter,0.000001,NA,µg/l,micrograms / liter
+milligramsPerLiter,milligramsPerLiter,massDensity,kilogramsPerCubicMeter,0.001,NA,mg/l,milligrams / liter
+gramsPerCubicCentimeter,gramsPerCubicCentimeter,massDensity,kilogramsPerCubicMeter,1000,NA,g/cm³,grams per cubic centimeter
+gramsPerMilliliter,gramsPerMilliliter,massDensity,kilogramsPerCubicMeter,1000,NA,g/ml,grams per milliliter
+gramsPerLiterPerDay,gramsPerLiterPerDay,volumetricMassDensityRate,NA,1,NA,NA,grams Per (Liter Per Day)
+litersPerSecond,litersPerSecond,volumetricRate,NA,1,NA,l/s,liters per second
+cubicMetersPerSecond,cubicMetersPerSecond,volumetricRate,litersPerSecond,1,NA,m³/s,cubic meters per second
+cubicFeetPerSecond,cubicFeetPerSecond,volumetricRate,litersPerSecond,28.316874,NA,ft³/sec,cubic feet per second
+squareMeter,squareMeter,area,NA,1,NA,m²,square meters
+are,are,area,squareMeter,100,NA,a,100 square meters
+hectare,hectare,area,squareMeter,10000,NA,ha,1 hectare is 10^4 square meters
+squareKilometers,squareKilometers,area,squareMeter,1000000,NA,NA,square kilometers
+squareMillimeters,squareMillimeters,area,squareMeter,0.000001,NA,NA,square millmeters
+squareCentimeters,squareCentimeters,area,squareMeter,0.0001,NA,NA,square centimeters
+acre,acre,area,squareMeter,4046.8564,NA,a,1 acre = 4046.8564 square meters or 1 hectare = 2.4710 acres
+squareFoot,squareFoot,area,squareMeter,0.092903,NA,ft²,12 inches squared
+squareYard,squareYard,area,squareMeter,0.836131,NA,yd²,36 inches squared
+squareMile,squareMile,area,squareMeter,2589998.498,NA,mile²,1 mile squared
+litersPerSquareMeter,litersPerSquareMeter,volumetricArea,NA,1,NA,l/m²,liters per square meter
+bushelsPerAcre,bushelsPerAcre,volumetricArea,litersPerSquareMeter,0.0087,NA,NA,bushels per acre -- 1 bushel = 35.23907 liters/1 acre = 4046.8564 squareMeters
+litersPerHectare,litersPerHectare,volumetricArea,litersPerSquareMeter,0.0001,NA,NA,liters per hectare
+squareMeterPerKilogram,squareMeterPerKilogram,specificArea,NA,1,NA,m²/kg,square meters per kilogram
+metersPerSecond,metersPerSecond,speed,metersPerSecond,1,NA,m/s,meters per second
+metersPerDay,metersPerDay,speed,NA,1.15741E-05,NA,m/day,meters per day
+feetPerDay,feetPerDay,speed,metersPerSecond,3.52778E-06,NA,ft/day,feet per day
+feetPerSecond,feetPerSecond,speed,metersPerSecond,0.3048,NA,ft/s,feet per second
+feetPerHour,feetPerHour,speed,metersPerSecond,0.000084667,NA,ft/hr,feet per hour
+yardsPerSecond,yardsPerSecond,speed,metersPerSecond,0.9144,NA,yd/s,yards per second
+milesPerHour,milesPerHour,speed,metersPerSecond,0.44704,NA,mph,miles per hour
+milesPerSecond,milesPerSecond,speed,metersPerSecond,1609.344,NA,mps,miles per second
+milesPerMinute,milesPerMinute,speed,metersPerSecond,26.8224,NA,mpm,miles per minute
+centimetersPerSecond,centimetersPerSecond,speed,metersPerSecond,0.01,NA,cm/s,centimeters per second
+millimetersPerSecond,millimetersPerSecond,speed,metersPerSecond,0.001,NA,mm/s,millimeters per second
+centimeterPerYear,centimeterPerYear,speed,metersPerSecond,3.17098E-10,NA,cm/year,centimeter Per Year
+knots,knots,speed,metersPerSecond,0.514444,NA,NA,knots
+kilometersPerHour,kilometersPerHour,speed,metersPerSecond,0.2778,NA,km/hr,km/hr
+metersPerSecondSquared,metersPerSecondSquared,acceleration,NA,1,NA,m/s²,meters per second squared
+waveNumber,waveNumber,lengthReciprocal,NA,1,NA,NA,1/meters
+cubicMeterPerKilogram,cubicMeterPerKilogram,specificVolume,NA,1,NA,m³/kg,cubic meters per kilogram
+cubicMicrometersPerGram,cubicMicrometersPerGram,specificVolume,cubicMeterPerKilogram,1E-15,NA,µm³/kg,cubic micrometers per gram
+amperePerSquareMeter,amperePerSquareMeter,currentDensity,NA,1,NA,A/m²,ampere per meter squared
+amperePerMeter,amperePerMeter,magneticFieldStrength,NA,1,NA,A/m,ampere per meter
+molePerCubicMeter,molePerCubicMeter,amountOfSubstanceConcentration,NA,1,NA,NA,mole per cubic meter
+molarity,molarity,amountOfSubstanceConcentration,molesPerCubicMeter,1000,NA,M,molarity = moles/liter
+molality,molality,amountOfSubstanceWeight,NA,1,NA,m,molality = moles/kg
+candelaPerSquareMeter,candelaPerSquareMeter,luminance,NA,1,NA,cd/m²,candela Per Square Meter
+metersSquaredPerSecond,metersSquaredPerSecond,transmissivity,NA,1,NA,m²/s,meters squared per second
+metersSquaredPerDay,metersSquaredPerDay,transmissivity,metersSquaredPerSecond,86400,NA,m²/day,meters squared per day
+feetSquaredPerDay,feetSquaredPerDay,transmissivity,metersSquaredPerSecond,0.000124586,NA,ft²/day,feet squared per day
+kilogramsPerMeterSquaredPerSecond,kilogramsPerMeterSquaredPerSecond,arealMassDensityRate,NA,1,NA,NA,kilograms per meter sqared per second
+gramsPerCentimeterSquaredPerSecond,gramsPerCentimeterSquaredPerSecond,arealMassDensityRate,kilogramsPerMeterSquaredPerSecond,0.1,NA,NA,grams Per Centimeter Squared Per Second
+gramsPerMeterSquaredPerYear,gramsPerMeterSquaredPerYear,arealMassDensityRate,kilogramsPerMeterSquaredPerSecond,3.17098E-11,NA,NA,grams Per Meter Squared Per Year
+gramsPerHectarePerDay,gramsPerHectarePerDay,arealMassDensityRate,kilogramsPerMeterSquaredPerSecond,1.1574E-12,NA,NA,grams Per Hectare Squared Per Day
+kilogramsPerHectarePerYear,kilogramsPerHectarePerYear,arealMassDensityRate,kilogramsPerMeterSquaredPerSecond,0.000317,NA,NA,kilograms Per Hectare Per Year
+kilogramsPerMeterSquaredPerYear,kilogramsPerMeterSquaredPerYear,arealMassDensityRate,kilogramsPerMeterSquaredPerSecond,317,NA,NA,kilograms Per Meter Squared Per Year
+molesPerKilogram,molesPerKilogram,amountOfSubstanceWeight,NA,1,NA,NA,moles per kilogram
+molesPerGram,molesPerGram,amountOfSubstanceWeight,molesPerKilogram,1000,NA,NA,moles per gram
+millimolesPerGram,millimolesPerGram,amountOfSubstanceWeight,molesPerKilogram,1,NA,NA,millimoles per gram
+molesPerKilogramPerSecond,molesPerKilogramPerSecond,amountOfSubstanceWeightFlux,NA,1,NA,NA,moles per kilogram per second
+nanomolesPerGramPerSecond,nanomolesPerGramPerSecond,amountOfSubstanceWeightFlux,molesPerKilogramPerSecond,0.000001,NA,NA,nanomoles Per Gram Per Second
+kilogramsPerSecond,kilogramsPerSecond,massFlux,NA,1,NA,kg/s,kilograms per second
+tonnesPerYear,tonnesPerYear,massFlux,kilogramsPerSecond,0.0000317,NA,NA,tonnes Per Year
+gramsPerYear,gramsPerYear,massFlux,kilogramsPerSecond,3.17E-11,NA,g/yr,grams Per Year
+numberPerMeterSquared,numberPerMeterSquared,arealDensity,NA,1,NA,NA,number per meter squared
+numberPerKilometerSquared,numberPerKilometerSquared,arealDensity,numberPerMeterSquared,0.000001,NA,NA,number per kilometer squared
+numberPerMeterCubed,numberPerMeterCubed,volumetricDensity,NA,1,NA,NA,number per meter cubed
+numberPerLiter,numberPerLiter,volumetricDensity,numberPerMeterCubed,0.001,NA,NA,number of entities per liter
+numberPerMilliliter,numberPerMilliliter,volumetricDensity,numberPerMeterCubed,0.000001,NA,NA,number of entities per milliliter
+metersPerGram,metersPerGram,massSpecificLength,NA,1,NA,m/g,meters per gram
+numberPerGram,numberPerGram,massSpecificCount,NA,1,NA,NA,number of entities per gram
+gramsPerGram,gramsPerGram,massPerMass,NA,1,NA,NA,grams per gram
+microgramsPerGram,microgramsPerGram,massPerMass,gramsPerGram,0.000001,NA,NA,micrograms per gram
+cubicCentimetersPerCubicCentimeters,cubicCentimetersPerCubicCentimeters,volumePerVolume,NA,1,NA,NA,cubic centimeters per cubic centimeter
