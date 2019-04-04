@@ -9,7 +9,7 @@ The process of converting DEIMS7 variables entities into content types involves 
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
     	1. Add Field: 
-    		label: Code Definition; machine name: field_variable_code_definition; type: Key/value (plain)
+    		* label: Code Definition; machine name: field_variable_code_definition; type: Key/value (plain)
     	
     1. Run the first part of the script up to saving upload_code_def_node.csv
     1. In the webroot of your D8 website run `drush migrate:import deims_csv_varcodedef`
@@ -23,12 +23,12 @@ The process of converting DEIMS7 variables entities into content types involves 
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
     	1. Add Fields: 
-    		label: Abbreviation; machine name: field_variables_unit_abbrev; type: Text (formatted)
-    		label: Constant to SI; machine name: field_variables_unit_constant; type: Number (float)
-    		label: Description; machine name: field_variables_unit_description; type: Text (plain)
-    		label: Multiplier to SI; machine name: field_variables_unit_multiplier; type: Number (float)
-    		label: Parent SI; machine name: field_variables_unit_parent_si; type: Text (plain)
-    		label: Unit Type; machine name: field_variables_unit_type; type: Text (plain)
+    		* label: Abbreviation; machine name: field_variables_unit_abbrev; type: Text (formatted)
+    		* label: Constant to SI; machine name: field_variables_unit_constant; type: Number (float)
+    		* label: Description; machine name: field_variables_unit_description; type: Text (plain)
+    		* label: Multiplier to SI; machine name: field_variables_unit_multiplier; type: Number (float)
+    		* label: Parent SI; machine name: field_variables_unit_parent_si; type: Text (plain)
+    		* label: Unit Type; machine name: field_variables_unit_type; type: Text (plain)
     1. Download the standard units csv file [units.csv](https://github.com/lter/Deims7-8-Migration/blob/master/data/units.csv)
     1. Check the units for typos, non-standard spelling etc., the R script contains a case block where these can be corrected
     1. Run R script 
@@ -41,16 +41,16 @@ The process of converting DEIMS7 variables entities into content types involves 
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
     	1. Add Fields: 
-    		label: Code Definition; machine name: 	field_variables_code_definition; type: 	Entity reference
-    		label: Date Time Format; machine name: 	field_variables_date_time_format; type: 	Text (plain)
-    		label: Definition; machine name: 	field_variables_definition; type: 	Text (plain, long)
-    		label: Label; machine name: 	field_variables_label; type: 	Text (plain)
-    		label: Maximum; machine name: 	field_variables_maximum; type: 	Number (float)
-    		label: Minimum; machine name: 	field_variables_minimum; type: 	Number (float)
-    		label: Missing Value; machine name: 	field_variables_missing_value; type: 	Key / Value (plain)
-    		label: Precision; machine name: 	field_variables_precision; type: 	Number (float)
-    		label: Type; machine name: 	field_variables_type; type: 	List (text)
-    		label: Unit; machine name: 	field_variables_unit; type: 	Entity reference
+    		* label: Code Definition; machine name: 	field_variables_code_definition; type: 	Entity reference
+    		* label: Date Time Format; machine name: 	field_variables_date_time_format; type: 	Text (plain)
+    		* label: Definition; machine name: 	field_variables_definition; type: 	Text (plain, long)
+    		* label: Label; machine name: 	field_variables_label; type: 	Text (plain)
+    		* label: Maximum; machine name: 	field_variables_maximum; type: 	Number (float)
+    		* label: Minimum; machine name: 	field_variables_minimum; type: 	Number (float)
+    		* label: Missing Value; machine name: 	field_variables_missing_value; type: 	Key / Value (plain)
+    		* label: Precision; machine name: 	field_variables_precision; type: 	Number (float)
+    		* label: Type; machine name: 	field_variables_type; type: 	List (text)
+    		* label: Unit; machine name: 	field_variables_unit; type: 	Entity reference
     1. Run R script
     1. In the webroot of your D8 website run `drush migrate:import deims_csv_variables`
     1. Make sure everything looks as expected. Variables have two dependencies, units and code/definitions.
