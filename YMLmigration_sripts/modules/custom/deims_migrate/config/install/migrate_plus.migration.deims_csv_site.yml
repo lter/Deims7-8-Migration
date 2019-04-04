@@ -1,0 +1,64 @@
+# Migration for Research Site Nodes.
+id: deims_csv_site
+label: Deims Research Site Nodes
+ 
+source:
+  plugin: csv
+ # the full path to the csv file
+  path: ../path/to/file/research_siteExport.csv
+ # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # The column(s) to use as a key. Each column specified will 
+  # create an index in the migration table and too many columns 
+  # may throw an index size error.
+  keys:
+    - nid 
+ 
+destination:
+  plugin: entity:node
+  default_bundle: research_site
+
+process:
+  nid: nid
+  vid: vid
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      und: en
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+    
+  status: status
+  created: created
+  changed: changed
+  comment: comment
+  promote: 
+    plugin: default_value
+    default_value: 0
+    
+  sticky: sticky
+  
+  body/value: field_description_value
+  body/format: 
+    plugin: default_value
+    default_value: full_html
+  
+  field_elevation: field_elevation_value
+  
+  field_coord_left_longitude: field_coordinates_left
+  field_coord_top_latitude: field_coordinates_top
+  field_coord_rigth_longitude: field_coordinates_right
+  field_coord_bottom_latitude: field_coordinates_bottom
+
+migration_dependencies: { }
+
+dependencies: { }
