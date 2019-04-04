@@ -60,5 +60,17 @@ We recommend the following set up:
 		1. migrate_plus.migration.deims_csv_varcodedef.yml
 		1. migrate_plus.migration.deims_csv_variables.yml
 
+
+## Most important Drush migration commands
+
+* after changing anything in a YML file run this with the correct path to install the changes:
+	`drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+* run the migration (example_nodes is the ID in the migration YML file):
+	`drush migrate:import example_nodes
+* roll back migration:
+	`drush migrate:rollback example_nodes`
+* reset migration status when it claims to be busy
+	`drush migrate-reset-status deims_csv_units`
+
 ## Sequence of migration steps:
 
