@@ -69,7 +69,7 @@ We recommend the following set up:
 	`drush migrate:import example_nodes
 * roll back migration:
 	`drush migrate:rollback example_nodes`
-* reset migration status when it claims to be busy
+* reset migration status when it claims to be busy after a failed migration
 	`drush migrate-reset-status example_nodes`
 
 ## Some general comments
@@ -86,21 +86,24 @@ We recommend the following set up:
 1. Migrate taxonomies
 	1. At NTL we have a few specific ones, change for a different website
 	1. Moving taxonomies separately allows to omit a few that seemed unnecessary
-	1. On the commandline inside the webroot of the new D8 website run the command `drush migrate:import deims_category_core_areas` etc.
+	1. On the commandline inside the webroot of the new D8 website run the command 
+	`drush migrate:import deims_category_core_areas` etc.
 
 1. Migrate basic pages and other custom content types that only need taxonomy tagging (e.g., research highlights, protocols, etc.)
 	1. Create the desired content type in D8
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
     	1. Add needed fields 
-    1. On the commandline inside the webroot of the new D8 website run the command `drush migrate:import deims_nodes_highlights` etc.
+    1. On the commandline inside the webroot of the new D8 website run the command 
+    `drush migrate:import deims_nodes_highlights` etc.
 
 1. Migrate organizations   
 	1. Create content type in D8 name: Organization; machine name: organization
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
     	1. It doesn't need any fields, only the title
-    1. On the commandline inside the webroot of the new D8 website run the command `drush migrate:import deims_nodes_organization`.
+    1. On the commandline inside the webroot of the new D8 website run the command 
+    `drush migrate:import deims_nodes_organization`.
 
 1. Migrate Person
 	1. Create content type in D8 name: Person; machine name: person
@@ -125,7 +128,8 @@ We recommend the following set up:
     	label: Specialty; machine name: field_person_specialty; type: Text (plain)
     	label: Street Address; machine name: field_address_street; type: Text (plain)
     1. Export person information from DEIMS7 database with [personExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/personExport.sql) and save as personExport.csv
-    1. On the commandline inside the webroot of the new D8 website run the command `drush migrate:import deims_csv_person` etc.
+    1. On the commandline inside the webroot of the new D8 website run the command 
+    `drush migrate:import deims_csv_person`
 
 1. Migrate research site
 	1. Create content type in D8 name: Research site machine name: research_site
@@ -138,6 +142,8 @@ We recommend the following set up:
     	label: Left Longitude; machine name: field_coord_left_longitude; type: Number (float)
     	label: Rigth Longitude; machine name: field_coord_rigth_longitude; type: Number (float)
     	label: Top Latitude; machine name: field_coord_top_latitude; type: Number (float)
-    1. On the commandline inside the webroot of the new D8 website run the command `drush migrate:import deims_csv_person` etc.
+    1. Export research site information from DEIMS7 database with [research_siteExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/research_siteExport.sql) and save as research_siteExport.csv
+    1. On the commandline inside the webroot of the new D8 website run the command 
+    `drush migrate:import deims_csv_site`
     	
 1. Migrate variable - this require new content types and some R scripts
