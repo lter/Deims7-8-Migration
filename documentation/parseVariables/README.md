@@ -10,7 +10,7 @@ The process of converting DEIMS7 variables entities into content types involves 
     	1. Add Content type
     	1. Add Fields: 
     	label | machine name | type
-    	--------------------------------------------------------------------
+    	----------------|--------------------------------|------------------
     	Code Definition | field_variable_code_definition | Key/value (plain)
     	
     1. Run the first part of the script up to saving upload_code_def_node.csv
