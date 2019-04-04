@@ -70,7 +70,7 @@ We recommend the following set up:
 * roll back migration:
 	`drush migrate:rollback example_nodes`
 * reset migration status when it claims to be busy
-	`drush migrate-reset-status deims_csv_units`
+	`drush migrate-reset-status example_nodes`
 
 ## Sequence of migration steps:
 
