@@ -14,5 +14,3 @@ CONVERT(field_data_field_variables.field_variables_missing_values USING utf8) as
 field_data_field_variables.field_variables_id
 FROM
 field_data_field_variables
-ORDER BY
-field_data_field_variables.field_variables_type ASC

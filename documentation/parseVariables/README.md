@@ -54,3 +54,5 @@ The process of converting DEIMS7 variables entities into content types involves 
     1. Run R script
     1. In the webroot of your D8 website run `drush migrate:import deims_csv_variables`
     1. Make sure everything looks as expected. Variables have two dependencies, units and code/definitions.
+    
+1. __Determine the sequence in which varialbes should appear in each data source__ This is done on the variables export file, but is needed for the data source migration.

@@ -84,6 +84,7 @@ We recommend the following set up:
 * At NTL only the admin changes web content, hence this migration does not include migrating users. If a different website requires other users, a good tutorial is [here](https://www.phase2technology.com/blog/managing-your-drupal)
 	* All YML files are setting the user to 1. If that is not desired they have to be changed to read the uid from file or database.
 * It doesn't look like anybody has developed the migration for a bounding box yet in geo-field yet. This may be an option later (see migrate research site)
+* Obviously, all SQL queries that now produce csv files could be programmed directly into the R code - if anybody wants to do that.
 
 ## Sequence of migration steps:
 1. If desired migrate users (see above general comments)
