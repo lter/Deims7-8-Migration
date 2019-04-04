@@ -1,4 +1,4 @@
-# Convert DEIMS7 variables (attributes) Code/Definition to Drupal8 content type
+# Convert DEIMS7 variables (attributes) to Drupal8 content types
 
 The process of converting DEIMS7 variables entities into content types involves several steps which are outlined in this document.  
 
