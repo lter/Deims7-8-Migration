@@ -1,0 +1,17 @@
+uuid: af650dad-21f6-4cf4-9888-1fe935e89d53
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Protocol
+type: protocol
+description: 'protocols used at NTL'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

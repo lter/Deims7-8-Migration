@@ -1,0 +1,29 @@
+uuid: 8d70b2a5-ec83-44fa-aa29-59f729cd0403
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lter_keywords
+    - node.type.research_highlight
+    - taxonomy.vocabulary.lter_controlled_vocabulary
+id: node.research_highlight.field_lter_keywords
+field_name: field_lter_keywords
+entity_type: node
+bundle: research_highlight
+label: 'LTER Keywords'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      lter_controlled_vocabulary: lter_controlled_vocabulary
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

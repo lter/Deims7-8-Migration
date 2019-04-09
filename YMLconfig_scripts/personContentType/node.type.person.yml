@@ -1,0 +1,17 @@
+uuid: f13cdfed-72bc-44b3-9f2e-a8490f936702
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Person
+type: person
+description: 'Information on peoples address etc.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

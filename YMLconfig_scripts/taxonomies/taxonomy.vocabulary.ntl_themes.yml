@@ -1,0 +1,9 @@
+uuid: 1063d158-de81-431b-82da-31e4164e3287
+langcode: en
+status: true
+dependencies: {  }
+name: 'NTL themes'
+vid: ntl_themes
+description: 'Major themes of NTL research'
+hierarchy: 0
+weight: 0

@@ -1,0 +1,29 @@
+uuid: a22b647f-ba96-411c-a5e0-2c1d5978ab22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_core_areas
+    - node.type.research_highlight
+    - taxonomy.vocabulary.core_areas
+id: node.research_highlight.field_core_areas
+field_name: field_core_areas
+entity_type: node
+bundle: research_highlight
+label: 'Core Areas'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      core_areas: core_areas
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

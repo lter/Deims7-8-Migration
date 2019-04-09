@@ -1,0 +1,9 @@
+uuid: 1d016aa6-f3e8-4d36-9a19-7e4a076e625d
+langcode: en
+status: true
+dependencies: {  }
+name: 'Core Areas'
+vid: core_areas
+description: 'LTER core areas'
+hierarchy: 0
+weight: 0

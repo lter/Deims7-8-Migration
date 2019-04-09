@@ -1,0 +1,9 @@
+uuid: e650c53b-87bc-4de0-8312-57d6f93a2dac
+langcode: en
+status: true
+dependencies: {  }
+name: 'NTL keywords'
+vid: ntl_keywords
+description: 'NTL specific keywords'
+hierarchy: 0
+weight: 0

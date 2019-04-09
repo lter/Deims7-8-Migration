@@ -1,0 +1,33 @@
+uuid: 96647f8f-bf80-417f-891e-f9bcce3ff972
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_protocol_type
+field_name: field_protocol_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: field
+      label: field
+    -
+      value: laboratory
+      label: laboratory
+    -
+      value: 'field & laboratory'
+      label: 'field & laboratory'
+    -
+      value: methods
+      label: methods
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

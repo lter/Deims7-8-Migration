@@ -1,0 +1,18 @@
+uuid: bfec3f33-f8f8-4638-aba3-d129013f7390
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_person_list_in_directory
+field_name: field_person_list_in_directory
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

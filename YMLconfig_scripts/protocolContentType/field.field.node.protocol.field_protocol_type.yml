@@ -1,0 +1,21 @@
+uuid: d892723d-c1bf-4d30-8fd2-fca915d2da55
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_protocol_type
+    - node.type.protocol
+  module:
+    - options
+id: node.protocol.field_protocol_type
+field_name: field_protocol_type
+entity_type: node
+bundle: protocol
+label: 'Protocol Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

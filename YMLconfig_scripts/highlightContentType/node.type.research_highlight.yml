@@ -1,0 +1,18 @@
+uuid: 35cbe967-e308-454c-bd81-17aebab22112
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'Research Highlight'
+type: research_highlight
+description: 'Important research findings at NTL'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

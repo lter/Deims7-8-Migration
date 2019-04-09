@@ -1,0 +1,19 @@
+uuid: ad64a2bd-688f-48de-8521-1fbf087e8c3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_specialty
+    - node.type.person
+id: node.person.field_person_specialty
+field_name: field_person_specialty
+entity_type: node
+bundle: person
+label: Specialty
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

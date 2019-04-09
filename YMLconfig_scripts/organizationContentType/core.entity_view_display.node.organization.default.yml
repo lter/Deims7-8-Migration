@@ -1,0 +1,19 @@
+uuid: f1dd6159-ca5c-418a-abde-cbd3807fb0e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.organization
+  module:
+    - user
+id: node.organization.default
+targetEntityType: node
+bundle: organization
+mode: default
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

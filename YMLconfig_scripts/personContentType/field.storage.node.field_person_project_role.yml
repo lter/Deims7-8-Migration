@@ -1,0 +1,57 @@
+uuid: def72389-f461-4611-946c-5bd0e1d2fe26
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_person_project_role
+field_name: field_person_project_role
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: LPI
+      label: 'Lead Principal Investigator'
+    -
+      value: COPI
+      label: 'co-Principal Investigator'
+    -
+      value: FA
+      label: 'Faculty Associate'
+    -
+      value: PDA
+      label: 'Post Doctoral Associate'
+    -
+      value: OP
+      label: 'Other Professional'
+    -
+      value: GS
+      label: 'Graduate Student'
+    -
+      value: US
+      label: 'Undergraduate Student'
+    -
+      value: OS
+      label: 'Other Staff'
+    -
+      value: SC
+      label: 'Secretary Clerical'
+    -
+      value: DA
+      label: 'Data Manager'
+    -
+      value: PUB
+      label: Publisher
+    -
+      value: CO
+      label: 'Contact Person'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

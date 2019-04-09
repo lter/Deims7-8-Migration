@@ -1,0 +1,29 @@
+uuid: c497a446-a500-45b0-b737-3a578cae6ecd
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ntl_keyword
+    - node.type.protocol
+    - taxonomy.vocabulary.ntl_keywords
+id: node.protocol.field_ntl_keyword
+field_name: field_ntl_keyword
+entity_type: node
+bundle: protocol
+label: 'NTL Keyword'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ntl_keywords: ntl_keywords
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

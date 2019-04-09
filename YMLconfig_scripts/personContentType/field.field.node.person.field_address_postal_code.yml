@@ -1,0 +1,19 @@
+uuid: 20dbc13c-7241-45eb-97c3-4114f1f32b12
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address_postal_code
+    - node.type.person
+id: node.person.field_address_postal_code
+field_name: field_address_postal_code
+entity_type: node
+bundle: person
+label: 'Postal Code'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

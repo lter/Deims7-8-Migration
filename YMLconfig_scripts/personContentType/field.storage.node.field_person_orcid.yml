@@ -1,0 +1,19 @@
+uuid: f45b5462-1801-4e71-bc1c-2abfcbb8cee1
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_person_orcid
+field_name: field_person_orcid
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

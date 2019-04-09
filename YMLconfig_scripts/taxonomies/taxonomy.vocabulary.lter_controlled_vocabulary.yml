@@ -1,0 +1,9 @@
+uuid: 7766b2a2-701e-4be2-83fd-fe8708f7a2b7
+langcode: en
+status: true
+dependencies: {  }
+name: 'LTER controlled vocabulary'
+vid: lter_controlled_vocabulary
+description: 'LTER controlled vocabulary'
+hierarchy: 0
+weight: 0

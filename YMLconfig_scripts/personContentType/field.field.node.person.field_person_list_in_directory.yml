@@ -1,0 +1,23 @@
+uuid: dd14bc2c-43b7-473e-bd25-e9269efdb313
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_person_list_in_directory
+    - node.type.person
+id: node.person.field_person_list_in_directory
+field_name: field_person_list_in_directory
+entity_type: node
+bundle: person
+label: 'List in directory'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
