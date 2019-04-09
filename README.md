@@ -16,6 +16,16 @@ We recommend the following set up:
 	1. If done on a Windows desk/lap top it works well with XAMPP https://www.apachefriends.org/index.html
 1. Follow instruction for installing composer (https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies) and drush
 
+1. On Windows this worked for me:
+	1. Use composer to install drush
+	1. Put two files into the webroot directory [Instructions](https://github.com/drush-ops/drush-launcher)
+		1. [drush.phar](https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar)
+		1. create drush.bat with the content:
+		```
+		@echo off
+		php "%~dp0\drush.phar" %*
+		```
+	
 1. Use Composer to install the Drupal migration modules and enable them, but don't enable the migration examples, they only clutter up the database. In the D8 root directory (e.g., ../xampp/htdocs/deims8) use `composer require drupal/module_name`:
 	1. [Migrate Upgrade](https://www.drupal.org/project/migrate_upgrade)
 	1. [Migrate Plus](https://www.drupal.org/project/migrate_plus)
@@ -24,11 +34,13 @@ We recommend the following set up:
 	
 1. User Composer to install other Drupal modules. Needed in this migration are:
 	1. [Key Value Field](https://www.drupal.org/project/key_value_field)
+	
+1. Enable telephone field
   
 1. On the command line, navigate to your web root folder (e.g., ../xampp/htdocs/deims8). Everything is working well if the command `drush config:status` returns all migrate commands. On Windows that can be a little tricky and will involve various changes to the Path Environment Variable or diving into .dll hell.
 
 1. In the settings.php (at e.g., ../xampp/htdocs/deims8/web/sites/default) file add the database connection information to access the DEIMS7 database.
-	`
+	```
 	$databases['migration_source_db']['default'] = array (
 		'database' => 'database_name',
 		'username' => 'user_name',
@@ -39,7 +51,7 @@ We recommend the following set up:
 		'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
 		'driver' => 'mysql',
 	);
-	`
+	```
 	
 1. Create a 'deims_migrate' folder under your new D8 webroot/web/modules/custom (e.g., ../xampp/htdocs/deims8/web/modules/custom/deims_migrate). Copy the deims_migrate.info.yml into this folder.
 1. Create a 'config' folder inside the 'deims_migrate' folder and a 'install' folder inside the 'config' folder and paste the YML files into it:
@@ -50,6 +62,8 @@ We recommend the following set up:
 		1. migrate_plus.migration.deims_category_lter.yml
 		1. migrate_plus.migration.deims_category_ntl.yml (NTL specific)
 		1. migrate_plus.migration.deims_category_ntl_themes.yml (NTL specific)
+	1. Migrate file management information (this will not copy the actual files only the content of table file_managed)
+		1. migrate_plus.migration.deims_files.yml
 	1. Migrating all 'basic pages' (migration directly from DEIMS7 database)
 		1. migrate_plus.migration.deims_nodes_page.yml
 	1. NTL uses a few other content types that are based on the basic page and are tagged with taxonomy terms (these are not strictly DEIMS)

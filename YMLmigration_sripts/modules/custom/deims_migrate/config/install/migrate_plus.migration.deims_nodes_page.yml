@@ -41,8 +41,15 @@ process:
     migration: deims_category_ntl
     no_stub: true
 
+  field_file:
+    plugin: migration_lookup
+    source: field_file
+    migration: deims_files
+    no_stub: true
+
 migration_dependencies:
   required:
     - deims_category_ntl
+    - deims_files
 
 dependencies: { }
