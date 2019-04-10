@@ -1,0 +1,19 @@
+uuid: 308642e2-0f08-4c4b-93c4-48c471877e24
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_instrumentation
+    - node.type.data_source
+id: node.data_source.field_dsource_instrumentation
+field_name: field_dsource_instrumentation
+entity_type: node
+bundle: data_source
+label: Instrumentation
+description: 'Specific instrumentation used to gather data in table'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

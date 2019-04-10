@@ -1,0 +1,28 @@
+uuid: cd4f4d48-75b8-4179-a0a5-7d210f209fe6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_related_sites
+    - node.type.data_source
+    - node.type.research_site
+id: node.data_source.field_dsource_related_sites
+field_name: field_dsource_related_sites
+entity_type: node
+bundle: data_source
+label: 'Related Sites'
+description: 'sites specific to data in table'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      research_site: research_site
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

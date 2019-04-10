@@ -1,0 +1,28 @@
+uuid: 37bbbf03-e8d7-4337-b07c-fdd8163795d6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_variables
+    - node.type.data_source
+    - node.type.variable
+id: node.data_source.field_dsource_variables
+field_name: field_dsource_variables
+entity_type: node
+bundle: data_source
+label: Variables
+description: 'the variables (attributes) for this data source'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      variable: variable
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

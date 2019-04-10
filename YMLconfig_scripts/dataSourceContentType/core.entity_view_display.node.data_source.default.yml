@@ -1,0 +1,154 @@
+uuid: 1ca968c8-af7d-40d0-bb29-69e258ae575a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.data_source.field_dsource_date_range
+    - field.field.node.data_source.field_dsource_description
+    - field.field.node.data_source.field_dsource_field_delimiter
+    - field.field.node.data_source.field_dsource_file
+    - field.field.node.data_source.field_dsource_footer_lines
+    - field.field.node.data_source.field_dsource_header_lines
+    - field.field.node.data_source.field_dsource_instrumentation
+    - field.field.node.data_source.field_dsource_methods
+    - field.field.node.data_source.field_dsource_num_records
+    - field.field.node.data_source.field_dsource_orientation
+    - field.field.node.data_source.field_dsource_quality_assurance
+    - field.field.node.data_source.field_dsource_quote_character
+    - field.field.node.data_source.field_dsource_record_delimiter
+    - field.field.node.data_source.field_dsource_related_sites
+    - field.field.node.data_source.field_dsource_variables
+    - node.type.data_source
+  module:
+    - datetime_range
+    - file
+    - options
+    - user
+id: node.data_source.default
+targetEntityType: node
+bundle: data_source
+mode: default
+content:
+  field_dsource_date_range:
+    weight: 111
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_dsource_description:
+    weight: 101
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_dsource_field_delimiter:
+    weight: 107
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_dsource_file:
+    weight: 102
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_dsource_footer_lines:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_dsource_header_lines:
+    weight: 103
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_dsource_instrumentation:
+    weight: 113
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_dsource_methods:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_dsource_num_records:
+    weight: 110
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_dsource_orientation:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_dsource_quality_assurance:
+    weight: 114
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_dsource_quote_character:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_dsource_record_delimiter:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_dsource_related_sites:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_dsource_variables:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,23 @@
+uuid: dd129bba-5420-422e-a352-80b51d039610
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_orientation
+    - node.type.data_source
+  module:
+    - options
+id: node.data_source.field_dsource_orientation
+field_name: field_dsource_orientation
+entity_type: node
+bundle: data_source
+label: Orientation
+description: 'Orientation of the data, either column or row'
+required: false
+translatable: false
+default_value:
+  -
+    value: column
+default_value_callback: ''
+settings: {  }
+field_type: list_string

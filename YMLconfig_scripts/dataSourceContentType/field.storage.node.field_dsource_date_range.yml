@@ -1,0 +1,20 @@
+uuid: e5977ee4-7f92-4514-ba3d-e83e43b27f1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - datetime_range
+    - node
+id: node.field_dsource_date_range
+field_name: field_dsource_date_range
+entity_type: node
+type: daterange
+settings:
+  datetime_type: datetime
+module: datetime_range
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

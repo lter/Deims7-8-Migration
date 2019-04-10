@@ -1,0 +1,27 @@
+uuid: a4555ae0-ffe7-4169-8eaa-434c0c62de44
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_file
+    - node.type.data_source
+  module:
+    - file
+id: node.data_source.field_dsource_file
+field_name: field_dsource_file
+entity_type: node
+bundle: data_source
+label: 'File Upload'
+description: 'Upload the actual spreadsheet containing the data.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: data
+  file_extensions: 'txt xls xlsx csv fhx rtf xml doc docx dbf zip'
+  max_filesize: '1 GB'
+  description_field: false
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: file

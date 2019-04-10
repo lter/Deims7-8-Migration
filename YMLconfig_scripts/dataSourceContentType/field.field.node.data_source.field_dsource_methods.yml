@@ -1,0 +1,19 @@
+uuid: 7195245d-383e-4ff2-acc3-cd9a9dec6713
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_methods
+    - node.type.data_source
+id: node.data_source.field_dsource_methods
+field_name: field_dsource_methods
+entity_type: node
+bundle: data_source
+label: Methods
+description: 'Methods used in gathering data in table'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

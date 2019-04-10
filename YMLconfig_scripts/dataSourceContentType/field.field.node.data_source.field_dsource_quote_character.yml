@@ -1,0 +1,23 @@
+uuid: d4e1c203-e7da-46c9-a1f2-172927bc9416
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_quote_character
+    - node.type.data_source
+  module:
+    - options
+id: node.data_source.field_dsource_quote_character
+field_name: field_dsource_quote_character
+entity_type: node
+bundle: data_source
+label: 'Quote Character'
+description: 'quote character with which text is enclosed'
+required: false
+translatable: false
+default_value:
+  -
+    value: '"'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

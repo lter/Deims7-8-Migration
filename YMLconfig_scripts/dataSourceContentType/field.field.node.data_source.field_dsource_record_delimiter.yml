@@ -1,0 +1,23 @@
+uuid: 5abfbf1d-5f19-470f-afcd-caca759a1c9e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_record_delimiter
+    - node.type.data_source
+  module:
+    - options
+id: node.data_source.field_dsource_record_delimiter
+field_name: field_dsource_record_delimiter
+entity_type: node
+bundle: data_source
+label: 'Record Delimiter'
+description: 'The character used to delimit or separate records (usually a new line - in case of doubt, leave empty).'
+required: false
+translatable: false
+default_value:
+  -
+    value: \r\n
+default_value_callback: ''
+settings: {  }
+field_type: list_string

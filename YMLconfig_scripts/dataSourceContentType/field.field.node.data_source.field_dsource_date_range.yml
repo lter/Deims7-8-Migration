@@ -1,0 +1,21 @@
+uuid: e27ee2c1-7f11-4257-bf00-f6f79d069401
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_date_range
+    - node.type.data_source
+  module:
+    - datetime_range
+id: node.data_source.field_dsource_date_range
+field_name: field_dsource_date_range
+entity_type: node
+bundle: data_source
+label: 'Date Range'
+description: 'Beginning and end date of data in table'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

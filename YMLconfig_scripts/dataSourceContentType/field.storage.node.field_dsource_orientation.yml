@@ -1,0 +1,30 @@
+uuid: c4577387-d5d6-4d3c-a97e-967b3690c232
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_dsource_orientation
+field_name: field_dsource_orientation
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: column
+      label: Column
+    -
+      value: row
+      label: Row
+    -
+      value: other
+      label: Other
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

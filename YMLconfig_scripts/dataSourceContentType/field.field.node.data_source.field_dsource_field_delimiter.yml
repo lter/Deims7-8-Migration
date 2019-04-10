@@ -1,0 +1,23 @@
+uuid: 6dadbac7-67f2-4c98-b549-6fe76f64032b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_field_delimiter
+    - node.type.data_source
+  module:
+    - options
+id: node.data_source.field_dsource_field_delimiter
+field_name: field_dsource_field_delimiter
+entity_type: node
+bundle: data_source
+label: 'Field Delimiter'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: ','
+default_value_callback: ''
+settings: {  }
+field_type: list_string

@@ -1,0 +1,23 @@
+uuid: 287fbfbb-e7c4-4d95-a357-352247b74c22
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_footer_lines
+    - node.type.data_source
+id: node.data_source.field_dsource_footer_lines
+field_name: field_dsource_footer_lines
+entity_type: node
+bundle: data_source
+label: 'Footer Lines'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer
