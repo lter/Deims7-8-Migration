@@ -29,4 +29,11 @@ while (i <= nrow(df_ref_raw)) {
   
 }
 
-write.csv(df_ref_datasource_variable, file = "datasourceVariablesReference.csv", row.names = F)
+df_dsource_vid <- read.csv("exportDataSourceIDs.csv", header = T, as.is = T)
+
+df_ref_datasource_variable$bundle <- "data_source"
+df_ref_datasource_variable$langcode <- "en"
+df_ref_datasource_variable <- left_join(df_ref_datasource_variable, df_dsource_vid, by = c("entity_id" = "nid"))
+df_ref_datasource_variable <- select(df_ref_datasource_variable, bundle, entity_id, revision_id = vid, langcode, delta, field_dsource_variables_target_id = variable_id)
+
+write.csv(df_ref_datasource_variable, file = "upload_dsourceVariablesReference.csv", row.names = F)

@@ -86,4 +86,34 @@ Content types may be imported as YML files [instructions are here](https://githu
     
     `drush migrate:import deims_csv_site`
     	
-1. Migrate variable - this requires new content types and some R scripts. Detailed instructions are under  [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables)
+1. Migrate variable - this requires new content types and some R scripts. Detailed instructions are: [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables)
+
+1. Migrate data sources
+	1. Create content type in D8 name: Data Source machine name: data_source
+    	1. Navigate in your D8 website to /admin/structure/types
+    	1. Add Content type
+    	1. Add needed fields 
+    		* label: Date Range; machine name: field_dsource_date_range; type: Date range 	
+    		* label: Description; machine name: field_dsource_description; type: Text (plain, long) 	
+    		* label: Field Delimiter; machine name: field_dsource_field_delimiter; type: List (text) 	
+    		* label: File Upload; machine name: field_dsource_file; type: File 	
+    		* label: Footer Lines; machine name: field_dsource_footer_lines; type: Number (integer) 	
+    		* label: Header Lines; machine name: field_dsource_header_lines; type: Number (integer) 	
+    		* label: Instrumentation; machine name: field_dsource_instrumentation; type: Text (plain, long) 	
+    		* label: Methods; machine name: field_dsource_methods; type: Text (plain, long) 	
+    		* label: Number of Records; machine name: field_dsource_num_records; type: Number (integer) 	
+    		* label: Orientation; machine name: field_dsource_orientation; type: List (text) 	
+    		* label: Quality Assurance; machine name: field_dsource_quality_assurance; type: Text (plain, long) 	
+    		* label: Quote Character; machine name: field_dsource_quote_character; type: List (text) 	
+    		* label: Record Delimiter; machine name: field_dsource_record_delimiter; type: List (text) 	
+    		* label: Related Sites; machine name: field_dsource_related_sites; type: Entity reference 	
+    		* label: Variables; machine name: field_dsource_variables; type: Entity reference
+    1. On the commandline inside the webroot of the new D8 website run `drush migrate:import deims_nodes_dsource`
+    	* Currently the YML script relies on the fact that old DIEMS7 nids are being used in D8 and no migration_lookup is performed!
+    1. Use [SQL script](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportDataSourceIDs.sql) to get the new nid/vid mapping
+    1. See last point in [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables). Run [R script](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasourceVariablesReference.R) to make the upload file needed to link variables to each data source.
+    1. Manually upload file 'upload_dsourceVariablesReference.csv' to table: 'node__field_dsource_variables'
+    1. Clear all caches in the D8 site and make sure the data source look like they are supposed to:
+    	* They have all variables linked
+    	* They have the csv file linked
+    
