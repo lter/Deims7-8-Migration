@@ -1,0 +1,21 @@
+uuid: 188751e2-6995-46c7-98d1-c17b50c0b5ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_type
+    - node.type.variable
+  module:
+    - options
+id: node.variable.field_variables_type
+field_name: field_variables_type
+entity_type: node
+bundle: variable
+label: Type
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

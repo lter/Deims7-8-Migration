@@ -1,0 +1,23 @@
+uuid: aa519f47-9fee-4b9f-b337-52f28638eb7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coord_bottom_latitude
+    - node.type.research_site
+id: node.research_site.field_coord_bottom_latitude
+field_name: field_coord_bottom_latitude
+entity_type: node
+bundle: research_site
+label: 'Bottom Latitude'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

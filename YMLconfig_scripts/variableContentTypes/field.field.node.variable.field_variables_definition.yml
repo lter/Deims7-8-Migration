@@ -1,0 +1,19 @@
+uuid: 9dc9959c-dfa2-4627-8b37-462208fd0a23
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_definition
+    - node.type.variable
+id: node.variable.field_variables_definition
+field_name: field_variables_definition
+entity_type: node
+bundle: variable
+label: Definition
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

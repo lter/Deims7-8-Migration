@@ -1,0 +1,118 @@
+uuid: 45190f36-cfc8-4720-ac53-b94493fe7010
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.variable.field_variables_code_definition
+    - field.field.node.variable.field_variables_date_time_format
+    - field.field.node.variable.field_variables_definition
+    - field.field.node.variable.field_variables_label
+    - field.field.node.variable.field_variables_maximum
+    - field.field.node.variable.field_variables_minimum
+    - field.field.node.variable.field_variables_missing_value
+    - field.field.node.variable.field_variables_precision
+    - field.field.node.variable.field_variables_type
+    - field.field.node.variable.field_variables_unit
+    - node.type.variable
+  module:
+    - key_value_field
+    - options
+    - user
+id: node.variable.default
+targetEntityType: node
+bundle: variable
+mode: default
+content:
+  field_variables_code_definition:
+    weight: 106
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_variables_date_time_format:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_variables_definition:
+    weight: 112
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_variables_label:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_variables_maximum:
+    weight: 108
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_variables_minimum:
+    weight: 109
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_variables_missing_value:
+    weight: 105
+    label: above
+    settings:
+      value_only: false
+    third_party_settings: {  }
+    type: key_value
+    region: content
+  field_variables_precision:
+    weight: 110
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_variables_type:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_variables_unit:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

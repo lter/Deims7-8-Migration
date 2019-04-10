@@ -1,0 +1,18 @@
+uuid: e90fadef-161d-4dd6-a49c-9cc60a495f52
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_coord_rigth_longitude
+field_name: field_coord_rigth_longitude
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,18 @@
+uuid: 7d903cdd-c3d0-40f3-8dc8-3432576451cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_variables_precision
+field_name: field_variables_precision
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

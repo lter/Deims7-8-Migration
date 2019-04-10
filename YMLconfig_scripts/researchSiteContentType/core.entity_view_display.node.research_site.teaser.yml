@@ -1,0 +1,32 @@
+uuid: 775ea033-68fd-4426-8b90-6eb618b7ac86
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.research_site.body
+    - field.field.node.research_site.field_elevation
+    - node.type.research_site
+  module:
+    - text
+    - user
+id: node.research_site.teaser
+targetEntityType: node
+bundle: research_site
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_elevation: true

@@ -1,0 +1,21 @@
+uuid: 4097fc8c-967e-4159-91de-cc02fbe8dcda
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_missing_value
+    - node.type.variable
+  module:
+    - key_value_field
+id: node.variable.field_variables_missing_value
+field_name: field_variables_missing_value
+entity_type: node
+bundle: variable
+label: 'Missing Value'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: key_value

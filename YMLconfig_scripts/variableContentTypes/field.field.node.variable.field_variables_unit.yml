@@ -1,0 +1,28 @@
+uuid: 2b490387-e4fc-4ccc-8802-1bb0a7b1f7c8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_unit
+    - node.type.variable
+    - node.type.variables_units
+id: node.variable.field_variables_unit
+field_name: field_variables_unit
+entity_type: node
+bundle: variable
+label: Unit
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      variables_units: variables_units
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,21 @@
+uuid: aedb45ea-0c6f-449c-a752-11c1a7daa34c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variable_code_definition
+    - node.type.variable_codes
+  module:
+    - key_value_field
+id: node.variable_codes.field_variable_code_definition
+field_name: field_variable_code_definition
+entity_type: node
+bundle: variable_codes
+label: 'Code Definition'
+description: 'code and its definition '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: key_value

@@ -1,0 +1,19 @@
+uuid: 3c6b141f-7266-4f56-a8fa-894081f6b4fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_unit_type
+    - node.type.variables_units
+id: node.variables_units.field_variables_unit_type
+field_name: field_variables_unit_type
+entity_type: node
+bundle: variables_units
+label: 'Unit Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

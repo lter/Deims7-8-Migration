@@ -1,0 +1,23 @@
+uuid: 2b62f3bc-b355-41b2-9b5d-c55cfded3a87
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_maximum
+    - node.type.variable
+id: node.variable.field_variables_maximum
+field_name: field_variables_maximum
+entity_type: node
+bundle: variable
+label: Maximum
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,18 @@
+uuid: 0073743d-1359-4e8d-9b75-73452d4677bb
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.variables_units
+id: node.variables_units.title
+field_name: title
+entity_type: node
+bundle: variables_units
+label: Unit
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

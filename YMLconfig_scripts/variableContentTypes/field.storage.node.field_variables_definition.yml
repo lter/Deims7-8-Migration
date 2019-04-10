@@ -1,0 +1,19 @@
+uuid: 1879088b-d22c-4c10-950a-90c7215453bc
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_variables_definition
+field_name: field_variables_definition
+entity_type: node
+type: string_long
+settings:
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

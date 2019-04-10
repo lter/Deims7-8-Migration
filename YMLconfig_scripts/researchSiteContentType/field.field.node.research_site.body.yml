@@ -1,0 +1,22 @@
+uuid: a8f25c9f-43d4-45a6-b27f-aa2dc042382a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.research_site
+  module:
+    - text
+id: node.research_site.body
+field_name: body
+entity_type: node
+bundle: research_site
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

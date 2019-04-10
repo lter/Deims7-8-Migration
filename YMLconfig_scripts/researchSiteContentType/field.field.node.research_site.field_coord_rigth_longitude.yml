@@ -1,0 +1,23 @@
+uuid: 6cae2321-2534-4144-ac84-63329b8cdb04
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coord_rigth_longitude
+    - node.type.research_site
+id: node.research_site.field_coord_rigth_longitude
+field_name: field_coord_rigth_longitude
+entity_type: node
+bundle: research_site
+label: 'Rigth Longitude'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

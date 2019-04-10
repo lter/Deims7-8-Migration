@@ -1,0 +1,30 @@
+uuid: cfc33c95-85c7-42df-b1d0-462033576510
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_variables_type
+field_name: field_variables_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: codes
+      label: codes
+    -
+      value: date
+      label: date
+    -
+      value: physical
+      label: physical
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

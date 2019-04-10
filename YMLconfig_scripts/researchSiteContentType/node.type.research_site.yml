@@ -1,0 +1,17 @@
+uuid: 4895ee4b-e0eb-47ae-8771-bd49d4914af1
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Research site'
+type: research_site
+description: 'Locations of NTL research'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

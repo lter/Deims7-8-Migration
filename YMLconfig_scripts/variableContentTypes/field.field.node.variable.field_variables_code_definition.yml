@@ -1,0 +1,29 @@
+uuid: f32dcb77-a45d-4fff-9f96-d98eaf8654d3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_code_definition
+    - node.type.variable
+    - node.type.variable_codes
+id: node.variable.field_variables_code_definition
+field_name: field_variables_code_definition
+entity_type: node
+bundle: variable
+label: 'Code Definition'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      variable_codes: variable_codes
+    sort:
+      field: title
+      direction: ASC
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

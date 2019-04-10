@@ -1,0 +1,23 @@
+uuid: 37d84df9-62cc-40ff-8857-35f1fd015a6e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coord_left_longitude
+    - node.type.research_site
+id: node.research_site.field_coord_left_longitude
+field_name: field_coord_left_longitude
+entity_type: node
+bundle: research_site
+label: 'Left Longitude'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

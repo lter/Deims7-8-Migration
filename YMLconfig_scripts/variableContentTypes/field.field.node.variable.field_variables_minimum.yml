@@ -1,0 +1,23 @@
+uuid: 2770ffbb-f299-47cc-822a-dffb5f0d541c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_minimum
+    - node.type.variable
+id: node.variable.field_variables_minimum
+field_name: field_variables_minimum
+entity_type: node
+bundle: variable
+label: Minimum
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

@@ -1,0 +1,23 @@
+uuid: cbccc933-51e6-431b-be50-d1a03eda2a3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_coord_top_latitude
+    - node.type.research_site
+id: node.research_site.field_coord_top_latitude
+field_name: field_coord_top_latitude
+entity_type: node
+bundle: research_site
+label: 'Top Latitude'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

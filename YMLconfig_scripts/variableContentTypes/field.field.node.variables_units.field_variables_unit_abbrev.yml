@@ -1,0 +1,21 @@
+uuid: 442b07b3-8a5d-4c85-aff6-4a6aa1862965
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_unit_abbrev
+    - node.type.variables_units
+  module:
+    - text
+id: node.variables_units.field_variables_unit_abbrev
+field_name: field_variables_unit_abbrev
+entity_type: node
+bundle: variables_units
+label: Abbreviation
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

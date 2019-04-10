@@ -4,15 +4,24 @@
 1. Migrate taxonomies
 	1. At NTL we have a few specific ones, change for a different website
 	1. Moving taxonomies separately allows to omit a few that seemed unnecessary
+	1. Create taxonomies in D8 site: core_areas, lter_controlled_vocabulary, other custom ones
 	1. On the commandline inside the webroot of the new D8 website run the command 
 	
 	`drush migrate:import deims_category_core_areas` change migration ID for the others.
 
+1. Migrate file entity information
+	1. This yml file will only migrate information in the table: file_managed. It will not actually copy the files.
+    1. On the commandline inside the webroot of the new D8 website run the command 
+    
+    `drush migrate:import deims_files`
+	
 1. Migrate basic pages and other custom content types that only need taxonomy tagging (e.g., research highlights, protocols, etc.)
 	1. Create the desired content type in D8
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
     	1. Add needed fields 
+    		* label: File; machine name: field_file; type: File
+    		* label: NTL Keyword; machine name: field_ntl_keyword; type: Entity reference
     1. On the commandline inside the webroot of the new D8 website run the command 
     
     `drush migrate:import deims_nodes_highlights` change migration ID for the others.

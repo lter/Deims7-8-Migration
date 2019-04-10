@@ -1,0 +1,19 @@
+uuid: a9aca2c2-2c21-4c7e-8b8b-4e0d8f126e01
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_date_time_format
+    - node.type.variable
+id: node.variable.field_variables_date_time_format
+field_name: field_variables_date_time_format
+entity_type: node
+bundle: variable
+label: 'Date Time Format'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,20 @@
+uuid: 1643d7c2-8f7a-4b47-8b3d-31d13af52ed8
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_elevation
+field_name: field_elevation
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

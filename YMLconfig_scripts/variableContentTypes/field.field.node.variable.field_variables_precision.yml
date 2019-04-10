@@ -1,0 +1,23 @@
+uuid: 5edd4719-6347-4086-9e69-09d4480c2805
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variables_precision
+    - node.type.variable
+id: node.variable.field_variables_precision
+field_name: field_variables_precision
+entity_type: node
+bundle: variable
+label: Precision
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: float

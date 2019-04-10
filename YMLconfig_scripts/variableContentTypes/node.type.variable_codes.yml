@@ -1,0 +1,17 @@
+uuid: ac69eb1f-63ed-4f85-b110-18059a7c2dd5
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Variable Codes'
+type: variable_codes
+description: 'sets of code/definitions for variables of categorical type'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

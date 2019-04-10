@@ -1,0 +1,18 @@
+uuid: 99e36461-0d68-4266-83bd-57f3cce2eb0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_coord_top_latitude
+field_name: field_coord_top_latitude
+entity_type: node
+type: float
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

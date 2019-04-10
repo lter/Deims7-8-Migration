@@ -1,0 +1,84 @@
+uuid: c69a7eed-6d0d-4beb-bd97-9a549ac8cdee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.research_site.body
+    - field.field.node.research_site.field_coord_bottom_latitude
+    - field.field.node.research_site.field_coord_left_longitude
+    - field.field.node.research_site.field_coord_rigth_longitude
+    - field.field.node.research_site.field_coord_top_latitude
+    - field.field.node.research_site.field_elevation
+    - node.type.research_site
+  module:
+    - text
+    - user
+id: node.research_site.default
+targetEntityType: node
+bundle: research_site
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_coord_bottom_latitude:
+    weight: 104
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 6
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_coord_left_longitude:
+    weight: 105
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 6
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_coord_rigth_longitude:
+    weight: 106
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 6
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_coord_top_latitude:
+    weight: 103
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 6
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_elevation:
+    weight: 102
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: number_unformatted
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

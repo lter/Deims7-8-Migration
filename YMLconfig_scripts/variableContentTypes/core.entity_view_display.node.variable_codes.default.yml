@@ -1,0 +1,29 @@
+uuid: 0dc2f428-876d-4ac1-8ff4-e70219033c79
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.variable_codes.field_variable_code_definition
+    - node.type.variable_codes
+  module:
+    - key_value_field
+    - user
+id: node.variable_codes.default
+targetEntityType: node
+bundle: variable_codes
+mode: default
+content:
+  field_variable_code_definition:
+    weight: 101
+    label: above
+    settings:
+      value_only: false
+    third_party_settings: {  }
+    type: key_value
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }
