@@ -5,7 +5,7 @@ label: Deims Research Site Nodes
 source:
   plugin: csv
  # the full path to the csv file
-  path: ../path/to/file/research_siteExport.csv
+  path: C:/Users/cgries/Dropbox/Corinna/datamanagement/NTLwebsite/deims7/research_siteExport.csv
  # Column delimiter. Comma (,) by default.
   delimiter: ','
   # Field enclosure. Double quotation marks (") by default.
@@ -24,7 +24,6 @@ destination:
 
 process:
   nid: nid
-  vid: vid
   type: type
   langcode:
     plugin: static_map

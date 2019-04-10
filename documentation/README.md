@@ -1,4 +1,6 @@
-# Sequence of migration steps:
+# Sequence of manual migration steps:
+
+Content types may be imported as YML files [instructions are here](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/SyncConfiguration)
 
 1. If desired migrate users (see above general comments)
 1. Migrate taxonomies
@@ -58,7 +60,10 @@
     		* label: Specialty; machine name: field_person_specialty; type: Text (plain)
     		* label: Street Address; machine name: field_address_street; type: Text (plain)
     1. Export person information from DEIMS7 database with [personExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/personExport.sql) and save as personExport.csv
-    1. On the commandline inside the webroot of the new D8 website run the command 
+    1. In the migration YML file make sure the path to that csv file is set correctly
+    1. On the commandline inside the webroot of the new D8 website run 
+    
+    `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
     
     `drush migrate:import deims_csv_person`
 
@@ -74,7 +79,10 @@
     		* label: Rigth Longitude; machine name: field_coord_rigth_longitude; type: Number (float)
     		* label: Top Latitude; machine name: field_coord_top_latitude; type: Number (float)
     1. Export research site information from DEIMS7 database with [research_siteExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/research_siteExport.sql) and save as research_siteExport.csv
-    1. On the commandline inside the webroot of the new D8 website run the command 
+    1. In the migration YML file make sure the path to that csv file is set correctly
+    1. On the commandline inside the webroot of the new D8 website run 
+    
+    `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
     
     `drush migrate:import deims_csv_site`
     	

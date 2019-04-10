@@ -12,7 +12,13 @@ The process of converting DEIMS7 variables entities into content types involves 
     		* label: Code Definition; machine name: field_variable_code_definition; type: Key/value (plain)
     	
     1. Run the first part of the script up to saving upload_code_def_node.csv
-    1. In the webroot of your D8 website run `drush migrate:import deims_csv_varcodedef`
+    1. In the migration YML file make sure the path to that csv file is set correctly
+    1. On the commandline inside the webroot of the new D8 website run 
+    
+    `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+ 
+    `drush migrate:import deims_csv_varcodedef`
+    
     1. Export IDs that Drupal has assigned with SQL script [exportVariableCodeIDs.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportVariableCodeIDs.sql) save as nid_vid_mapping.csv
     1. Run the second part of the R script
     1. Manually import file upload_code_def_values.csv into D8 table node__field_variable_code_definition
@@ -33,7 +39,13 @@ The process of converting DEIMS7 variables entities into content types involves 
     1. Check the units for typos, non-standard spelling etc., the R script contains a case block where these can be corrected
     1. Run R script 
     1. In a text editor remove special characters from csv file (micro, square, etc.)
-    1. In the webroot of your D8 website run `drush migrate:import deims_csv_units`
+    1. In the migration YML file make sure the path to that csv file is set correctly
+    1. On the commandline inside the webroot of the new D8 website run 
+    
+    `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+ 
+    `drush migrate:import deims_csv_units`
+    
     1. Make sure everything looks as expected
     
 1. __Variable content type__ I.e., all the rest of the information variables need. Use R script [parseVariablesNodes.R](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/parseVariablesNodes.R)
@@ -52,7 +64,13 @@ The process of converting DEIMS7 variables entities into content types involves 
     		* label: Type; machine name: 	field_variables_type; type: 	List (text)
     		* label: Unit; machine name: 	field_variables_unit; type: 	Entity reference
     1. Run R script
-    1. In the webroot of your D8 website run `drush migrate:import deims_csv_variables`
+    1. In the migration YML file make sure the path to that csv file is set correctly
+    1. On the commandline inside the webroot of the new D8 website run 
+    
+    `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+ 
+    `drush migrate:import deims_csv_variables`
+    
     1. Make sure everything looks as expected. Variables have two dependencies, units and code/definitions.
     
 1. __Determine the sequence in which variables should appear in each data source__ This is done on the variables export file, but is needed for the data source migration. Use R script []()
