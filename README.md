@@ -15,16 +15,16 @@ We recommend the following set up:
 1. Set up a fresh Drupal8 site in a testing environment - https://www.drupal.org/docs/8/install
 	1. If done on a Windows desk/lap top it works well with XAMPP https://www.apachefriends.org/index.html
 1. Follow instruction for installing composer (https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies) and drush
-
-1. On Windows this worked for me:
-	1. Use composer to install drush
-	1. Put two files into the webroot directory [Instructions](https://github.com/drush-ops/drush-launcher)
-		1. [drush.phar](https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar)
-		1. create drush.bat with the content:
-		```
-		@echo off
-		php "%~dp0\drush.phar" %*
-		```
+	1. On windows 
+		* composer needs to be on the path environment variable
+		* Use composer to install drush
+		* Put two files into the webroot directory [Instructions for drush launcher](https://github.com/drush-ops/drush-launcher)
+			1. [drush.phar](https://github.com/drush-ops/drush-launcher/releases/download/0.6.0/drush.phar)
+			1. create drush.bat with the content:
+			```
+			@echo off
+			php "%~dp0\drush.phar" %*
+			```
 	
 1. Use Composer to install the Drupal migration modules and enable them, but don't enable the migration examples, they only clutter up the database. In the D8 root directory (e.g., ../xampp/htdocs/deims8) use `composer require drupal/module_name`:
 	1. [Migrate Upgrade](https://www.drupal.org/project/migrate_upgrade)
