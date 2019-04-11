@@ -35,11 +35,13 @@ We recommend the following set up:
 1. User Composer to install other Drupal modules. Needed in this migration are:
 	1. [Key Value Field](https://www.drupal.org/project/key_value_field)
 	
-1. Enable telephone field
+1. Enable telephone field (part of core, but may not be active)
+
+1. Enable date range field (part of core, but may not be active)
   
 1. On the command line, navigate to your web root folder (e.g., ../xampp/htdocs/deims8). Everything is working well if the command `drush config:status` returns all migrate commands. On Windows that can be a little tricky and will involve various changes to the Path Environment Variable or diving into .dll hell.
 
-1. In the settings.php (at e.g., ../xampp/htdocs/deims8/web/sites/default) file add the database connection information to access the DEIMS7 database.
+1. In the settings.php (at e.g., ../xampp/htdocs/deims8/web/sites/default) file add the database connection information to access the DEIMS7 database. Make sure to call it: migration_source_db, which is used throughout this migration.
 	```
 	$databases['migration_source_db']['default'] = array (
 		'database' => 'database_name',
@@ -53,8 +55,8 @@ We recommend the following set up:
 	);
 	```
 	
-1. Create a 'deims_migrate' folder under your new D8 webroot/web/modules/custom (e.g., ../xampp/htdocs/deims8/web/modules/custom/deims_migrate). Copy the deims_migrate.info.yml into this folder.
-1. Create a 'config' folder inside the 'deims_migrate' folder and a 'install' folder inside the 'config' folder and paste the YML files into it:
+1. Create a 'deims_migrate' folder under your new D8 webroot/web/modules/custom (e.g., ../xampp/htdocs/deims8/web/modules/custom/deims_migrate). Copy the file: deims_migrate.info.yml into this folder.
+1. Create a 'config' folder inside the 'deims_migrate' folder and a 'install' folder inside the 'config' folder and paste the rest of the YML files from [this folder](https://github.com/lter/Deims7-8-Migration/tree/master/YMLmigration_sripts) into it:
 	1. This sets up the connections
 		1. migrate_plus.migration_group.deims_general.yml
 	1. Migrating 'categories or taxonomies' (migration directly from DEIMS7 database)
@@ -78,6 +80,9 @@ We recommend the following set up:
 		1. migrate_plus.migration.deims_csv_units.yml
 		1. migrate_plus.migration.deims_csv_varcodedef.yml
 		1. migrate_plus.migration.deims_csv_variables.yml
+	1. Migrating content type 'data source' (currently this script relies on nids not changing during migration)
+		1. migrate_plus.migration.deims_nodes_dsource.yml
+		
 1. The deims_migrate module should show up in the D8 website ../deims8/web/admin/modules where it needs to be enabled. After it has been enabled run drush install command every time something is changed in a YML file.
 
 ## Most important Drush migration commands

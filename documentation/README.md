@@ -85,6 +85,28 @@ Content types may be imported as YML files [instructions are here](https://githu
     `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
     
     `drush migrate:import deims_csv_site`
+
+1. Migrate Project and create new content type for funding in anticipating of EML 2.2
+	1. Create content type in D8 name: Data Source machine name: data_source
+    	1. Navigate in your D8 website to /admin/structure/types
+    	1. Add Content type label: Project Funding; machine name: project_funding
+    	1. Add needed fields
+    		* label: Award URL; machine name: field_funder_award_url; type: Link
+    		* label: Funder Award Number; machine name: field_funder_award_number; type: Text (plain)
+    		* label: Funder Award Title; machine name: field_funder_award_title; type: Text (plain)
+    		* label: Funder ID; machine name: field_funder_id; type: Text (plain) 	
+    		* label: Funder Name; machine name: field_funder_name; type: Text (plain)
+    	1. Add Content type label: Research Project; machine name: project
+    	1. Add needed fields
+    		* label: Body; machine name: body 	Text (formatted, long, with summary)
+    		* label: Funding; machine name: field_project_funding; type: Entity reference
+    		* label: Investigator; machine name: field_project_investigator; type: Entity reference
+    		* label: LTER Keyword; machine name: field_project_lter_keyword; type: Entity reference
+    		* label: NTL Keyword; machine name: field_project_ntl_keyword; type: Entity reference
+    		* label: Timeline; machine name: field_project_timeline; type: Date range
+    1. On the commandline inside the webroot of the new D8 website run `drush migrate:import deims_nodes_project`
+    	* Currently the YML script relies on the fact that old DIEMS7 nids are being used in D8 and no migration_lookup is performed!
+    	* No funding information is in DEIMS7
     	
 1. Migrate variable - this requires new content types and some R scripts. Detailed instructions are: [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables)
 

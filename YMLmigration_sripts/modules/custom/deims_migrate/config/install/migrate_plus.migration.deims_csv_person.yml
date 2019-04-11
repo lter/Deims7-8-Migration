@@ -13,7 +13,7 @@ label: Deims Person Nodes Export
 source:
   plugin: csv
  # the full path to the csv file
-  path: ../complete/path/to/file/personExport.csv
+  path: C:/Users/cgries/Dropbox/Corinna/datamanagement/NTLwebsite/deims7/personExport.csv
  # Column delimiter. Comma (,) by default.
   delimiter: ','
   # Field enclosure. Double quotation marks (") by default.
@@ -28,6 +28,7 @@ source:
     
 
 process:
+  nid: nid
   type:
     plugin: default_value
     default_value: person
