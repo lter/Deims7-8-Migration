@@ -1,0 +1,20 @@
+uuid: feb36123-15ea-4588-afa3-fa7a1f30f025
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_project_lter_keyword
+field_name: field_project_lter_keyword
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

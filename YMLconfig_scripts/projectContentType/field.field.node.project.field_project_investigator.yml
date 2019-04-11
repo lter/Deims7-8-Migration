@@ -1,0 +1,28 @@
+uuid: 48ee365a-15f5-4305-9482-236803f87b18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_investigator
+    - node.type.person
+    - node.type.project
+id: node.project.field_project_investigator
+field_name: field_project_investigator
+entity_type: node
+bundle: project
+label: Investigator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

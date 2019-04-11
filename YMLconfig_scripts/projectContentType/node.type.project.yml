@@ -1,0 +1,17 @@
+uuid: 2c65d009-6ae8-4608-a55a-a1356a4c1a34
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Project
+type: project
+description: 'research project information'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

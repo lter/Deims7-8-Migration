@@ -1,0 +1,19 @@
+uuid: 941ed4c9-3474-45ca-9a65-19b1a36216ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_funder_award_number
+    - node.type.project_funding
+id: node.project_funding.field_funder_award_number
+field_name: field_funder_award_number
+entity_type: node
+bundle: project_funding
+label: 'Funder Award Number'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

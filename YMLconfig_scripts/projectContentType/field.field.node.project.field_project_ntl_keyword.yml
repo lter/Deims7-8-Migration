@@ -1,0 +1,29 @@
+uuid: cea56f88-8ef9-44b0-a26f-a0ee62183235
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_ntl_keyword
+    - node.type.project
+    - taxonomy.vocabulary.ntl_keywords
+id: node.project.field_project_ntl_keyword
+field_name: field_project_ntl_keyword
+entity_type: node
+bundle: project
+label: 'NTL Keyword'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ntl_keywords: ntl_keywords
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

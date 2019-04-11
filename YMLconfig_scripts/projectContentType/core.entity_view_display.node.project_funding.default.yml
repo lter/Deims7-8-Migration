@@ -1,0 +1,69 @@
+uuid: 6ab4a163-dda2-4f01-92e3-4547eefee5e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.project_funding.field_funder_award_number
+    - field.field.node.project_funding.field_funder_award_title
+    - field.field.node.project_funding.field_funder_award_url
+    - field.field.node.project_funding.field_funder_id
+    - field.field.node.project_funding.field_funder_name
+    - node.type.project_funding
+  module:
+    - link
+    - user
+id: node.project_funding.default
+targetEntityType: node
+bundle: project_funding
+mode: default
+content:
+  field_funder_award_number:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_funder_award_title:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_funder_award_url:
+    weight: 105
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_funder_id:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_funder_name:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

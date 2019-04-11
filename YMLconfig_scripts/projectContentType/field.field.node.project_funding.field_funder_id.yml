@@ -1,0 +1,19 @@
+uuid: ead3ebfe-8ffc-49d0-84c3-03678b9063b1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_funder_id
+    - node.type.project_funding
+id: node.project_funding.field_funder_id
+field_name: field_funder_id
+entity_type: node
+bundle: project_funding
+label: 'Funder ID'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

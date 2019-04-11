@@ -1,0 +1,74 @@
+# Migration for research project Nodes.
+id: deims_nodes_project
+label: Deims Research Project Nodes
+ 
+source:
+  key: migration_source_db
+  plugin: d7_node
+  node_type: project
+ 
+destination:
+  plugin: entity:node
+  default_bundle: project
+
+process:
+  nid: nid
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      und: en
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+    
+  status: status
+  created: created
+  changed: changed
+  comment: comment
+  promote: promote
+  sticky: sticky
+  
+  body: body
+  
+  field_project_investigator: field_related_people
+    
+  field_project_lter_keyword: 
+    plugin: migration_lookup
+    source: field_keywords
+    migration: deims_category_lter
+    no_stub: true
+  
+  field_project_ntl_keyword:    
+    plugin: migration_lookup
+    source: field_ntl_keywords
+    migration: deims_category_ntl
+    no_stub: true
+  
+  field_project_timeline:
+    plugin: sub_process
+    source: field_startdate
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+      end_value:
+        plugin: format_date
+        source: value2
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+
+
+migration_dependencies:
+  required:
+    - deims_category_ntl
+    - deims_category_lter
+    - deims_csv_person
+  
+
+dependencies: { }

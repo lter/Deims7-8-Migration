@@ -1,0 +1,21 @@
+uuid: 2044772b-a0ef-403c-bfa6-4d9c52f9b2eb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_project_timeline
+    - node.type.project
+  module:
+    - datetime_range
+id: node.project.field_project_timeline
+field_name: field_project_timeline
+entity_type: node
+bundle: project
+label: Timeline
+description: 'start and estimated end date'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: daterange

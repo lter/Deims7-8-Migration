@@ -1,0 +1,17 @@
+uuid: 43c00bd8-f220-44d4-ac4d-aa321ade3dcc
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Project Funding'
+type: project_funding
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
