@@ -1,0 +1,84 @@
+# Migration for data source Nodes.
+id: deims_nodes_dsource
+label: Deims Data Source Nodes
+ 
+source:
+  key: migration_source_db
+  plugin: d7_node
+  node_type: data_source
+ 
+destination:
+  plugin: entity:node
+  default_bundle: data_source
+
+process:
+  nid: nid
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      und: en
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+    
+  status: status
+  created: created
+  changed: changed
+  comment: comment
+  promote: promote
+  sticky: sticky
+  
+  field_dsource_description: field_description
+  field_dsource_header_lines: field_csv_header_lines
+  field_dsource_footer_lines: field_csv_footer_lines
+  field_dsource_orientation: field_csv_orientation
+  field_dsource_quote_character: field_csv_quote_character
+  field_dsource_field_delimiter: field_csv_field_delimiter
+  field_dsource_record_delimiter: field_csv_record_delimiter
+  field_dsource_num_records: field_number_of_records
+  
+  field_dsource_date_range:
+    plugin: sub_process
+    source: field_date_range
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+      end_value:
+        plugin: format_date
+        source: value2
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+
+  field_dsource_methods: field_methods
+  field_dsource_instrumentation: field_instrumentation
+  field_dsource_quality_assurance: field_quality_assurance
+
+# this will only work when nids from DEIMS7 are used in migration as it does not involve a migration_lookup
+# maybe chaining the migration_lookup with this subprocess would work
+
+  field_dsource_file: 
+    plugin: sub_process
+    source: field_data_source_file
+    process:
+      target_id: fid
+      display: display
+      description: description
+
+# same here this will work only with old nids, otherwise it needs a migration_lookup, but NTL doesn't have related sites at this level.
+
+  field_dsource_related_sites: field_related_sites
+
+migration_dependencies:
+  required:
+    - deims_csv_site
+    - deims_files
+  
+
+dependencies: { }
