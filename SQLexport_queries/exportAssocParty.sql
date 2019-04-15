@@ -1,0 +1,11 @@
+SELECT
+field_data_field_project_roles.entity_id as dataset_id,
+node.nid as person_id,
+node.title as person_name,
+field_data_field_project_role.field_project_role_value as project_role,
+CONCAT(node.title," as ",field_data_field_project_role.field_project_role_value) as field_title
+FROM
+field_data_field_project_role
+INNER JOIN field_data_field_related_person ON field_data_field_project_role.entity_id = field_data_field_related_person.entity_id
+INNER JOIN node ON field_data_field_related_person.field_related_person_target_id = node.nid
+INNER JOIN field_data_field_project_roles ON field_data_field_project_roles.field_project_roles_target_id = field_data_field_project_role.entity_id
