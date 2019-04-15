@@ -54,6 +54,13 @@ We recommend the following set up:
 		'driver' => 'mysql',
 	);
 	```
+1. If encountering the WSOD ('white screen of death' or 'The website encountered an unexpected error. Please try again later.')
+	* On windows it was resolved by increasing the setting for innodb_log_file_size to 48M (innodb_log_file_size = 48M)
+	* This is a seeting in the 'my.ini' file which resides in the ../mysql/bin folder:
+		* Shut down MySQL server
+		* Move old log files away (../mysql/data/ib_logfile0 and ib_logfile1
+		* Increase innodb_log_file_size to 48M
+		* Restart the MySQL server
 	
 1. Create a 'deims_migrate' folder under your new D8 webroot/web/modules/custom (e.g., ../xampp/htdocs/deims8/web/modules/custom/deims_migrate). Copy the file: deims_migrate.info.yml into this folder.
 1. Create a 'config' folder inside the 'deims_migrate' folder and a 'install' folder inside the 'config' folder and paste the rest of the YML files from [this folder](https://github.com/lter/Deims7-8-Migration/tree/master/YMLmigration_sripts) into it:

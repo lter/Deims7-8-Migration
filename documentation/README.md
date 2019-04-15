@@ -135,7 +135,7 @@ Content types may be imported as YML files [instructions are here](https://githu
     1. Use [SQL script](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportDataSourceIDs.sql) to get the new nid/vid mapping
     1. See last point in [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables). Run [R script](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasourceVariablesReference.R) to make the upload file needed to link variables to each data source.
     1. Manually upload file 'upload_dsourceVariablesReference.csv' to table: 'node__field_dsource_variables'
-    1. Clear all caches in the D8 site and make sure the data source look like they are supposed to:
+    1. Clear all caches in the D8 site and make sure the data sources look like they are supposed to:
     	* They have all variables linked
     	* They have the csv file linked
     
