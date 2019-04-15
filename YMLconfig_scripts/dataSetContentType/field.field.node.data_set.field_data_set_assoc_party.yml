@@ -1,0 +1,28 @@
+uuid: 2111ae45-5716-4769-9e15-47734b533c34
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_assoc_party
+    - node.type.associated_party
+    - node.type.data_set
+id: node.data_set.field_data_set_assoc_party
+field_name: field_data_set_assoc_party
+entity_type: node
+bundle: data_set
+label: 'Associated Party'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      associated_party: associated_party
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

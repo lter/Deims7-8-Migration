@@ -1,0 +1,37 @@
+uuid: db8b64d5-68fb-45bb-a024-b3138664549b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.associated_party.field_assoc_party_person
+    - field.field.node.associated_party.field_assoc_party_role
+    - node.type.associated_party
+  module:
+    - user
+id: node.associated_party.default
+targetEntityType: node
+bundle: associated_party
+mode: default
+content:
+  field_assoc_party_person:
+    weight: 101
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_assoc_party_role:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

@@ -1,0 +1,19 @@
+uuid: 1c3a24a3-5bf0-47f6-9553-d38601981636
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assoc_party_role
+    - node.type.associated_party
+id: node.associated_party.field_assoc_party_role
+field_name: field_assoc_party_role
+entity_type: node
+bundle: associated_party
+label: Role
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,19 @@
+uuid: 1365a760-c339-4bd8-bc4b-24471d8d7648
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_purpose
+    - node.type.data_set
+id: node.data_set.field_data_set_purpose
+field_name: field_data_set_purpose
+entity_type: node
+bundle: data_set
+label: Purpose
+description: 'explanation of purpose of data '
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

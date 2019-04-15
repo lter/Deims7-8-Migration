@@ -1,0 +1,19 @@
+uuid: 492950af-7ca6-4583-b211-5cf5ee413742
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_data_set_publisher
+field_name: field_data_set_publisher
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

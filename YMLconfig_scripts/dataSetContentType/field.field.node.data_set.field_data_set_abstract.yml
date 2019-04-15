@@ -1,0 +1,19 @@
+uuid: f3f9d1be-520d-4cac-a3ac-0e02886e2e2c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_abstract
+    - node.type.data_set
+id: node.data_set.field_data_set_abstract
+field_name: field_data_set_abstract
+entity_type: node
+bundle: data_set
+label: Abstract
+description: 'abstract text'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

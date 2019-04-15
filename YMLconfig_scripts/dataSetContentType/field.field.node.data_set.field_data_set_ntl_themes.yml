@@ -1,0 +1,29 @@
+uuid: ac5518fa-340c-404d-b9db-dc05f9447738
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_ntl_themes
+    - node.type.data_set
+    - taxonomy.vocabulary.ntl_themes
+id: node.data_set.field_data_set_ntl_themes
+field_name: field_data_set_ntl_themes
+entity_type: node
+bundle: data_set
+label: 'NTL Themes'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      ntl_themes: ntl_themes
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

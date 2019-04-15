@@ -1,0 +1,28 @@
+uuid: 8b6925fd-bbe0-4fc5-a2f4-7d4d05a488a8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_creator
+    - node.type.data_set
+    - node.type.person
+id: node.data_set.field_data_set_creator
+field_name: field_data_set_creator
+entity_type: node
+bundle: data_set
+label: Creator
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

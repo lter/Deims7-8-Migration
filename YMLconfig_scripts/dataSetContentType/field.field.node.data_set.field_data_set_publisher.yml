@@ -1,0 +1,28 @@
+uuid: 1232a0e4-6676-4468-8a69-12029a3d2b21
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_publisher
+    - node.type.data_set
+    - node.type.person
+id: node.data_set.field_data_set_publisher
+field_name: field_data_set_publisher
+entity_type: node
+bundle: data_set
+label: Publisher
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

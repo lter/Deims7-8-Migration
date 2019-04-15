@@ -1,0 +1,20 @@
+uuid: ff943112-f518-469d-a794-6ef5b41b2425
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_data_set_lter_keywords
+field_name: field_data_set_lter_keywords
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

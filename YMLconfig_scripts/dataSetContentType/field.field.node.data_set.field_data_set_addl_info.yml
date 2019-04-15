@@ -1,0 +1,19 @@
+uuid: ad6816f2-c32a-418b-ae6b-97ff1db8a3e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_addl_info
+    - node.type.data_set
+id: node.data_set.field_data_set_addl_info
+field_name: field_data_set_addl_info
+entity_type: node
+bundle: data_set
+label: 'Additional Information'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

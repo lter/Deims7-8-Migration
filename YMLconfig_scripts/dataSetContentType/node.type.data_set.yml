@@ -1,0 +1,17 @@
+uuid: 3a7300f2-4ee9-4666-81a2-f1481cddde55
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: 'Data Set'
+type: data_set
+description: 'Basic information for each dataset, plus all entity references for related information'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

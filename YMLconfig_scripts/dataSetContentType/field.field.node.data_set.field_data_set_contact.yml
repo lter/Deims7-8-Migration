@@ -1,0 +1,28 @@
+uuid: 467a035f-becb-4e89-92cb-f96cc259e6f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_contact
+    - node.type.data_set
+    - node.type.person
+id: node.data_set.field_data_set_contact
+field_name: field_data_set_contact
+entity_type: node
+bundle: data_set
+label: Contact
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

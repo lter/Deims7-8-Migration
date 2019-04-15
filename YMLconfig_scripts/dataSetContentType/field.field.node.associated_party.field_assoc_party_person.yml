@@ -1,0 +1,28 @@
+uuid: c4f8d3e5-e48e-414a-890b-a2feb8cadbb7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_assoc_party_person
+    - node.type.associated_party
+    - node.type.person
+id: node.associated_party.field_assoc_party_person
+field_name: field_assoc_party_person
+entity_type: node
+bundle: associated_party
+label: Person
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      person: person
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

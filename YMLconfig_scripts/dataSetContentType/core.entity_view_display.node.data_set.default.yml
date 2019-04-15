@@ -1,0 +1,233 @@
+uuid: 5d493914-0e06-470c-83a2-e379e056039b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.data_set.field_data_set_abstract
+    - field.field.node.data_set.field_data_set_addl_info
+    - field.field.node.data_set.field_data_set_assoc_party
+    - field.field.node.data_set.field_data_set_contact
+    - field.field.node.data_set.field_data_set_core_areas
+    - field.field.node.data_set.field_data_set_creator
+    - field.field.node.data_set.field_data_set_data_sources
+    - field.field.node.data_set.field_data_set_date_range
+    - field.field.node.data_set.field_data_set_doi
+    - field.field.node.data_set.field_data_set_id
+    - field.field.node.data_set.field_data_set_instrumentation
+    - field.field.node.data_set.field_data_set_lter_keywords
+    - field.field.node.data_set.field_data_set_maintenance
+    - field.field.node.data_set.field_data_set_mdata_prov
+    - field.field.node.data_set.field_data_set_methods
+    - field.field.node.data_set.field_data_set_ntl_keyword
+    - field.field.node.data_set.field_data_set_ntl_themes
+    - field.field.node.data_set.field_data_set_project
+    - field.field.node.data_set.field_data_set_pub_date
+    - field.field.node.data_set.field_data_set_publisher
+    - field.field.node.data_set.field_data_set_purpose
+    - field.field.node.data_set.field_data_set_quality_assurance
+    - field.field.node.data_set.field_data_set_related_sites
+    - field.field.node.data_set.field_data_set_short_name
+    - node.type.data_set
+  module:
+    - datetime
+    - datetime_range
+    - user
+id: node.data_set.default
+targetEntityType: node
+bundle: data_set
+mode: default
+content:
+  field_data_set_abstract:
+    weight: 103
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_data_set_addl_info:
+    weight: 105
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_data_set_assoc_party:
+    weight: 114
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_contact:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_core_areas:
+    weight: 118
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_creator:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_data_sources:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_date_range:
+    weight: 123
+    label: above
+    settings:
+      separator: '-'
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: daterange_default
+    region: content
+  field_data_set_doi:
+    weight: 126
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_data_set_id:
+    weight: 101
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_data_set_instrumentation:
+    weight: 117
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_data_set_lter_keywords:
+    weight: 119
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_maintenance:
+    weight: 106
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_data_set_mdata_prov:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_methods:
+    weight: 115
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_data_set_ntl_keyword:
+    weight: 120
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_ntl_themes:
+    weight: 121
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_project:
+    weight: 111
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_pub_date:
+    weight: 122
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_data_set_publisher:
+    weight: 113
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_purpose:
+    weight: 104
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_data_set_quality_assurance:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_data_set_related_sites:
+    weight: 124
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_data_set_short_name:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

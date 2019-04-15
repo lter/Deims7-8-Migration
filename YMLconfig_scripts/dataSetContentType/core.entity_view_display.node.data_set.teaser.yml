@@ -1,0 +1,45 @@
+uuid: c82178c1-0206-4d0b-b1e6-5ff61d39fed3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.data_set
+  module:
+    - user
+id: node.data_set.teaser
+targetEntityType: node
+bundle: data_set
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_data_set_abstract: true
+  field_data_set_addl_info: true
+  field_data_set_assoc_party: true
+  field_data_set_contact: true
+  field_data_set_core_areas: true
+  field_data_set_creator: true
+  field_data_set_data_sources: true
+  field_data_set_date_range: true
+  field_data_set_doi: true
+  field_data_set_id: true
+  field_data_set_instrumentation: true
+  field_data_set_lter_keywords: true
+  field_data_set_maintenance: true
+  field_data_set_mdata_prov: true
+  field_data_set_methods: true
+  field_data_set_ntl_keyword: true
+  field_data_set_ntl_themes: true
+  field_data_set_project: true
+  field_data_set_pub_date: true
+  field_data_set_publisher: true
+  field_data_set_purpose: true
+  field_data_set_quality_assurance: true
+  field_data_set_related_projects: true
+  field_data_set_related_sites: true
+  field_data_set_short_name: true

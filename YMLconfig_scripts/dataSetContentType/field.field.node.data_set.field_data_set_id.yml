@@ -1,0 +1,19 @@
+uuid: b0ceace9-5ebb-4fb5-825a-ef4539870648
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_id
+    - node.type.data_set
+id: node.data_set.field_data_set_id
+field_name: field_data_set_id
+entity_type: node
+bundle: data_set
+label: 'Dataset ID'
+description: 'internal data set ID'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

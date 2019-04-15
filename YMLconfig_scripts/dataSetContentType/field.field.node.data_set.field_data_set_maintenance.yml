@@ -1,0 +1,19 @@
+uuid: 7e961113-6bb4-45b1-a36d-23af260a4656
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_data_set_maintenance
+    - node.type.data_set
+id: node.data_set.field_data_set_maintenance
+field_name: field_data_set_maintenance
+entity_type: node
+bundle: data_set
+label: Maintenance
+description: 'maintenance status, e.g. complete, ongoing'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
