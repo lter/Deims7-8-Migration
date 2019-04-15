@@ -6,7 +6,7 @@
     1. Add needed fields 
     	* label: Person; machine name: field_assoc_party_person; type: Entity reference 	
     	* label: Role; machine name: field_assoc_party_role; type: Text (plain)
-    1. User [SQL script]() to export file exportAssocParty.csv
+    1. Use [SQL script](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportAssocParty.sql) to export file exportAssocParty.csv
     1. Add a nid column with appropriate IDs - it's a new content type, so make sure it fits into the nid scheme of the site
     1. On the commandline inside the webroot of the new D8 website run `drush migrate:import deims_csv_assocParty`
 
@@ -40,3 +40,8 @@
     	* label: Related Sites; machine name: field_data_set_related_sites; type: Entity reference
     	* label: Short Name; machine name: field_data_set_short_name; type: Text (plain)
     1. On the commandline inside the webroot of the new D8 website run `drush migrate:import deims_nodes_dataset` 
+    
+1. Connect associated party to datasets
+	1. Use [SQL script](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportDatasetIDs.sql) to export nid/vid mappings for data sets
+	1. Run [R script](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasetAssocPartyRelation.R) to generate table
+	1. Manually upload data to table node__field_data_set_assoc_party 
