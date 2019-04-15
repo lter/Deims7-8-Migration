@@ -9,6 +9,8 @@ library(dplyr)
 df_raw <- read.csv("variableExport.csv", header = T, quote = "\"", as.is = T)
 df_ref_raw <- select(df_raw, entity_id, variable_id = field_variables_id)
 
+df_ref_raw <- arrange(df_ref_raw, entity_id)
+
 df_ref_datasource_variable <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("entity_id", "delta", "variable_id"))
 
 i <- 1
