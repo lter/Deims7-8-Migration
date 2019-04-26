@@ -1,0 +1,23 @@
+uuid: a48938d3-8fa5-41fd-beb4-8ec995116a85
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_variable_de_expose
+    - node.type.variable
+id: node.variable.field_variable_de_expose
+field_name: field_variable_de_expose
+entity_type: node
+bundle: variable
+label: 'DE expose'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'Expose to query'
+  off_label: 'Do not expose to query'
+field_type: boolean

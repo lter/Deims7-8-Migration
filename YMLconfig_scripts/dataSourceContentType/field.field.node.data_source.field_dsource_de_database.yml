@@ -1,0 +1,19 @@
+uuid: 4d7cc0f9-05e0-4d98-8cb4-8c65fab74fee
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_de_database
+    - node.type.data_source
+id: node.data_source.field_dsource_de_database
+field_name: field_dsource_de_database
+entity_type: node
+bundle: data_source
+label: Database
+description: 'Database the data explorer needs to access to query table or view'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

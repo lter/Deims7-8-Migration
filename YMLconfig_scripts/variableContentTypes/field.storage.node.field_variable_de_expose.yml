@@ -1,0 +1,18 @@
+uuid: 65518d52-05fc-4808-a087-bc1ea2e5af2f
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_variable_de_expose
+field_name: field_variable_de_expose
+entity_type: node
+type: boolean
+settings: {  }
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

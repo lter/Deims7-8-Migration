@@ -1,0 +1,21 @@
+uuid: f417eb20-62bf-4bf8-9e67-9313ab1de9d4
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_dsource_de_database
+field_name: field_dsource_de_database
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

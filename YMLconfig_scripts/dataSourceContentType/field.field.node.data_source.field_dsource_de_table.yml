@@ -1,0 +1,19 @@
+uuid: 3502c46f-9a40-4bcb-a2d8-840c897ad44b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dsource_de_table
+    - node.type.data_source
+id: node.data_source.field_dsource_de_table
+field_name: field_dsource_de_table
+entity_type: node
+bundle: data_source
+label: 'database table'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
