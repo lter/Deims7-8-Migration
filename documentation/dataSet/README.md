@@ -43,5 +43,5 @@
     
 1. Connect associated party to datasets
 	1. Use [SQL script](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportDatasetIDs.sql) to export nid/vid mappings for data sets
-	1. Run [R script](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasetAssocPartyRelation.R) to generate table
+	1. Run [datasetAssocPartyRelation.R](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasetAssocPartyRelation.R) to generate table
 	1. Manually upload data to table node__field_data_set_assoc_party 

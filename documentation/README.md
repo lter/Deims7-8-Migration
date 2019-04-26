@@ -115,6 +115,8 @@ Content types may be imported as YML files [instructions are here](https://githu
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
     	1. Add needed fields 
+    		* label: Database; machine name: field_dsource_de_database;type: Text (plain)
+    		* lable: database table; machine name: field_dsource_de_table; type: Text (plain)
     		* label: Date Range; machine name: field_dsource_date_range; type: Date range 	
     		* label: Description; machine name: field_dsource_description; type: Text (plain, long) 	
     		* label: Field Delimiter; machine name: field_dsource_field_delimiter; type: List (text) 	
@@ -138,4 +140,4 @@ Content types may be imported as YML files [instructions are here](https://githu
     1. Clear all caches in the D8 site and make sure the data sources look like they are supposed to:
     	* They have all variables linked
     	* They have the csv file linked
-    
+1. Migrate data sets - see documentation   

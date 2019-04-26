@@ -55,6 +55,8 @@ The process of converting DEIMS7 variables entities into content types involves 
     	1. Add Fields: 
     		* label: Code Definition; machine name: 	field_variables_code_definition; type: 	Entity reference
     		* label: Date Time Format; machine name: 	field_variables_date_time_format; type: 	Text (plain)
+    		* label: DE expose; machine name: field_variable_de_expose; type: Boolean
+    		* label: DE filter; machine name: field_variable_de_filter; type: Boolean
     		* label: Definition; machine name: 	field_variables_definition; type: 	Text (plain, long)
     		* label: Label; machine name: 	field_variables_label; type: 	Text (plain)
     		* label: Maximum; machine name: 	field_variables_maximum; type: 	Number (float)
@@ -63,7 +65,7 @@ The process of converting DEIMS7 variables entities into content types involves 
     		* label: Precision; machine name: 	field_variables_precision; type: 	Number (float)
     		* label: Type; machine name: 	field_variables_type; type: 	List (text)
     		* label: Unit; machine name: 	field_variables_unit; type: 	Entity reference
-    1. Run R script
+    1. Run R script 
     1. In the migration YML file make sure the path to that csv file is set correctly
     1. On the commandline inside the webroot of the new D8 website run 
     
@@ -73,4 +75,4 @@ The process of converting DEIMS7 variables entities into content types involves 
     
     1. Make sure everything looks as expected. Variables have two dependencies, units and code/definitions.
     
-1. __Determine the sequence in which variables should appear in each data source__ This is done on the variables export file, but is needed for the data source migration. Use R script []()
+1. __Determine the sequence in which variables should appear in each data source__ This is done on the variables export file, but is needed for the data source migration. Use R script [datasourceVariablesReference.R](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasourceVariablesReference.R)

@@ -7,7 +7,7 @@ label: Deims Variable Nodes
 source:
   plugin: csv
  # the full path to the csv file
-  path: ../complete/path/to/file/uploadVariablesNode.csv
+  path: C:/Users/cgries/Dropbox/Corinna/datamanagement/NTLwebsite/deims7/parseVariables/uploadVariablesNode.csv
  # Column delimiter. Comma (,) by default.
   delimiter: ','
   # Field enclosure. Double quotation marks (") by default.
@@ -58,6 +58,8 @@ process:
   field_variables_missing_value/key: mv_code
   field_variables_precision: precision
   field_variables_type: field_variables_type
+  field_variable_de_expose: expose
+  field_variable_de_filter: filter
   
   field_variables_code_definition:
     plugin: migration_lookup
