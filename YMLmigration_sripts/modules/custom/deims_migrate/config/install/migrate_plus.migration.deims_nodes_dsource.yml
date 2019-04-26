@@ -41,6 +41,18 @@ process:
   field_dsource_record_delimiter: field_csv_record_delimiter
   field_dsource_num_records: field_number_of_records
   
+  field_dsource_de_database: 
+    plugin: sub_process
+    source: field_deims_data_explorer
+    process:
+      value: connection
+      
+  field_dsource_de_table:
+    plugin: sub_process
+    source: field_deims_data_explorer
+    process:
+      value: table
+  
   field_dsource_date_range:
     plugin: sub_process
     source: field_date_range

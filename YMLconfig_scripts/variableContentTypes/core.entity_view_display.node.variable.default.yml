@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.variable.field_variable_de_expose
+    - field.field.node.variable.field_variable_de_filter
     - field.field.node.variable.field_variables_code_definition
     - field.field.node.variable.field_variables_date_time_format
     - field.field.node.variable.field_variables_definition
@@ -23,6 +25,26 @@ targetEntityType: node
 bundle: variable
 mode: default
 content:
+  field_variable_de_expose:
+    weight: 113
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_variable_de_filter:
+    weight: 114
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
   field_variables_code_definition:
     weight: 106
     label: above

@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - field.field.node.data_source.field_dsource_date_range
+    - field.field.node.data_source.field_dsource_de_database
+    - field.field.node.data_source.field_dsource_de_table
     - field.field.node.data_source.field_dsource_description
     - field.field.node.data_source.field_dsource_field_delimiter
     - field.field.node.data_source.field_dsource_file
@@ -38,6 +40,22 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: daterange_default
+    region: content
+  field_dsource_de_database:
+    weight: 117
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_dsource_de_table:
+    weight: 116
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_dsource_description:
     weight: 101
