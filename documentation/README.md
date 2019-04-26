@@ -140,4 +140,4 @@ Content types may be imported as YML files [instructions are here](https://githu
     1. Clear all caches in the D8 site and make sure the data sources look like they are supposed to:
     	* They have all variables linked
     	* They have the csv file linked
-1. Migrate data sets - see documentation   
+1. Migrate data sets - [see documentation](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/dataSet)   
