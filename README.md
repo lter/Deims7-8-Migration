@@ -23,7 +23,7 @@ We recommend the following set up:
 			@echo off
 			php "%~dp0\drush.phar" %*
 			```
-	1. In Ubuntu command-line, [these instructions work well](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04)
+	1. In Ubuntu command-line, [these instructions work well for installing Composer](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04)
 		* The Composer executable should ultimately end up in /usr/local/bin with permissions *chmod 0755*.
 		* You will **not** want to run Composer with "sudo", so all users should be able to execute it.
 	
@@ -42,7 +42,7 @@ We recommend the following set up:
 	1. [Migrate Plus](https://www.drupal.org/project/migrate_plus)
 	1. [Migrate Tools](https://www.drupal.org/project/migrate_tools)
 	1. [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv)
-	
+		
 1. User Composer to install other Drupal modules. Needed in this migration are:
 	1. [Key Value Field](https://www.drupal.org/project/key_value_field)
 	
