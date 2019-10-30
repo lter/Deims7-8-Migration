@@ -38,7 +38,7 @@ We recommend the following set up:
 		1. In your browser go to your new URL (note: you will need to include the 'web' subdirectory). For example: "https://newsite.wisc.edu/web". You should arrive at a Drupal set-up page to configure the database, etc.
 		1. Reset permissions to something more secure. [Here is some guidance from drupal.org](https://www.drupal.org/node/244924)
 1. Use Composer to install the Drupal migration modules and enable them, but don't enable the migration examples, they only clutter up the database. In the D8 root directory (e.g., ../xampp/htdocs/deims8) use `composer require drupal/module_name`:
-	1. [Migrate Upgrade](https://www.drupal.org/project/migrate_upgrade)
+	1. [Migrate Upgrade](https://www.drupal.org/project/migrate_upgrade) (shows up as "Drupal Upgrade")
 	1. [Migrate Plus](https://www.drupal.org/project/migrate_plus)
 	1. [Migrate Tools](https://www.drupal.org/project/migrate_tools)
 	1. [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv)
@@ -50,7 +50,7 @@ We recommend the following set up:
 
 1. Enable date range field (part of core, but may not be active)
   
-1. On the command line, navigate to your web root folder (e.g., ../xampp/htdocs/deims8). Everything is working well if the command `drush config:status` returns all migrate commands. On Windows that can be a little tricky and will involve various changes to the Path Environment Variable or diving into .dll hell.
+1. On the command line, navigate to your web root folder (e.g., ../xampp/htdocs/deims8). Everything is working well if the command `drush migrate:status` returns all migrate commands. On Windows that can be a little tricky and will involve various changes to the Path Environment Variable or diving into .dll hell. It's straightforward in Linux.
 
 1. In the settings.php (at e.g., ../xampp/htdocs/deims8/web/sites/default) file add the database connection information to access the DEIMS7 database. Make sure to call it: migration_source_db, which is used throughout this migration.
 	```
