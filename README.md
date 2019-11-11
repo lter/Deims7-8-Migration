@@ -41,7 +41,7 @@ We recommend the following set up:
 	1. [Migrate Upgrade](https://www.drupal.org/project/migrate_upgrade) (shows up as "Drupal Upgrade")
 	1. [Migrate Plus](https://www.drupal.org/project/migrate_plus)
 	1. [Migrate Tools](https://www.drupal.org/project/migrate_tools)
-	1. [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv)  -- Use version 2.2 (composer require 'drupal/migrate_source_csv:2.2') because the 3.x version has slightly changed the format of the YML file.
+	1. [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv)  -- Use version 2.2 (composer require 'drupal/migrate_source_csv:2.2') because the 3.x version uses a slightly different format of the YML file.
 		
 1. User Composer to install other Drupal modules. Needed in this migration are:
 	1. [Key Value Field](https://www.drupal.org/project/key_value_field)
