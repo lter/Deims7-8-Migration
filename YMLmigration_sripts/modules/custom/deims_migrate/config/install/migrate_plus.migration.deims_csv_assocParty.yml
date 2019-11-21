@@ -1,0 +1,46 @@
+# Migration for Associate Party Nodes.
+id: deims_csv_assocParty
+label: Deims associate party Nodes
+ 
+source:
+  plugin: csv
+ # the full path to the csv file
+  path: C:/Users/cgries/Dropbox/Corinna/datamanagement/NTLwebsite/deims7/DataSet/exportAssocParty.csv
+ # Column delimiter. Comma (,) by default.
+  delimiter: ','
+  # Field enclosure. Double quotation marks (") by default.
+  enclosure: '"'
+  # The number of rows at the beginning which are not data.
+  header_row_count: 1
+  # The column(s) to use as a key. Each column specified will 
+  # create an index in the migration table and too many columns 
+  # may throw an index size error.
+  keys:
+    - nid 
+ 
+destination:
+  plugin: entity:node
+  default_bundle: associated_party
+
+process:
+  nid: nid
+  type: 'associated_party'
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      und: en
+  title: field_title
+  uid: 1
+  status: 1
+  comment: 0
+  promote: 0    
+  sticky: 0
+  
+  field_assoc_party_person: person_id
+  field_assoc_party_role: project_role
+
+migration_dependencies: { }
+
+dependencies: { }

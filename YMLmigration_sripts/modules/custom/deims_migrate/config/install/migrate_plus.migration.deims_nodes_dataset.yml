@@ -1,0 +1,112 @@
+# Migration for data set Nodes.
+id: deims_nodes_dataset
+label: Deims Data Set Nodes
+ 
+source:
+  key: migration_source_db
+  plugin: d7_node
+  node_type: data_set
+ 
+destination:
+  plugin: entity:node
+  default_bundle: data_set
+
+process:
+  nid: nid
+  type: type
+  langcode:
+    plugin: static_map
+    bypass: true
+    source: language
+    map:
+      und: en
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+    
+  status: status
+  created: created
+  changed: changed
+  comment: comment
+  promote: promote
+  sticky: sticky
+  
+  field_data_set_id: field_data_set_id
+  field_data_set_doi: field_doi
+  field_data_set_short_name: field_short_name
+  field_data_set_abstract: field_abstract
+  field_data_set_addl_info: field_additional_information
+  
+  field_data_set_creator: field_person_creator
+  field_data_set_contact: field_person_contact
+  field_data_set_mdata_prov: field_person_metadata_provider
+  field_data_set_publisher: field_person_publisher 
+  
+  field_data_set_pub_date:
+    plugin: sub_process
+    source: field_publication_date
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+
+  field_data_set_date_range:
+    plugin: sub_process
+    source: field_date_range
+    process:
+      value:
+        plugin: format_date
+        source: value
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+      end_value:
+        plugin: format_date
+        source: value2
+        from_format: 'Y-m-d H:i:s'
+        to_format: 'Y-m-d\TH:i:s'
+
+  field_data_set_methods: field_methods
+  field_data_set_instrumentation: field_instrumentation
+  field_data_set_quality_assurance: field_quality_assurance
+  field_data_set_maintenance: field_maintenance
+  field_data_set_purpose: field_purpose
+  field_data_set_quality_assurance: field_quality_assurance
+
+# this will only work when nids from DEIMS7 are used in migration as it does not involve a migration_lookup
+# maybe chaining the migration_lookup with this subprocess would work
+
+  
+  field_data_set_data_sources: field_data_sources
+  field_data_set_project: field_related_project
+  field_data_set_related_sites: field_related_sites
+  
+  field_data_set_core_areas:
+    plugin: migration_lookup
+    source: field_core_areas
+    migration: deims_category_core_areas
+    no_stub: true
+    
+  field_data_set_lter_keywords:
+    plugin: migration_lookup
+    source: field_keywords
+    migration: deims_category_lter
+    no_stub: true
+
+  field_data_set_ntl_keyword:
+    plugin: migration_lookup
+    source: field_ntl_keywords
+    migration: deims_category_ntl
+    no_stub: true
+
+  field_data_set_ntl_themes:
+    plugin: migration_lookup
+    source: field_tags
+    migration: deims_category_ntl_themes
+    no_stub: true
+
+migration_dependencies: { }
+
+dependencies: { }
