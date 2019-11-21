@@ -8,7 +8,11 @@
     	* label: Role; machine name: field_assoc_party_role; type: Text (plain)
     1. Use [SQL script](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportAssocParty.sql) to export file exportAssocParty.csv
     1. Add a nid column with appropriate IDs - it's a new content type, so make sure it fits into the nid scheme of the site
-    1. On the commandline inside the webroot of the new D8 website run `drush migrate:import deims_csv_assocParty`
+    1. On the commandline inside the webroot of the new D8 website run:
+    
+    `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+    	
+	`drush migrate:import deims_csv_assocParty`
 
 1. Create new content type 'Data Set', machine name: data_set
     1. Navigate in your D8 website to /admin/structure/types
