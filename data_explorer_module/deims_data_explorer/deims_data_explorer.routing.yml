@@ -1,0 +1,7 @@
+deims_data_explorer.data_form:
+  path: '/node/{nodeid}/data_form'
+  defaults:
+    _title: 'Subset the data'
+    _form: 'Drupal\deims_data_explorer\Form\deims_data_explorerForm'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,10 @@
+type: module
+
+name: 'DEIMS Data Explorer'
+description: 'Provides exploration and CSV exporting of data sources that have a linked database table or view.'
+package: 'DEIMS Enhancements'
+
+core: '8.x'
+
+dependencies: 
+  - drupal:views
