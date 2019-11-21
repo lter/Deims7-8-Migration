@@ -1,6 +1,6 @@
 # Deims7-8-Migration
 
-Step by step migration from DEIMS in Drupal7 to Drupal8. Inlcudes several changes to the basic DEIMS7 structure.
+Step by step migration from DEIMS in Drupal7 to Drupal8. Includes several changes to the basic DEIMS7 structure.
 
 ### Disclaimer:
 
@@ -12,9 +12,7 @@ We recommend the following set up:
 
 1. Set up a copy of your current production website for testing without disturbing the production website
 1. Make sure you have access to its MySQL database for querying and exporting data. Alternatively, load a copy of the database onto a local MySQL server (comes with XAMPP see below)
-1. Set up a fresh Drupal8 site in a testing environment - https://www.drupal.org/docs/8/install
-	1. If done on a Windows desk/lap top it works well with XAMPP https://www.apachefriends.org/index.html
-1. Follow instruction for installing composer (https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies) and drush
+1. Follow instructions for installing Composer (https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies) and drush
 	1. On windows 
 		* composer needs to be on the path environment variable
 		* Use composer to install drush
@@ -25,13 +23,26 @@ We recommend the following set up:
 			@echo off
 			php "%~dp0\drush.phar" %*
 			```
+	1. In Ubuntu command-line, [these instructions work well for installing Composer](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04)
+		* The Composer executable should ultimately end up in /usr/local/bin with permissions *chmod 0755*.
+		* You will **not** want to run Composer with "sudo", so all users should be able to execute it.
 	
+1. Set up a fresh Drupal8 site in a testing environment - https://www.drupal.org/docs/8/install
+	1. If done on a Windows desk/lap top it works well with XAMPP https://www.apachefriends.org/index.html
+	1. In Ubuntu using command-line, Drupal 8 is most easily installed with Composer. [Instructions link.](https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies#drupal-composer-drupal-project) Summary of steps: 
+		1. Open permissions for the install directory so you can install without "sudo" (e.g. /var/www/newsite with *chmod 0777*)
+		1. Run this command to install the latest version of Drupal 8:
+		```
+		composer create-project drupal-composer/drupal-project:8.x-dev /var/www/newsite --stability dev --no-interaction
+		```
+		1. In your browser go to your new URL (note: you will need to include the 'web' subdirectory). For example: "https://newsite.wisc.edu/web". You should arrive at a Drupal set-up page to configure the database, etc.
+		1. Reset permissions to something more secure. [Here is some guidance from drupal.org](https://www.drupal.org/node/244924)
 1. Use Composer to install the Drupal migration modules and enable them, but don't enable the migration examples, they only clutter up the database. In the D8 root directory (e.g., ../xampp/htdocs/deims8) use `composer require drupal/module_name`:
-	1. [Migrate Upgrade](https://www.drupal.org/project/migrate_upgrade)
+	1. [Migrate Upgrade](https://www.drupal.org/project/migrate_upgrade) (shows up as "Drupal Upgrade")
 	1. [Migrate Plus](https://www.drupal.org/project/migrate_plus)
 	1. [Migrate Tools](https://www.drupal.org/project/migrate_tools)
-	1. [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv)
-	
+	1. [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv)  -- Use version 2.2 (composer require 'drupal/migrate_source_csv:2.2') because the 3.x version uses a slightly different format of the YML file.
+		
 1. User Composer to install other Drupal modules. Needed in this migration are:
 	1. [Key Value Field](https://www.drupal.org/project/key_value_field)
 	
@@ -39,7 +50,7 @@ We recommend the following set up:
 
 1. Enable date range field (part of core, but may not be active)
   
-1. On the command line, navigate to your web root folder (e.g., ../xampp/htdocs/deims8). Everything is working well if the command `drush config:status` returns all migrate commands. On Windows that can be a little tricky and will involve various changes to the Path Environment Variable or diving into .dll hell.
+1. On the command line, navigate to your web root folder (e.g., ../xampp/htdocs/deims8). Everything is working well if the command `drush migrate:status` returns all migrate commands. On Windows that can be a little tricky and will involve various changes to the Path Environment Variable or diving into .dll hell. It's straightforward in Linux.
 
 1. In the settings.php (at e.g., ../xampp/htdocs/deims8/web/sites/default) file add the database connection information to access the DEIMS7 database. Make sure to call it: migration_source_db, which is used throughout this migration.
 	```
