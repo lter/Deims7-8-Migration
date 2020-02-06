@@ -55,13 +55,23 @@ use Drupal\Core\Database;
  	 	 $header  = array(
  	 	 	 'name' => t('Column'),
  	 	 	 'definition' => t('Definition'),
+ 	 	 	 'unit' => t('Unit'),
  	 	 	 );
  	 	 
  	 	 $options = array();
  	 	 foreach ($variables as $variable) {
+ 	 	 	 $unit = $variable -> get('field_variables_unit') -> referencedEntities();
+ 	 	 	 $unit_name = '';
+ 	 	 	 if (!empty($unit)) {
+ 	 	 	 	 //drupal_set_message(print_r($unit));
+ 	 	 	 	 //$unit_name = count($unit[0]);
+ 	 	 	 	 $unit_name = $unit[0] ->getTitle();
+ 	 	 	 }
+ 	 	 	 
  	 	 	 $options[$variable -> getTitle()] = array(
  	 	 	 	 'name' => $variable -> getTitle(),
  	 	 	 	 'definition' => $variable -> get('field_variables_definition') -> getString(),
+ 	 	 	 	 'unit' => $unit_name,
  	 	 	 	 );
  	 	 }
  	 	 $form['columns_set']['columns_table'] = array(
