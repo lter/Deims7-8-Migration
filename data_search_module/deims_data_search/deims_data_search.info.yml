@@ -1,0 +1,8 @@
+name: DEIMS Data Search
+description: 'Plugins for search pulldowns on data catalog'
+type: module
+core: 8.x
+package: 'DEIMS Enhancements'
+
+dependencies: 
+  - drupal:views
