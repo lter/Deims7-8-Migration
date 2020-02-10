@@ -39,7 +39,7 @@ The process of converting DEIMS7 variables entities into content types involves 
     1. Check the units for typos, non-standard spelling etc., the R script contains a case block where these can be corrected
     1. Run R script 
     1. In a text editor remove special characters from csv file (micro, square, etc.)
-    1. In the migration YML file make sure the path to that csv file is set correctly
+    1. In the migration YML file make sure the path to that csv file is set correctly and that the column names exactly match those in the csv file.
     1. On the commandline inside the webroot of the new D8 website run 
     
     `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
