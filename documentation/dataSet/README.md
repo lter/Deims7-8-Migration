@@ -42,8 +42,8 @@
     	* label: Quality Assurance; machine name: field_data_set_quality_assurance; type: Text (plain, long)
     	* label: Related Projects; machine name: field_data_set_related_projects; type: Entity reference
     	* label: Related Sites; machine name: field_data_set_related_sites; type: Entity reference
-    	* label: Short Name; machine name: field_data_set_short_name; type: Number (integer)
-		* label: Version Number; machine name: field_data_set_version_number; type: Integer
+    	* label: Short Name; machine name: field_data_set_short_name; type: Text (plain)
+		* label: Version Number; machine name: field_data_set_version_number; type: Number (integer)
 		
     1. On the commandline inside the webroot of the new D8 website run `drush migrate:import deims_nodes_dataset` 
     
