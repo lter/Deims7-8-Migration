@@ -1,0 +1,10 @@
+type: module
+
+name: 'DEIMS Data Citation'
+description: 'Uses the PASTA webservice to display the suggested dataset citation'
+package: 'DEIMS Enhancements'
+
+core: '8.x'
+
+dependencies: 
+  - block

@@ -10,6 +10,10 @@ However, it goes into the same folder:
 
 root/web/modules/custom/deims_data_search .... with the folder structure in this repo
 
+go to 'Extend' and turn on the module 'Deims Data Search'
+
+go to 'Configuration' -> 'Performance' -> 'clear all caches'
+
 ## Building the search page:
 
 Our search page has four filters: taxonomy-term 'core areas', taxonomy-term 'NTL Themes', Creator last name, full text keyword search
@@ -31,7 +35,13 @@ Our search page has four filters: taxonomy-term 'core areas', taxonomy-term 'NTL
 	1. Add Filters
 		* taxonomy terms as very easy, just add and configure to pull down or if you allow multiple selections it will be a box with bar on the right side.
 		* add 'Dataset author filter' - that's the custom one from above
+			* configure to use the relationship
 		* add 'Global: Combine fields filter' and configure to the fields you want searched (e.g., title, abstract, methods, in our case) and set operator to 'contains'
+		
+	1. Make things nicer
+		* under format -> table -> settings make title sortable and the default sort
+		* give all filters proper labels
+		* sort the filters meaningfully by pulling down on the 'add' button and choose 'rearrange'. Here you can also choose if you want the filters linked by 'and' or 'or'.
 		
 That's it.
 
