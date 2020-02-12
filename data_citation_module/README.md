@@ -4,7 +4,7 @@ This module is a Block plugin. It needs to be placed on the dataset content type
 
 It goes into the module folder:
 
-root/web/modules/custom/deims_data_search .... with the folder structure in this repo
+root/web/modules/custom/deims_data_citation .... with the folder structure in this repo
 
 go to 'Extend' and turn on the module 'DEIMS Data Citation'
 

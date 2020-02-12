@@ -1,0 +1,10 @@
+type: module
+
+name: 'DEIMS full metadata'
+description: 'Makes link to PASTA full metadata display'
+package: 'DEIMS Enhancements'
+
+core: '8.x'
+
+dependencies: 
+  - block
