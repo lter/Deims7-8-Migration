@@ -1,3 +1,4 @@
+# This code_id, and unit_id fields in the output (uploadVariablesNode.csv) are what's questionable
 
 
 library(tidyr)
@@ -6,6 +7,8 @@ library(stringr)
 
 
 df_raw <- read.csv("variableExport_code_unit.csv", header = T, as.is = T)
+# Remove duplicate records -- it happens with wtemp data (buoys?)
+df_raw <- df_raw %>% distinct()
 
 #check for nid vs. variables ID - uncomment the next three lines
 
@@ -26,6 +29,8 @@ df_raw <- read.csv("variableExport_code_unit.csv", header = T, as.is = T)
 
 df_dates_raw <- filter(df_raw, field_variables_type == "date")
 df_dates_raw <- select(df_dates_raw, variables_data, field_variables_id)
+
+#write.csv(df_dates_raw, file = "dfDatesRaw.csv", row.names = F, na = "")
 
 df_dates_all <- setNames(data.frame(matrix(ncol = 2, nrow = 0)), c("variable_id", "dateFormat"))
 
@@ -50,7 +55,16 @@ for (i in 1:nrow(df_dates_raw)) {
   
 }
 
+## Get rid of duplicates
+#df_dates_all <- df_dates_all %>% distinct() 
+#write.csv(df_dates_all, file = "dfDatesAll.csv", row.names = F, na = "")
+
+
+#New data frame to carry over
 df_dates_combined <- left_join(df_raw, df_dates_all, by = c("field_variables_id" = "variable_id"))
+
+
+#write.csv(df_dates_combined, file = "dfDatesCombined.csv", row.names = F, na = "")
 
 
 #parse the missing value code/definition into two columns
@@ -101,12 +115,20 @@ for (i in 1:nrow(df_mv_raw)) {
   
 }
 
+##Remove duplicates
+#df_mv_all <- df_mv_all %>% distinct() 
+
+#New data frame to carry over
 df_dates_mv_combined <- left_join(df_dates_combined, df_mv_all, by = c("field_variables_id" = "variable_id"))
+
+#write.csv(df_dates_mv_combined, file = "dfmvCombined.csv", row.names = F, na = "")
 
 # parse minimum and maximum values into two columns
 
 df_minmax_raw <- filter(df_raw, field_variables_type == "physical")
 df_minmax_raw <- select(df_minmax_raw, variables_data, field_variables_id)
+
+#write.csv(df_minmax_raw, file = "dfMinmaxRaw.csv", row.names = F, na = "")
 
 df_minmax_all <- setNames(data.frame(matrix(ncol = 4, nrow = 0)), c("variable_id", "maximum", "minimum", "precision"))
 
@@ -142,10 +164,64 @@ for (i in 1:nrow(df_minmax_raw)) {
   
 }
 
+##Remove duplicates
+#df_mv_all <- df_mv_all %>% distinct() 
+
+
+#New data frame to carry over
 df_dates_mv_minmax_combined <- left_join(df_dates_mv_combined, df_minmax_all, by = c("field_variables_id" = "variable_id"))
 
+#write.csv(df_dates_mv_minmax_combined, file = "dfMinmaxCombined.csv", row.names = F, na = "")
 
-df_variables_nodes <- select(df_dates_mv_minmax_combined, -entity_id, -variables_data, -variables_missing_values)
+
+# parse select & filter flags into two columns
+
+df_expose_raw <- select(df_raw, variables_data, field_variables_id)
+
+df_expose_all <- setNames(data.frame(matrix(ncol = 3, nrow = 0)), c("variable_id", "expose", "filter"))
+
+exposeStr <- "s:6:\"expose\";s:6:\"expose\";"
+filterStr <- "s:6:\"filter\";s:6:\"filter\";"
+
+for (i in 1:nrow(df_expose_raw)) {
+  
+  variable_id <- df_expose_raw[i,2]
+  
+  blobStr <- df_expose_raw[i,1]
+ 
+  # expose <- grepl(exposeStr,blobStr,fixed=TRUE)
+  # filter <- grepl(filterStr,blobStr,fixed=TRUE)
+
+  if (grepl(exposeStr,blobStr,fixed=TRUE)) expose <- 1
+  else expose <- 0
+
+  if (grepl(filterStr,blobStr,fixed=TRUE)) filter <- 1
+  else filter <- 0
+  
+  df_expose_row <- data.frame("variable_id" = variable_id,
+                              "expose" = expose,
+                              "filter" = filter)
+  
+
+  df_expose_all <-   rbind(df_expose_all, df_expose_row )
+  
+} #
+
+write.csv(df_expose_all, file = "dfExposeAll.csv", row.names = F, na = "")
+
+#New data frame to carry over
+df_dates_mv_minmax_expose_combined <- left_join(df_dates_mv_minmax_combined, df_expose_all, by = c("field_variables_id" = "variable_id"))
+
+##Remove duplicates
+#df_dates_mv_minmax_expose_combined <- df_dates_mv_minmax_expose_combined %>% distinct() 
+
+
+#write.csv(df_dates_mv_minmax_expose_combined, file = "dfExposeCombined.csv", row.names = F, na = "")
+
+
+# Removed unused columns
+df_variables_nodes <- select(df_dates_mv_minmax_expose_combined, -entity_id, -variables_data, -variables_missing_values)
+
 
 write.csv(df_variables_nodes, file = "uploadVariablesNode.csv", row.names = F, na = "")
 
