@@ -74,6 +74,7 @@ process:
   field_data_set_maintenance: field_maintenance
   field_data_set_purpose: field_purpose
   field_data_set_quality_assurance: field_quality_assurance
+  field_data_set_version_number: field_eml_revision_id
 
 # this will only work when nids from DEIMS7 are used in migration as it does not involve a migration_lookup
 # maybe chaining the migration_lookup with this subprocess would work

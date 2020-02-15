@@ -5,7 +5,7 @@ label: Deims associate party Nodes
 source:
   plugin: csv
  # the full path to the csv file
-  path: C:/Users/cgries/Dropbox/Corinna/datamanagement/NTLwebsite/deims7/DataSet/exportAssocParty.csv
+  path: /home/gahler/d8_migrate/Final/exportAssocParty2.csv
  # Column delimiter. Comma (,) by default.
   delimiter: ','
   # Field enclosure. Double quotation marks (") by default.
@@ -32,7 +32,10 @@ process:
     map:
       und: en
   title: field_title
-  uid: 1
+  uid:
+    plugin: default_value
+    default_value: 1
+
   status: 1
   comment: 0
   promote: 0    
