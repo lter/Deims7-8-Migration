@@ -1,0 +1,7 @@
+type: module
+
+name: 'Lake Biology Display Zoomable (D3)'
+description: '1D plot and table display using D3, zoomable and displays numbers'
+package: 'NTL ModDev'
+
+core: '8.x'

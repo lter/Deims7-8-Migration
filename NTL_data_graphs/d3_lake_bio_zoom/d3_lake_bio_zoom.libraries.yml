@@ -1,0 +1,13 @@
+d3_lake_bio_zoom_lib:
+  version: 1.x
+  css:
+    theme:
+      css/lake_bio_zoom.css: {}
+  js:
+    js/lake_bio_zoom_plot.js: {}
+    js/d3.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings

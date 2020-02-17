@@ -1,0 +1,7 @@
+type: module
+
+name: '1D Plot Zoom (D3)'
+description: '1D plots using D3 library zoomable'
+package: 'NTL ModDev'
+
+core: '8.x'

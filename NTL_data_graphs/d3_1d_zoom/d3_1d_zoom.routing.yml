@@ -1,0 +1,7 @@
+d3_1d_zoom.generate:
+  path: '/1dPlotzoom/{lakeid}/{variable}'
+  defaults:
+    _title: ''
+    _controller: 'Drupal\d3_1d_zoom\Controller\D3_1d_zoomController::generate'
+  requirements:
+    _permission: 'access content'

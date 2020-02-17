@@ -1,0 +1,60 @@
+.axis text {
+  font-size: 1em;
+}
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+path.line {
+  fill: none;
+  stroke: #406693;
+  stroke-width: 3px;
+}
+#mainDiv {
+  width: 70%;
+}
+#plotDiv {
+  width: 70%;
+  margin-left: auto ;
+  margin-right: auto ;
+}
+.getData {
+  fill: #ffffff;
+  cursor: pointer;
+}
+.getDataText {
+  pointer-events: none;
+  fill: #5e96d7;
+  font-size: .9em;
+}
+.zoomInText {
+	fill: grey;
+	font-size:.75em;
+}
+.zoomOut {
+  fill: #ffffff;
+  cursor: pointer;
+}
+.zoomOutText {
+  pointer-events: none;
+  fill: #5e96d7;
+  font-size: .9em;
+}
+.zoomInText {
+  font-size: 1em;
+}
+.zoomOverlay {
+  pointer-events: all;
+  fill: none;
+}
+.band {
+  fill: none;
+  stroke-width: 1px;
+  stroke: red;
+}
+.y1, .y2 {
+  font-size: 1.4em;
+}
+
+

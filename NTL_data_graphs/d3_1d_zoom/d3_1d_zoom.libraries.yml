@@ -1,0 +1,14 @@
+d3_1d_zoom_lib:
+  version: 1.x
+  css:
+    theme:
+      css/style_d3_1d_zoom.css: {}
+  header: true
+  js:
+    js/js_d3_1d_zoom.js: {}
+    js/d3.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
+    - core/drupalSettings

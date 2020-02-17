@@ -1,0 +1,6 @@
+d3_lake_bio_zoom.generate:
+  path: '/lake-bio-zoom/{lakeid}/{variable}'
+  defaults:
+    _controller: 'Drupal\d3_lake_bio_zoom\Controller\D3_lake_bio_zoomController::generate'
+  requirements:
+    _permission: 'access content'
