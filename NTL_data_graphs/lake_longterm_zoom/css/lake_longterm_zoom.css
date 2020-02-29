@@ -1,0 +1,28 @@
+.lt_label {
+  font-size: .9em;
+  color: #5e96d7;
+}
+.lt_text {
+  font-size: 1em;
+  font-style: normal;
+}
+.lake_photo_icon {
+  display: block;
+/*  margin: auto;*/
+  margin-left: 20%;
+  margin-top: 15%;
+  height: 60%;
+  width: 60%;
+}
+.lakelt {
+  width: 100%;
+}
+.lakelt_sub {
+  display: inline-block;
+  vertical-align: top; 
+  text-align: center;
+  width: 150px;
+  height: 100px;
+  margin: .1em;
+}
+

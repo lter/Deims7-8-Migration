@@ -1,0 +1,10 @@
+type: module
+
+name: 'Lake Long Term Data Zoom'
+description: 'Display links to lake long-term data on lakeinfo pages.'
+package: 'NTL ModDev'
+
+core: '8.x'
+
+dependencies: 
+  - block

@@ -1,0 +1,9 @@
+lake_longterm_zoom_lib:
+  version: 1.x
+  css:
+    theme:
+      css/lake_longterm_zoom.css: {}
+  js:
+    js/d3.js: {}
+  dependencies:
+    - core/drupal
