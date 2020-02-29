@@ -277,7 +277,7 @@ class D3_1d_zoomController extends ControllerBase {
    	   if ($lakeid == 'SP') $lakename = 'Sparkling Lake';
    	   if ($lakeid == 'CR') $lakename = 'Crystal Lake';
    	   if ($lakeid == 'AL') $lakename = 'Allequash Lake';
-   	   if ($lakeid == 'BM') $lakename = 'Big Muskellunge';
+   	   if ($lakeid == 'BM') $lakename = 'Big Muskellunge Lake';
    	   if ($lakeid == 'CB') $lakename = 'Crystal Bog';
    	   if ($lakeid == 'TB') $lakename = 'Trout Bog';
    	   if ($lakeid == 'ME') $lakename = 'Lake Mendota';
