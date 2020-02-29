@@ -110,7 +110,11 @@ class D3_lake_bio_zoomController extends ControllerBase {
 		$Species = $returned_data['Species'];
 		$Common = $returned_data['Common'];
 		$numspecies = sizeof($Species);
-		$Splinks = $this->d3_lake_bio_zoom_eol_links($Species,$Common);
+		
+		//EOL doesn't provide species pages via URL search any more. 
+		//this will need to be rewritten to use webservice and get the ID first to access pages
+		//$Splinks = $this->d3_lake_bio_zoom_eol_links($Species,$Common);
+		$Splinks = $Species;
 		
 		$rows = array();
 		//For fish and macrophytes, include two columns: common and scientific names
@@ -370,6 +374,8 @@ class D3_lake_bio_zoomController extends ControllerBase {
 		return $lakename;
 	}
 	//Return the EOL.org links based on species name
+	//EOL seems to have changed and this doesn't work any more. 
+	//Will require rewrite to first get the ID for a species and then access the page.
 	function d3_lake_bio_zoom_eol_links($Species, $Common) {
 		
 		$Splinks = array();  //This is array of species links, which will be put in the "Common Name" column of the table
