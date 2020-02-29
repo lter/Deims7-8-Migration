@@ -274,7 +274,7 @@ use Drupal\Core\Database;
  	 	 }
  	 	 
  	 	 try{
- 	 	 	 $connection = \Drupal\Core\Database\Database::getConnection('dbmaker', 'dbmaker');
+ 	 	 	 $connection = \Drupal\Core\Database\Database::getConnection('default', 'dbmaker');
  	 	 	 
  	 	 	 $query = $connection->select($table_name, 'tn')
  	 	 	 ->fields('tn', $fields);
