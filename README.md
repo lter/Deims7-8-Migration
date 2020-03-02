@@ -43,7 +43,7 @@ We recommend the following set up:
 	1. [Migrate Tools](https://www.drupal.org/project/migrate_tools)
 	1. [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv)  -- Use version 2.2 (composer require 'drupal/migrate_source_csv:2.2') because the 3.x version uses a slightly different format of the YML file.
 		
-1. User Composer to install other Drupal modules. Needed in this migration are:
+1. Use Composer to install other Drupal modules. Needed in this migration are:
 	1. [Key Value Field](https://www.drupal.org/project/key_value_field)
 	
 1. Enable telephone field (part of core, but may not be active)
