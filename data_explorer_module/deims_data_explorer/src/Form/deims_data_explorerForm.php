@@ -307,14 +307,13 @@ use Drupal\Core\Database;
  	 	 	 $data_table = array();
  	 	 	 $header = array();
  	 	 	 
- 	 	 	 foreach($result as $record){
- 	 	 	 	 $record = $result->fetchAssoc();
- 	 	 	 	 if(is_array($record)){
- 	 	 	 	 	 $header = array_keys($record);
- 	 	 	 	 	 $data_row = array_values($record);
- 	 	 	 	 	 array_push($data_table, $data_row);
- 	 	 	 	 }
+ 	 	 	 
+ 	 	 	 while ($row = $result->fetchAssoc()) {
+ 	 	 	 	 $header = array_keys($row);
+ 	 	 	 	 $data_row = array_values($row);
+ 	 	 	 	 array_push($data_table, $data_row);
  	 	 	 }
+ 	 	 	 
   	 	 }
  	 	 catch (Exception $e) {
  	 	 	 watchdog_exception('deims_data_explorer', $e);
