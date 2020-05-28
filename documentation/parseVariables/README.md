@@ -64,6 +64,7 @@ The process of converting DEIMS7 variables entities into content types involves 
     		* label: Missing Value; machine name: 	field_variables_missing_value; type: 	Key / Value (plain)
     		* label: Precision; machine name: 	field_variables_precision; type: 	Number (float)
     		* label: Type; machine name: 	field_variables_type; type: 	List (text)
+    			* add list items: 'physical|physical', 'code|code', 'date|date'
     		* label: Unit; machine name: 	field_variables_unit; type: 	Entity reference
     1. Run R script 
     1. In the migration YML file make sure the path to that csv file is set correctly
