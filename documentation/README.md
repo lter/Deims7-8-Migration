@@ -57,6 +57,10 @@ Content types may be imported as YML files [instructions are here](https://githu
     		* label: Postal Code; machine name: field_address_postal_code; type: Text (plain)
     		* label: Premise; machine name: field_address_premise; type: Text (plain)
     		* label: Project Role; machine name: field_person_project_role; type: List (text)
+    			* add list items: e.g. 'LPI|Lead Principal Investigator', 'COPI|co-Principal Investigator',
+    				'FA|Faculty Associate', 'PDA|Post Doctoral Associate', 'OP|Other Professional',
+    				'GS|Graduate Student', 'US|Undergraduate Student', 'OS|Other Staff', 'SC|Secretary Clerical',
+    				'DA|Data Manager', 'PUB|Publisher', 'CO|Contact Person'
     		* label: Specialty; machine name: field_person_specialty; type: Text (plain)
     		* label: Street Address; machine name: field_address_street; type: Text (plain)
     1. Export person information from DEIMS7 database with [personExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/personExport.sql) and save as personExport.csv
@@ -119,17 +123,25 @@ Content types may be imported as YML files [instructions are here](https://githu
     		* lable: database table; machine name: field_dsource_de_table; type: Text (plain)
     		* label: Date Range; machine name: field_dsource_date_range; type: Date range 	
     		* label: Description; machine name: field_dsource_description; type: Text (plain, long) 	
-    		* label: Field Delimiter; machine name: field_dsource_field_delimiter; type: List (text) 	
+    		* label: Field Delimiter; machine name: field_dsource_field_delimiter; type: List (text)
+    			* add list items: ',|Comma (,)', '\t|tab', ';|Semicolon (;)', 'other|other'
+    			* set the default value
     		* label: File Upload; machine name: field_dsource_file; type: File 	
     		* label: Footer Lines; machine name: field_dsource_footer_lines; type: Number (integer) 	
     		* label: Header Lines; machine name: field_dsource_header_lines; type: Number (integer) 	
     		* label: Instrumentation; machine name: field_dsource_instrumentation; type: Text (plain, long) 	
     		* label: Methods; machine name: field_dsource_methods; type: Text (plain, long) 	
     		* label: Number of Records; machine name: field_dsource_num_records; type: Number (integer) 	
-    		* label: Orientation; machine name: field_dsource_orientation; type: List (text) 	
+    		* label: Orientation; machine name: field_dsource_orientation; type: List (text)
+    			* add list items: 'column|column', 'row|row'
+    			* set the default value
     		* label: Quality Assurance; machine name: field_dsource_quality_assurance; type: Text (plain, long) 	
-    		* label: Quote Character; machine name: field_dsource_quote_character; type: List (text) 	
-    		* label: Record Delimiter; machine name: field_dsource_record_delimiter; type: List (text) 	
+    		* label: Quote Character; machine name: field_dsource_quote_character; type: List (text)
+    			* add list items: ''|single quote (')','"|double quote (")', 'other|other'
+    			* set the default value
+    		* label: Record Delimiter; machine name: field_dsource_record_delimiter; type: List (text)
+    			* add list items: '\n|Newline (Unix \n)', '\r\n|Newline (Windows \r\n)', '\r|Newline (some macs \r)', ';|Semicolon (;)', 'other|other'
+    			* set the default value
     		* label: Related Sites; machine name: field_dsource_related_sites; type: Entity reference 	
     		* label: Variables; machine name: field_dsource_variables; type: Entity reference
     1. On the commandline inside the webroot of the new D8 website run `drush migrate:import deims_nodes_dsource`
