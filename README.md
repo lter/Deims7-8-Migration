@@ -6,6 +6,13 @@ Step by step migration from DEIMS in Drupal7 to Drupal8. Includes several change
 
 This migration is not fully programmed and automatic but involves many manual steps. It requires knowledge in and access to the underlying databases (DEIMS7 and Drupal8) in MySQL. Preferably access via a client that allows querying the databases and exporting/importing data (e.g., PHPMyAdmin or a commercial client) but commandline access works. It also requires familiarity with running R scripts. We recommend to set up R projects in Rstudio especially to work with converting variables. The R code can be improvde and everything has so far only been tested on the DEIMS7 installation at the North Temperate Lakes LTER.
 
+## Resources
+
+* [Drupal Migrate API](https://www.drupal.org/docs/drupal-apis/migrate-api)
+* Phase2: [intro](https://www.phase2technology.com/blog/managing-your-drupal), [taxonomies](https://www.phase2technology.com/blog/drupal-8-migrations),
+* [Overview by Lullabot](https://www.lullabot.com/articles/overview-migrating-drupal-sites-8)
+* [31 days of Drupal migrations by Mauricio Dinarte and Carlos Dinarte](https://understanddrupal.com/31-days-of-migrations)
+
 ## Getting Started
 
 We recommend the following set up:
