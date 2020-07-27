@@ -1,1 +1,361 @@
+<!-- Header and Navbar -->
+<header class="main-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-8">
+        {% if page.header %}
+          {{ page.header }}
 
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        
+        {% endif %}
+      </div>
+
+      {% if page.search %}
+        <div class="col-sm-3 col-md-4">
+          {% if page.search %}
+            {{ page.search }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+    </div>
+  </div>
+</header>
+<!--End Header & Navbar -->
+
+<!--Custom Menu-->
+  {% if page.custom_menu %}
+    <div class="custom-menu-container">
+      <div class="container">
+        <div class="row custom-menu-row">
+          <div class="col-md-12 primary-menu-ntl">
+            {{ page.custom_menu }}
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+<!--End Custom Menu-->
+
+
+<!--FlexSlider-->
+  {% if page.flexslider %}
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 ntl_flexslider">
+            {{ page.flexslider }}
+          </div>
+        </div>
+      </div>
+  {% endif %}
+<!--End FlexSlider-->
+
+<!-- Start Top Widget -->
+{% if page.topwidget_first or page.topwidget_second or page.topwidget_third %}
+  <div class="topwidget">
+    <!-- start: Container -->
+    <div class="container">
+      
+      <div class="row">
+        <!-- Top widget first region -->
+        <div class = {{ topwidget_class }}>
+          {% if page.topwidget_first %}
+            {{ page.topwidget_first }}
+          {% endif %}
+        </div>
+        <!-- End top widget third region -->
+        <!-- Top widget second region -->
+        <div class = {{ topwidget_class }}>
+          {% if page.topwidget_second %}
+            {{ page.topwidget_second }}
+          {% endif %}
+        </div>
+        <!-- End top widget third region -->
+        <!-- Top widget third region -->
+        <div class = {{ topwidget_third_class }}>
+          {% if page.topwidget_third %}
+            {{ page.topwidget_third }}
+          {% endif %}
+        </div>
+        <!-- End top widget third region -->
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!--End Top Widget -->
+
+
+<!-- Page Title -->
+{%  if page.page_title and not is_front %}
+  <div id="page-title">
+    <div id="page-title-inner">
+      <!-- start: Container -->
+      <div class="container">
+        {{ page.page_title }}
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!-- End Page Title -- >
+
+
+<!-- layout -->
+<div id="wrapper">
+  <!-- start: Container -->
+  <div class="container">
+    
+    <!--Content top-->
+      {% if page.content_top %}
+        <div class="row">
+          {{ page.content_top }}
+        </div>
+      {% endif %}
+    <!--End Content top-->
+    
+    <!--start:content -->
+    <div class="row">
+      <div class="col-md-12">{{ page.breadcrumb }}</div>
+    </div>
+
+    <div class="row layout">
+      <!--- Start Left SideBar -->
+      {% if page.sidebar_first %}
+        <div class="sidebar" >
+          <div class = {{sidebarfirst}} >
+            {{ page.sidebar_first }}
+          </div>
+        </div>
+      {% endif %}
+      <!---End Right SideBar -->
+
+      <!--- Start content -->
+      {% if page.content %}
+        <div class="content_layout">
+          <div class={{contentlayout}}>
+            {{ page.content }}
+          </div>
+        </div>
+      {% endif %}
+      <!---End content -->
+
+      <!--- Start Right SideBar -->
+      {% if page.sidebar_second %}
+        <div class="sidebar">
+          <div class={{sidebarsecond}}>
+            {{ page.sidebar_second }}
+          </div>
+        </div>
+      {% endif %}
+      <!---End Right SideBar -->
+      
+    </div>
+    <!--End Content -->
+
+    <!--Start Content Bottom-->
+    {% if page.content_bottom %}
+      <div class="row">
+        {{ page.content_bottom }}
+      </div>
+    {% endif %}
+    <!--End Content Bottom-->
+  </div>
+</div>
+<!-- End layout -->
+
+
+<!-- Start Middle Widget -->
+{% if page.middle_first or page.middle_second or page.middle_third %}
+  <div class="middlewidget">
+    <!-- start: Container -->
+    <div class="container">
+      
+      <div class="row">
+        <!-- Top widget first region -->
+        <div class = {{ middle_class }}>
+          {% if page.middle_first %}
+            {{ page.middle_first }}
+          {% endif %}
+        </div>
+        <!-- End top widget third region -->
+        <!-- Top widget second region -->
+        <div class = {{ middle_class }}>
+          {% if page.middle_second %}
+            {{ page.middle_second }}
+          {% endif %}
+        </div>
+        <!-- End top widget third region -->
+        <!-- Top widget third region -->
+        <div class = {{ middle_third_class }}>
+          {% if page.middle_third %}
+            {{ page.middle_third }}
+          {% endif %}
+        </div>
+        <!-- End top widget third region -->
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!--End Top Widget -->
+
+
+<!-- Start bottom -->
+{% if page.bottom_first or page.bottom_second or page.bottom_third %}
+  <div class="bottom-widgets">
+    <!-- Start Container -->
+    <div class="container">
+      
+      <div class="row">
+
+        <!-- Start Bottom First Region -->
+        <div class = {{ bottom_class }}>
+          {% if page.bottom_first %}
+            {{ page.bottom_first }}
+          {% endif %}
+        </div>
+        <!-- End Bottom First Region -->
+
+        <!-- Start Bottom Second Region -->
+        <div class = {{ bottom_class }}>
+          {% if page.bottom_second %}
+            {{ page.bottom_second }}
+          {% endif %}
+        </div>
+        <!-- End Bottom Second Region -->
+
+        <!-- Start Bottom third Region -->
+        <div class = {{ bottom_class }}>
+          {% if page.bottom_third %}
+            {{ page.bottom_third }}
+          {% endif %}
+        </div>
+        <!-- End Bottom Third Region -->
+
+        <div class = {{ bottom_class }}>
+          {% if page.bottom_forth %}
+            {{ page.bottom_forth }}
+          {% endif %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!--End Bottom -->
+
+
+<!-- start: Footer -->
+{% if page.footer_first or page.footer_second or page.footer_third %}
+  <div class="footerwidget">
+    <div class="container">
+      
+      <div class="row">
+        
+        <!-- Start Footer First Region -->
+        <div class = {{ footer_class }}>
+          {% if page.footer_first %}
+            {{ page.footer_first }}
+          {% endif %}
+        </div>
+        <!-- End Footer First Region -->
+
+        <!-- Start Footer Second Region -->
+        <div class = {{ footer_class }}>
+          {% if page.footer_second %}
+            {{ page.footer_second }}
+          {% endif %}
+        </div>
+        <!-- End Footer Second Region -->
+
+        <!-- Start Footer third Region -->
+        <div class = {{ footer_third_class }}>
+          {% if page.footer_third %}
+            {{ page.footer_third }}
+          {% endif %}
+        </div>
+        <!-- End Footer Third Region -->
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!--End Footer -->
+
+
+<!-- Start Footer Menu -->
+{% if page.footer_menu %}
+  <div class="footer-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-6">
+          {{ page.footer_menu }}
+        </div>
+        {% if show_social_icon %}
+        <div class="col-sm-6 col-md-6">
+          <div class="social-media">
+            {% if facebook_url %}
+              <a href="{{ facebook_url }}"  class="facebook" target="_blank" ><i class="fab fa-facebook-f"></i></a>
+            {% endif %}
+            {% if google_plus_url %}
+              <a href="{{ google_plus_url }}"  class="google-plus" target="_blank" ><i class="fab fa-google-plus-g"></i></a>
+            {% endif %}
+            {% if twitter_url %}
+              <a href="{{ twitter_url }}" class="twitter" target="_blank" ><i class="fab fa-twitter"></i></a>
+            {% endif %}
+            {% if linkedin_url %}
+              <a href="{{ linkedin_url }}" class="linkedin" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            {% endif %}
+            {% if pinterest_url %}
+              <a href="{{ pinterest_url }}" class="pinterest" target="_blank" ><i class="fab fa-pinterest-p"></i></a>
+            {% endif %}
+            {% if rss_url %}
+              <a href="{{ rss_url }}" class="rss" target="_blank" ><i class="fas fa-rss"></i></a>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+<!-- End Footer Menu -->
+
+
+{% if copyright_text or show_credit_link %}
+<div class="copyright">
+  <div class="container">
+    <div class="row">
+
+      <!-- Copyright -->
+      <div class="col-sm-6 col-md-6">
+        {% if copyright_text %}        
+          <p>{{copyright_text}}</p>        
+        {% endif %}
+      </div>
+      <!-- End Copyright -->
+
+      <!-- Credit link -->
+      {% if show_credit_link %}
+        <div class="col-sm-6 col-md-6">
+          <p class="credit-link">Designed by <a href="http://www.zymphonies.com" target="_blank">Zymphonies</a></p>
+        </div>
+      {% endif %}
+      <!-- End Credit link -->
+      
+    </div>
+  </div>
+</div>
+{% endif %}
+
+
+<!-- Google map -->
+{% if is_front and page.google_map %}
+  <div class="google_map">
+    {{ page.google_map }}
+  </div>
+{% endif %}
+<!-- End Google map -->
