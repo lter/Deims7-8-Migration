@@ -1,0 +1,86 @@
+/* Dataset title */
+.block-field-blocknodedata-settitle span{
+  font-size: 1.3em;
+}
+/* Abstract */
+.block-field-blocknodedata-setfield-data-set-abstract{
+  font-size: 1em;
+  padding: 5px 20px 5px 5px;
+}
+/*
+.block-field-blocknodedata-setfield-data-set-abstract h2{
+  font-size: 1.2em;
+}
+*/
+
+
+/* Right column */
+.layout__region--second h2{
+  font-size: 1.2em;
+}
+/* Creator */
+.block-field-blocknodedata-setfield-data-set-creator{
+}
+/* Date Range */
+.block-field-blocknodedata-setfield-data-set-date-range{
+}
+
+/* Dataset ID */
+.block-field-blocknodedata-setfield-data-set-id{
+}
+/* Data Citiation */
+.block-deims-data-citation-block h2{
+  font-size: 1.2em;
+}
+.block-deims-data-citation-block span{
+  font-size: 1em;
+}
+
+/* Data Download View */
+.data-download-view{
+  line-height: 110%;
+}
+
+.block-views-blockdata-download-block-data-download{
+  border-top: 1px solid gray;
+}
+.block-views-blockdata-download-block-data-download h2{
+  /*font-size: 1.2em;*/
+}
+
+/* Data source description */
+
+.views-field-field-dsource-description{
+  text-decoration: underline;
+}
+
+/* Query link */
+.views-field-field-dsource-de-table{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.views-field-field-dsource-de-table a{
+  font-size: 1.1em;
+  text-decoration: italic;
+  color: #2962a3;
+}
+/* CSV */
+.views-field-uri {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+/* Keywords Section */
+.layout--threecol-section--33-34-33{
+  border-top: 1px solid gray;
+  margin-top: 30px;
+}
+.layout--threecol-section--33-34-33 h2{
+  color: #000;
+  font-size: 1.1em;
+  text-decoration: underline;
+
+}
+
+
+

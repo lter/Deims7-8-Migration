@@ -1,0 +1,46 @@
+/* Add some space right of the checkbox */
+.form-item {
+  margin-right: 1em;	
+}
+
+/* Instructions for selecting field */
+#edit-columns-set span, #edit-filter-set span{
+  font-size: 0.8em;
+}
+
+
+/* Query table */
+#edit-columns-table{
+  margin-bottom: 30px;
+/*  margin-left: auto;
+  margin-right:auto;
+*/
+}
+
+#edit-columns-table thead{
+  color: #404040;
+  text-decoration: underline;
+}
+
+#edit-columns-table td, #edit-columns-table th{
+  padding: 0px 15px 0px 15px;
+}
+
+#edit-columns-table tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+/*
+#edit-columns-table tbody{
+  color: red;
+  border: 1px solid orange;
+}
+*/
+
+#edit-columns-table tbody{
+}
+
+/* Filter */
+#edit-filter-set {
+
+}

@@ -1,0 +1,31 @@
+.main-header{
+  background: url("/themes/ntl_zym/images/header-tile8.png") repeat-x;
+
+}
+.main-header:after{
+  background: none;
+}
+
+.logo{
+  width: 104px;
+  height: 104px;
+}
+
+.site-name a{
+  /*border: 1px solid green;*/
+  font-weight: bold;
+  font-size: 2em;
+/*  margin-left: 15px */
+  margin-top: 2em;
+  font-family: Verdana, Tahoma;
+  font-style: italic;
+  color: #2962a3;
+  text-shadow: 1px 1px #999999;
+}
+.site-branding__slogan{
+  color: #0d0d0d;
+  font-weight: bold;
+  margin-top: 5px;
+  font-family: Verdana, Tahoma;
+}
+

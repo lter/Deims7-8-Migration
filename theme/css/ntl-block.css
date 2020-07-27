@@ -1,1 +1,17 @@
+#block-linkblockdatalinks {
+  padding-bottom: 0;
+}
 
+.link-block {
+  text-align: center;
+}
+
+.block-superfishmain {
+  margin-bottom: 0px;
+}
+
+.block-field-blocknoderesearch-sitetitle span{
+  font-size: 1.4em;
+  font-weight: bold;
+/*  text-decoration: underline;*/
+}

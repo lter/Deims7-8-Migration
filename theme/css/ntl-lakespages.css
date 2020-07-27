@@ -1,0 +1,48 @@
+/* Icons on the lakes pages */
+.lakelt_sub {
+  margin: 15px 0 15px 0;
+}
+.lakelt {
+  text-align: center;
+}
+#lakelt_chem img{
+  width: 100px;
+  height: 75px;
+}
+#lakelt_chem .lakelt_sub {
+  line-height: 1;
+  text-align: center;
+}
+#lakelt_bio img{
+  width: 80px;
+  height: 60px;
+}
+#lakelt_phys img{
+  width: 64px;
+  width: 64px;
+}
+
+/*Style the species list table*/
+#mainDiv {
+  width: 100%;
+}
+#mainDiv h4{
+  text-align: center;
+  font-size: 1.4em;
+  text-decoration: underline;
+}
+.plotDiv svg{
+  display: block;
+  margin: auto;
+}
+#speciesTable {
+  margin: auto;
+  font-size: 1em;
+  white-space: nowrap;
+}
+#speciesTable tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+#speciesTable td, #speciesTable th {
+  padding: 0px 15px 0px 5px;
+}

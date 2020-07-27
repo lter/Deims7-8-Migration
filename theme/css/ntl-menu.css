@@ -1,0 +1,75 @@
+
+.custom-menu-container{
+  height: auto;
+  width: 100%;
+  background: #e6e6e6;
+}
+
+/*
+.custom-menu-row {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+*/
+
+.primary-menu-ntl{
+  width: 100%;
+  font-family: Verdana, Tahoma;
+  /*color: #224f77;*/
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+
+
+/*
+ * Main menu lettering and behavior
+*/
+
+/*
+.menu-base-theme{
+  margin-top: 0px;
+}
+.menu-base-theme a, 
+.menu-base-theme a:hover, 
+.menu-base-theme a:focus, 
+.menu-base-theme a:active, 
+.menu-base-theme a.highlighted {
+  padding: 13px 24px;
+  background: none;
+  color: #224f77;
+}
+*/
+
+/*
+ * Pointers to submenu in main menu
+*/
+
+/*
+.menu-base-theme a span.sub-arrow {
+  border-color: #333333 transparent transparent transparent;
+}
+*/
+
+
+/*
+ * Submenu 
+*/
+
+/*
+.menu-base-theme ul {
+  border: 1px solid #a8a8a8;
+  padding: 0;
+  background-color: #fff;
+  background: rgba(255, 255, 255, 0.74);
+}
+.menu-base-theme ul a
+{
+  color: #224f77;
+} 
+.menu-base-theme ul a:hover
+{
+  background: #224f77;
+  color: #fff;
+} 
+*/

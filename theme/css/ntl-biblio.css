@@ -1,0 +1,23 @@
+
+.bibcite-citation {
+  margin-top: 10px;
+}
+.views-field-citation {
+  font-size: 12px;
+  line-height: 120%;
+}
+.citeproc-author {
+  font-weight: bold;
+}
+.citeproc-container-title {
+  font-style: italic;
+}
+.cols-0 tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+.cols-0 caption{
+  background-color: #d9d9d9;
+  color: #262626;
+  padding-left: 10px;
+  margin-bottom: 5px;
+}

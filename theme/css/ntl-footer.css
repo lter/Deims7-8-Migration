@@ -1,0 +1,28 @@
+.footerwidget{
+  background: none;
+  padding: 0;
+}
+.copyright{
+  background: none;
+}
+
+#footer_menu ul {
+ margin: 0; padding: 0;
+ list-style-type: none; list-style-image: none;
+ text-align: center;
+}
+#footer_menu li {
+ display: inline;
+ padding: 5px 20px 5px 20px;
+}
+#footer_menu a {
+ font-weight: bold;
+ font-family: Trebuchet MS, Helvetica Neue, Arial, Helvetica, sans-serif;
+ font-size: 1em;
+ color: #5e96d7;
+}
+#footer_menu a:hover {
+ color: #cc6600;
+}
+
+
