@@ -9,11 +9,11 @@ This migration is not fully programmed and automatic but involves many manual st
 ## Getting Started 
 It is assummed that a [XAMPP]( https://www.apachefriends.org/index.html) or a [LAMP](https://tecadmin.net/install-lamp-ubuntu-20-04/) stack has already been installed.
 ### Installing Drupal 8 with composer
-Composer is recommended for installing Drupal as it will manage Drupal and all dependencies (modules, themes, libraries).
+Composer is recommended for installing Drupal as it will manage Drupal and all dependencies (modules, themes, libraries). [See Using Composer to Install Drupal and Manage Dependencies](https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies). 
 
 We recommend the following set up:
 
-1. Install Composer (https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies). 
+1. Install Composer 
 	1. Windows 10/server
 		* composer needs to be on the path environment variable
 		* Use composer to install drush
@@ -24,16 +24,16 @@ We recommend the following set up:
 			@echo off
 			php "%~dp0\drush.phar" %*
 			```
-	1. Ubuntu command-line, [these instructions work well for installing Composer](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04)
+	1. Ubuntu command-line, [these instructions work well for installing Composer. Do step 1 and 2](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04)
 		* The Composer executable should ultimately end up in /usr/local/bin with permissions *chmod 0755*.
 		* You will **not** want to run Composer with "sudo", so all users should be able to execute it.
 		* Install drush launcher. [Instructions for drush launcher](https://github.com/drush-ops/drush-launcher) 
 	
 2. Install Drupal 8 site in a testing environment - [Overview of installing Drupal with composer](https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies) 
 	1. Windows 10/server works well with XAMPP https://www.apachefriends.org/index.html
-	1. Ubuntu, using the command-line, Drupal 8 is most easily installed with Composer. [Instructions link.](https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies#drupal-composer-drupal-project) Summary of steps: 
+	1. Ubuntu, using the command-line, install Drupal 8 using Composer. [Instructions link.](https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies#download-core) Summary of steps: 
 		1. Open permissions for the install directory so you can install without "sudo" (e.g. /var/www with *chmod 0777* or change the owner to user installing drupal)
-		2. Download  drupal/recommended-project composer.json and composer.lock to /var/www
+		2. Download  [drupal/recommended-project](https://github.com/drupal/recommended-project) composer.json and composer.lock to /var/www
 		3. Do a modified installation. https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies#s-to-do-a-modified-install 
 		```
 		cd /var/www
@@ -42,32 +42,41 @@ We recommend the following set up:
 		* Note: composer will create the site 'newsite' directory and several subdirectories and a new 'composer.json' file in the 'newsite' directory. (drupal root will be in newsite/web)
 		* Modify the /var/www/newsite/composer.json with an editor to include the following list of required projects 
 		```
-		"drupal/backup_migrate": "^4.0",
+		"drupal/backup_migrate": "^5.0",
 		"drupal/console": "^1.0.2",
-		"drupal/devel": "~1.0",
+		"drupal/devel": "^4.0",
 		"drupal/ds": "^3.5",
-		"drupal/filehash": "^1.2",
-		"drupal/imce": "^1.7", 
+		"drupal/imce": "^2.3", 
 		"drupal/key_value_field": "^1.0",
-		"drupal/leaflet": "^1.23",
-		"drupal/migrate_plus": "^4.2",
-		"drupal/migrate_source_csv": "2.2", 
-		"drupal/migrate_tools": "^4.5",
+		"drupal/leaflet": "^2.1",
+		"drupal/migrate_plus": "^5.1",
+		"drupal/migrate_source_csv": "^3.2", 
+		"drupal/migrate_tools": "^5.0",
 		"drupal/migrate_upgrade": "^3.2",
 		"drupal/views_bulk_operations": "^3.3",
-		"drush/drush": "^9.7.1 | ^10.0.0" 
+		"drush/drush": "^10.0.0" 
 		```
 		* Review the above list to check if newer versions are availabe. Note migrate_source_csv is version 2.2 because the 3.x version uses a slightly different format of the YML file.
 		* Run the following to create the site. 
 		
 		```
-		Composer update
+		cd /var/www/'newsite'
+		composer update
 		```
 		* Drush 10 is now installed in vendor/bin/drush. To be able to just type drush in the 'newsite' directory install the drush launcher.  
 		
-		4. Add a virtual host in apache2 for the ‘newsite’ URL. Document root will be ‘/var/www/newsite/web’. Modify the directive for symbolic links. Add web site user to www-data group
+		4. Add a virtual host in apache2 for the ‘newsite’ URL. Document root will be ‘/var/www/newsite/web’. 
+		* Modify the directive for symbolic links. 
+		```
+		Options FollowSymlinks
+		AllowOverride All
+		```
+		* Add web site user to www-data group.
+		
 		5. In your browser go to your new site. You should arrive at a Drupal set-up page to configure the database, etc.
+		
 		6. Reset permissions to something more secure. [Here is some guidance from drupal.org](https://www.drupal.org/node/244924)
+		
 3. To install additional modules use Composer. See https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies\#adding-modules The above modified composer.json has already installed the Drupal migration modules and additional modules needed for migration. Note for [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv) -- Use version 2.2 (composer require 'drupal/migrate_source_csv:2.2') because the 3.x version uses a slightly different format of the YML file.
  4. Enable the migration and key_value modules using drush or the web-interface but don't enable the migration examples, they only clutter up the database.
 	 1. Enable telephone field (part of core, but may not be active)
