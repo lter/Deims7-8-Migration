@@ -1,8 +1,11 @@
 # Sequence of manual migration steps:
-
-Content types may be imported as YML files [instructions are here](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/SyncConfiguration)
-
+Don't forget after any changes to .yml files in the install folder run
+```
+drush cim -y --partial --source=modules/custom/deims_migrate/config/install/
+```
+Note drush migrate is used to do the imports.  A GUI is also available, /admin/structure/migrate which will mirror the drush cammands
 1. If desired migrate users (see above general comments)
+
 1. Migrate taxonomies
 	1. At NTL we have a few specific ones, change for a different website
 	1. Moving taxonomies separately allows to omit a few that seemed unnecessary
