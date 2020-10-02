@@ -1,15 +1,22 @@
 # Sequence of manual migration steps:
-Don't forget after any changes to .yml files in the install folder run
+Don't forget after any changes to .yml files in the install folder run:
 ```
 drush cim -y --partial --source=modules/custom/deims_migrate/config/install/
 ```
-Note drush migrate is used to do the imports.  A GUI is also available, /admin/structure/migrate which will mirror the drush cammands
-1. If desired migrate users (see above general comments)
+All drush commands are run from the webroot of the 'newsite', e.g. for Ubuntu - /var/www/newsite
+In this document drush migrate:import is used to do the imports.  A GUI is also available, /admin/structure/migrate which mirrors the drush cammands. However the csv .yml files do not show up in the GUI.
+It is a good idea to do backups between imports.  
+
+1. If desired migrate users.
+	1. Both  migrate_plus.migration.upgrade_d7_user.yml and migrate_plus.migration.upgrade_d7_user_role.yml files should be in the install folder.
+	1. Run the following command.  Users will be import along with their roles.
+	
+	`drush migrate:import upgrade_d7_user'
 
 1. Migrate taxonomies
-	1. At NTL we have a few specific ones, change for a different website
-	1. Moving taxonomies separately allows to omit a few that seemed unnecessary
-	1. Create taxonomies in D8 site: core_areas, lter_controlled_vocabulary, other custom ones
+	1. At NTL and ARC we have a few specific ones.  Edit the .yml files or use the upgrade_d7 files for specific taxonomies.
+	1. Moving taxonomies separately allows to omit a few that seemed unnecessary. 
+	1. Create taxonomies in D8 site: core_areas, lter_controlled_vocabulary, other custom ones.  If all taxonomies will be migradred you can use the upgrade_d7_user.yml file to create the taxonomies. 
 	1. On the commandline inside the webroot of the new D8 website run the command 
 	
 	`drush migrate:import deims_category_core_areas` change migration ID for the others.
@@ -21,7 +28,7 @@ Note drush migrate is used to do the imports.  A GUI is also available, /admin/s
     `drush migrate:import deims_files`
 	
 1. Migrate basic pages and other custom content types that only need taxonomy tagging (e.g., research highlights, protocols, etc.)
-	1. Create the desired content type in D8
+	1. Create the desired content type in D8. For ARC the D7 simple page content was migrated to basic page in D8. The D8 basic page content included the combined fields.
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
     	1. Add needed fields 
