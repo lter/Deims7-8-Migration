@@ -6,7 +6,8 @@ Step by step migration from DEIMS in Drupal7 to Drupal8. Includes several change
 
 This migration is not fully programmed and automatic but involves many manual steps. It requires knowledge in and access to the underlying databases (DEIMS7 and Drupal8) in MySQL. Preferably access via a client that allows querying the databases and exporting/importing data (e.g., PHPMyAdmin or a commercial client) but commandline access works. It also requires familiarity with running R scripts. We recommend to set up R projects in Rstudio especially to work with converting variables. The R code can be improvde and everything has so far only been tested on the DEIMS7 installation at the North Temperate Lakes LTER.
 
-## Getting Started 
+## Getting Started
+
 It is assumed that a [XAMPP]( https://www.apachefriends.org/index.html) or a [LAMP](https://tecadmin.net/install-lamp-ubuntu-20-04/) stack has already been installed.
 
 ### Installing Drupal 8|9 with composer
@@ -16,6 +17,7 @@ We recommend the following set up:
 
 1. Composer Installation (https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies). 
 	1. **Windows** 10/server
+
 		* composer needs to be on the path environment variable
 		* Use composer to install drush
 		* Put two files into the webroot directory [Instructions for drush launcher](https://github.com/drush-ops/drush-launcher)
@@ -25,6 +27,7 @@ We recommend the following set up:
 			@echo off
 			php "%~dp0\drush.phar" %*
 			```
+
 	1. **Ubuntu** command-line, [these instructions work well for installing Composer](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-18-04)
 		* The Composer executable should ultimately end up in /usr/local/bin with permissions *chmod 0755*.
 		* You will **not** want to run Composer with "sudo", so all users should be able to execute it.
@@ -75,6 +78,7 @@ We recommend the following set up:
 		   site user to www-data group
 		5. In your browser go to your new site. You should arrive at a Drupal set-up page to configure the database, etc.
 		6. Reset permissions to something more secure. [Here is some guidance from drupal.org](https://www.drupal.org/node/244924)
+
 3. To install additional modules use Composer. See https://www.drupal.org/docs/develop/using-composer/using-composer-to-install-drupal-and-manage-dependencies\#adding-modules The above modified composer.json has already installed the Drupal migration modules and additional modules needed for migration. Note for [Migrate Source CSV](https://www.drupal.org/project/migrate_source_csv) -- Use version 2.2 (composer require 'drupal/migrate_source_csv:2.2') because the 3.x version uses a slightly different format of the YML file.
  4. Enable the migration and key_value modules using drush or the web-interface but don't enable the migration examples, they only clutter up the database.
 	 1. Enable telephone field (part of core, but may not be active)
@@ -84,6 +88,7 @@ We recommend the following set up:
 
 6. In the settings.php (at e.g., ../xampp/htdocs/deims8/web/sites/default) file add the database connection information to access the DEIMS7 database. Make sure to call it: migration_source_db, which is used throughout this migration. 
 For enhanced security specify the 'config_sync_directory' to be outside the web directory.
+
 	```
 	$settings['config_sync_directory'] = '../config/sync';
 	
@@ -98,6 +103,7 @@ For enhanced security specify the 'config_sync_directory' to be outside the web 
 		'driver' => 'mysql',
 	);
 	```
+
 	* If encountering the WSOD ('white screen of death' or 'The website encountered an unexpected error. Please try again later.')
 		* On windows it was resolved by increasing the setting for innodb_log_file_size to 48M (innodb_log_file_size = 48M)
 		* This is a seting in the 'my.ini' file which resides in the ../mysql/bin folder:
