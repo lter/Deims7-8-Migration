@@ -1,0 +1,7 @@
+deims_eal_importer.content:
+  path: '/eal_import'
+  defaults:
+    _controller: '\Drupal\deims_eal_importer\Controller\EALImportPage::content'
+    _title: 'EAL Metadata Import'
+  requirements:
+    _permission: 'access administration pages'

@@ -1,0 +1,12 @@
+type: module
+
+name: 'DEIMS EAL Importer'
+description: 'Imports text files of metadata as used in EMLassemblyline.'
+package: 'DEIMS Enhancements'
+
+core: '8.x'
+
+core_version_requirement: ^8 || ^9
+
+dependencies: 
+  - drupal:views
