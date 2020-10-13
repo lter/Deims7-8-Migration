@@ -116,7 +116,7 @@ For enhanced security specify the 'config_sync_directory' to be outside the web 
 
 8. For any content .yml files that are not in the install folder you will need to create .yml files using 'drush migrate-upgrade'. (Before this step you should review your D7 site and decide which taxonomy vocabularies, content types, users you will migrate and/or rename.)
 	* Create the config/sync directory `mkdir /var/www/newsite/config/sync`
-	* Run command `drush migrate-upgrade --legacy-db-key=migrate_source_db --configure-only`
+	* Run command `drush migrate-upgrade --legacy-db-key=migration_source_db --configure-only`
 	* Export the migrations using `drush config:export` The .yml files will be in /var/www/newsite/config/sync. 
 	* You only need to copy and edit the files that begin with migrate_plus.migration and are not in the install folder.
 	
