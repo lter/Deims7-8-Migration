@@ -16,4 +16,4 @@ and to keep the unzipped csv files create a folder:
 
 web/sites/default/files/data
 
-Put the EML file generated with EMLassemblyline R package and the corresponding csv data fiel into a zip archive and upload it.
+Put the EML file generated with EMLassemblyline R package and the corresponding csv data file(s) into a zip archive and upload it.
