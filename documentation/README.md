@@ -14,9 +14,13 @@ It is a good idea to do backups between imports.
 	`drush migrate:import upgrade_d7_user'
 
 1. Migrate taxonomies
-	1. At NTL and ARC we have a few specific ones.  Edit the .yml files or use the upgrade_d7 files for specific taxonomies.
+	1. At NTL and ARC we have a few specific ones.  Edit the .yml files or use the upgrade_d7 files for specific taxonomies.  If .yml files were genrated with drush cim you will need to edit the files to remove the first line with the uuid number and edit parent_id changing it to: 
+	`plugin: default_value`  
+	`default_value: taxonomy_name`
+	
+	Where taxonomy_name is the name of the taxonomy being migrated.  This fixes the few cases where the imports failed with the message: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'vid' cannot be null:  
 	1. Moving taxonomies separately allows to omit a few that seemed unnecessary. 
-	1. Create taxonomies in D8 site: core_areas, lter_controlled_vocabulary, other custom ones.  If all taxonomies will be migradred you can use the upgrade_d7_user.yml file to create the taxonomies. 
+	1. Create taxonomies in D8 site: core_areas, lter_controlled_vocabulary, other custom ones.  If all taxonomies will be migradred you can use the upgrade_d7_taxonomy_vocabulary.yml file to create the taxonomies. 
 	1. On the commandline inside the webroot of the new D8 website run the command 
 	
 	`drush migrate:import deims_category_core_areas` change migration ID for the others.
@@ -31,12 +35,17 @@ It is a good idea to do backups between imports.
 	1. Create the desired content type in D8. For ARC the D7 simple page content was migrated to basic page in D8. The D8 basic page content included the combined fields.
     	1. Navigate in your D8 website to /admin/structure/types
     	1. Add Content type
-    	1. Add needed fields 
-    		* label: File; machine name: field_file; type: File
-    		* label: NTL Keyword; machine name: field_ntl_keyword; type: Entity reference
+    	1. Add needed fields.  For example:
+    		* label: File; machine name: field_page_file; field type: File
+    		* label: NTL Keyword; machine name: field_ntl_keyword; field type: Entity reference
+		* For ARC site - label: Project Keyword; machine name: field_page_project_keyword; field type: Entity reference
     1. On the commandline inside the webroot of the new D8 website run the command 
     
-    `drush migrate:import deims_nodes_highlights` change migration ID for the others.
+    `drush migrate:import deims_nodes_highlights` 
+    
+     * Change migration name for the others. Note for the ARC migration, body format of filtered html did not migrate to D8's restricted html. After trying various ways of mapping the format the I used phpmyadmin SQL to replace filtered html with restricted html.
+    
+    `UPDATE `node__body` SET `body_format` = REPLACE(`body_format`, 'filtered_html', 'restricted_html') WHERE `body_format` LIKE '%filtered_html%'`
 
 1. Migrate organizations   
 	1. Create content type in D8 name: Organization; machine name: organization
