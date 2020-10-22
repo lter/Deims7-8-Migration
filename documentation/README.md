@@ -57,10 +57,9 @@ It is a good idea to do backups between imports.
     `drush migrate:import deims_nodes_organization`.
 
 1. Migrate Person
-	1. Create content type in D8 name: Person; machine name: person
-    	1. Navigate in your D8 website to /admin/structure/types
-    	1. Add Content type
-    	1. Add needed fields 
+ 1. Create content type in D8
+	* name: Person; machine name: person    	
+    	1. NTL: Add needed fields 
     		* label: Administrative Area; machine name: field_address_admin_area; type: Text (plain)
     		* label: City; machine name: field_address_locality; type: Text (plain)
     		* label: Country; machine name: field_address_country; type: Text (plain)
@@ -81,14 +80,27 @@ It is a good idea to do backups between imports.
     				'GS|Graduate Student', 'US|Undergraduate Student', 'OS|Other Staff', 'SC|Secretary Clerical',
     				'DA|Data Manager', 'PUB|Publisher', 'CO|Contact Person'
     		* label: Specialty; machine name: field_person_specialty; type: Text (plain)
-    		* label: Street Address; machine name: field_address_street; type: Text (plain)
-    1. Export person information from DEIMS7 database with [personExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/personExport.sql) and save as personExport.csv
+    		* label: Street Address; machine name: field_address_street; type: Text (plain)		
+    	1. ARC: The address module is used which Provides functionality for storing, validating and displaying international postal addresses. (composer require 'drupal/address:^1.8') The added fields are
+    		* label: Address; machine name: field_person_address; type: Address
+    		* label: e-mail; machine name: field_person_email; type: Email
+    		* label: List in directory; machine name: field_person_list_in_directory; type: Boolean
+    		* label: ORCID; machine name: field_person_orcid; type: Link
+    		* label: Organization; machine name: field_organization; type: Entity reference
+    		* label: Phone; machine name: field_person_phone; type: Telephone number
+    		* label: Project Role; machine name: field_person_project_role; type: List (text)
+    			* add list items: e.g. 'LPI|Lead Principal Investigator', 'COPI|co-Principal Investigator',
+    				'FA|Faculty Associate', 'PDA|Post Doctoral Associate', 'OP|Other Professional',
+    				'GS|Graduate Student', 'US|Undergraduate Student', 'OS|Other Staff', 'SC|Secretary Clerical',
+    				'DA|Data Manager', 'PUB|Publisher', 'CO|Contact Person'
+    		* label: URL; machine name: field_person_url; type: Link
+    1. Export person information from DEIMS7 database with [personExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/personExport.sql) and save as personExport.csv. ARC used a view to export the csv person file.  Excel is used to cleanup some inconsistences and older content as well as change all state and country names to their abriviations.
     1. In the migration YML file make sure the path to that csv file is set correctly
     1. On the commandline inside the webroot of the new D8 website run 
     
     `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
     
-    `drush migrate:import deims_csv_person`
+    `drush migrate:import deims_csv_person`  or whatever you names the .yml file
 
 1. Migrate research site
 	1. Create content type in D8 name: Research site machine name: research_site
@@ -107,7 +119,7 @@ It is a good idea to do backups between imports.
     
     `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
     
-    `drush migrate:import deims_csv_site`
+    `drush migrate:import deims_csv_site`  or whatever you names the .yml file
 
 1. Migrate Project and create new content type for funding in anticipating of EML 2.2
 	1. Create content type in D8 name: Data Source machine name: data_source
