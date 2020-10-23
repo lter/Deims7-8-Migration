@@ -41,11 +41,11 @@ It is a good idea to do backups between imports.
 		* For ARC site - label: Project Keyword; machine name: field_page_project_keyword; field type: Entity reference
     1. On the commandline inside the webroot of the new D8 website run the command 
     
-    `drush migrate:import deims_nodes_highlights` 
+        `drush migrate:import deims_nodes_highlights` 
     
      * Change migration name for the others. Note for the ARC migration, body format of filtered html did not migrate to D8's restricted html. After trying various ways of mapping the format the I used phpmyadmin SQL to replace filtered html with restricted html.
     
-    `UPDATE `node__body` SET `body_format` = REPLACE(`body_format`, 'filtered_html', 'restricted_html') WHERE `body_format` LIKE '%filtered_html%'`
+        `UPDATE `node__body` SET `body_format` = REPLACE(`body_format`, 'filtered_html', 'restricted_html') WHERE `body_format` LIKE '%filtered_html%'`
 
 1. Migrate organizations   
 	1. Create content type in D8 name: Organization; machine name: organization
@@ -56,10 +56,11 @@ It is a good idea to do backups between imports.
     
     `drush migrate:import deims_nodes_organization`.
 
-1. Migrate Person
- 1. Create content type in D8
-	* name: Person; machine name: person    	
-    	1. NTL: Add needed fields 
+
+1. Migrate Person  
+	1. Create content type in D8  
+    		* name: Person; machine name: person
+    	1. NTL: fields 
     		* label: Administrative Area; machine name: field_address_admin_area; type: Text (plain)
     		* label: City; machine name: field_address_locality; type: Text (plain)
     		* label: Country; machine name: field_address_country; type: Text (plain)
@@ -81,7 +82,7 @@ It is a good idea to do backups between imports.
     				'DA|Data Manager', 'PUB|Publisher', 'CO|Contact Person'
     		* label: Specialty; machine name: field_person_specialty; type: Text (plain)
     		* label: Street Address; machine name: field_address_street; type: Text (plain)		
-    	1. ARC: The address module is used which Provides functionality for storing, validating and displaying international postal addresses. (composer require 'drupal/address:^1.8') The added fields are
+    	1. ARC: The address module is used which Provides functionality for storing, validating and displaying international postal addresses. (composer require 'drupal/address:^1.8') The fields are
     		* label: Address; machine name: field_person_address; type: Address
     		* label: e-mail; machine name: field_person_email; type: Email
     		* label: List in directory; machine name: field_person_list_in_directory; type: Boolean
@@ -94,14 +95,13 @@ It is a good idea to do backups between imports.
     				'GS|Graduate Student', 'US|Undergraduate Student', 'OS|Other Staff', 'SC|Secretary Clerical',
     				'DA|Data Manager', 'PUB|Publisher', 'CO|Contact Person'
     		* label: URL; machine name: field_person_url; type: Link
-    1. Export person information from DEIMS7 database with [personExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/personExport.sql) and save as personExport.csv. ARC used a view to export the csv person file.  Excel is used to cleanup some inconsistences and older content as well as change all state and country names to their abriviations.
-    1. In the migration YML file make sure the path to that csv file is set correctly
-    1. On the commandline inside the webroot of the new D8 website run 
+	1. Export person information from DEIMS7 database with [personExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/personExport.sql) and save as personExport.csv. ARC used a view to export the csv person file.  Excel is used to cleanup some inconsistences and older content. See the .yml file for additional notes.
+    	1. In the migration YML file make sure the path to that csv file is set correctly
+		1. On the commandline inside the webroot of the new D8 website run 
     
-    `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+        `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
     
-    `drush migrate:import deims_csv_person`  or whatever you names the .yml file
-
+        `drush migrate:import deims_csv_person`  or the id name of the .yml file
 1. Migrate research site
 	1. Create content type in D8 name: Research site machine name: research_site
     	1. Navigate in your D8 website to /admin/structure/types
