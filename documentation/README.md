@@ -102,46 +102,47 @@ It is a good idea to do backups between imports.
         `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
     
         `drush migrate:import deims_csv_person`  or the id name of the .yml file
-Migrate research site
 
-1. Navigate in your D8 website to /admin/structure/types
+1. Migrate research site
 
-   1. Add Content type 
-      - name: Research site; machine name: research_site
+   1. Navigate in your D8 website to /admin/structure/types
 
-   **NTL**
+      1. Add Content type 
+         - name: Research site; machine name: research_site
 
-   2. needed fields
+      **NTL**
 
-      - label: Body; machine name: body; type: Text (formatted, long, with summary)
-      -  label: Bottom Latitude; machine name: field_coord_bottom_latitude; type: Number (float)
-      - label: Elevation; machine name: field_elevation; type: Number (integer)
-      - label: Left Longitude; machine name: field_coord_left_longitude; type: Number (float)
-      - label: Rigth Longitude; machine name: field_coord_rigth_longitude; type: Number (float)
-      - label: Top Latitude; machine name: field_coord_top_latitude; type: Number (float)
+      1. needed fields
 
-    2. Export research site information from DEIMS7 database with [research_siteExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/research_siteExport.sql) and save as research_siteExport.csv
+         * label: Body; machine name: body; type: Text (formatted, long, with summary)
+         * label: Bottom Latitude; machine name: field_coord_bottom_latitude; type: Number (float)
+         * label: Elevation; machine name: field_elevation; type: Number (integer)
+         * label: Left Longitude; machine name: field_coord_left_longitude; type: Number (float)
+         * label: Rigth Longitude; machine name: field_coord_rigth_longitude; type: Number (float)
+         * label: Top Latitude; machine name: field_coord_top_latitude; type: Number (float)
 
-    3. In the migration YML file make sure the path to that csv file is set correctly On the commandline inside the webroot of the new D8 website run 
+       2. Export research site information from DEIMS7 database with [research_siteExport.sql](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/research_siteExport.sql) and save as research_siteExport.csv
 
-       `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+       3. In the migration YML file make sure the path to that csv file is set correctly On the commandline inside the webroot of the new D8 website run 
 
-       `drush migrate:import deims_csv_site`  or whatever you names the .yml file
+          `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
 
-   **ARC**
+          `drush migrate:import deims_csv_site`  or whatever you names the .yml file
 
-   2. needed fields using latest version of Geofield with a geofield d7d8 plugin module. The D7 site geofield needs to be version 2.4.
+      **ARC**
 
-      - label: Body; machine name: body; type: Text (formatted, long, with summary)
-      - label: Coordinates; machine name: field_coordinates; type: Geofield
-      - label: Elevation; machine name: field_elevation; type: Number (integer)
-      - label: Research Site Images; machine name: field_research_site_images; type: Image
+      1. needed fields using latest version of Geofield with a geofield d7d8 plugin module. The D7 site geofield needs to be version 2.4.
 
-   2. Use the upgrade_d7node_reserach_site.yml  as a template. Run
+         * label: Body; machine name: body; type: Text (formatted, long, with summary)
+         * label: Coordinates; machine name: field_coordinates; type: Geofield
+         * label: Elevation; machine name: field_elevation; type: Number (integer)
+         * label: Research Site Images; machine name: field_research_site_images; type: Image
 
-      `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+      2. Use the upgrade_d7node_reserach_site.yml  as a template. Run
 
-      `drush migrate:import upgeade_d7node_reserach_site`  or whatever you names the .yml file
+         `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
+
+         `drush migrate:import upgeade_d7node_reserach_site`  or whatever you names the .yml file
 
 1. Migrate Project and create new content type for funding in anticipating of EML 2.2
 	1. Create content type in D8 name: Data Source machine name: data_source
