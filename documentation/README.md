@@ -127,7 +127,7 @@ It is a good idea to do backups between imports.
 
           `drush cim -y --partial --source=modules/custom/deims_migrate/config/install/`
 
-          `drush migrate:import deims_csv_site`  or whatever you names the .yml file
+          `drush migrate:import deims_csv_site`  or whatever the id name of the .yml file
 
       **ARC**
 
@@ -145,9 +145,7 @@ It is a good idea to do backups between imports.
          `drush migrate:import upgeade_d7node_reserach_site`  or whatever the id name of the .yml file
 
 1. Migrate Project and create new content type for funding in anticipating of EML 2.2
-      
          1. Navigate in your D8 website to /admin/structure/types
-       
                 1. Add Content type Project Funding
        
                        * label: Project Funding; machine name: project_funding
