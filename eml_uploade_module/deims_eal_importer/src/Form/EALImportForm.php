@@ -298,11 +298,11 @@ class EALImportForm extends FormBase {
   public function get_lter_keyword($lter_keyword) {
   	  $vid = 'lter_controlled_vocabulary';
   	  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-  	  ->loadByProperties(['name' => $lter_keyword, 'vid' => $vid]);
+  	  ->loadByProperties(['name' => (string)$lter_keyword, 'vid' => $vid]);
   	  $term = reset($term);
   	  if (empty($term)) {
   	  	  $term = \Drupal\taxonomy\Entity\Term::create([
-  	  	  		  'name' => $lter_keyword,
+  	  	  		  'name' => (string)$lter_keyword,
   	  	  		  'vid' => $vid,
   	  	  		  ]);
   	  	  $term->save();
@@ -315,14 +315,15 @@ class EALImportForm extends FormBase {
   public function get_keyword($keyword) {
   	  $vid = 'keywords';
   	  $term = \Drupal::entityTypeManager()->getStorage('taxonomy_term')
-  	  ->loadByProperties(['name' => $keyword, 'vid' => $vid]);
+  	  ->loadByProperties(['name' => (string)$keyword, 'vid' => $vid]);
   	  $term = reset($term);
   	  if (empty($term)) {
   	  	  $term = \Drupal\taxonomy\Entity\Term::create([
-  	  	  		  'name' => $keyword,
+  	  	  		  'name' => (string)$keyword,
   	  	  		  'vid' => $vid,
   	  	  		  ]);
   	  	  $term->save();
+  	  	  echo(' term has saved ');
   	  }
   	  $keyword_tid = $term->id();
   	  
@@ -403,7 +404,7 @@ class EALImportForm extends FormBase {
   	  $attribute_data['field_variables_definition'] = (string)$attribute->attributeDefinition;
   	  //$attribute_data['field_variables_label'] = (string)$attribute->attributeLabel;
   	  
-  	  if ((string)$attribute->storageType == 'float') {
+  	  if (!empty($attribute->measurementScale->ratio->unit)) {
   	  	  $attribute_data['field_variables_type'] = 'physical';
   	  	  
   	  	  $unit_title = '';
@@ -437,7 +438,7 @@ class EALImportForm extends FormBase {
   	  	  $attribute_data['field_variables_missing_value']['value'] = (string)$attribute->missingValueCode->codeExplanation;
   	  }
   	  
-  	  elseif((string)$attribute->storageType == 'date') {
+  	  elseif(!empty($attribute->measurementScale->dateTime)) {
   	  	  
   	  	  \Drupal::messenger()->addMessage('getting the date format');
   	  	  
@@ -445,7 +446,7 @@ class EALImportForm extends FormBase {
   	  	  $attribute_data['field_variables_date_time_format'] = (string)$attribute->measurementScale->dateTime->formatString;
   	  }
   	  
-  	  elseif($attribute->measurementScale->nominal->nonNumericDomain->enumeratedDomain){
+  	  elseif(!empty($attribute->measurementScale->nominal->nonNumericDomain->enumeratedDomain)){
   	  	  $attribute_data['field_variables_type'] = 'codes';
   	  	  $code_data['type'] = 'variable_codes';
   	  	  $code_data['title'] = 'Code definition for '.(string)$attribute->attributeName;
