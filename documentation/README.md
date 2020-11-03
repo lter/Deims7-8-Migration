@@ -144,54 +144,43 @@ It is a good idea to do backups between imports.
 
          `drush migrate:import upgeade_d7node_reserach_site`  or whatever the id name of the .yml file
 
-1. Migrate Project and create new content type for funding in anticipating of EML 2.2
-         1. Navigate in your D8 website to /admin/structure/types
-                1. Add Content type Project Funding
-       
-                       * label: Project Funding; machine name: project_funding
-       
-                2. Add needed fields
-       
-                       * label: Award URL; machine name: field_funder_award_url; type: Link
-                       * label: Funder Award Number; machine name: field_funder_award_number; type: Text (plain)
-                       * label: Funder Award Title; machine name: field_funder_award_title; type: Text (plain)
-                       * label: Funder ID; machine name: field_funder_id; type: Text (plain)
-                       * label: Funder Name; machine name: field_funder_name; type: Text (plain)
-       
-                1. Add Content type Research Project
-       
-                       * label: Research Project; machine name: project
-       
-                2. Add needed fields
-       
-                     **NTL**
-       
-                       * label: Body; machine name: body Text (formatted, long, with summary)
-                       * label: Funding; machine name: field_project_funding; type: Entity reference
-                       * label: Investigator; machine name: field_project_investigator; type: Entity reference
-                       * label: LTER Keyword; machine name: field_project_lter_keyword; type: Entity reference
-                       * label: NTL Keyword; machine name: field_project_ntl_keyword; type: Entity reference
-                       * label: Timeline; machine name: field_project_timeline; type: Date range
-       
-                     **ARC**
-       
-                       * label: Body; machine name: body; type: Text (formatted, long, with summary)
-                       * label: Funding; machine name: field_project_funding; type: Entity reference
-                       * label: Investigator; machine name: field_project_investigator; type: Entity reference
-                       * label: LTER Keyword; machine name: field_project_lter_keyword; type: Entity reference
-                       * label: ARC Keyword; machine name: field_project_arc_keyword; type: Entity reference
-                       * label: Timeline; machine name: field_project_timeline; type: Date range
-                       * label: Photos; machine name: field_project_photos; type: Image
-                       * label: Abstract; machine name :field_project_abstract; type: Text (formatted, long)
-                       * label: Project or Theme Keyword; machine name: field_project_or_theme_keyword; type: Entity reference
+1. Migrate Project and create new content type for funding in anticipating of EML 2.2  
+	1. Navigate in your D8 website to /admin/structure/types. Add Content type Project Funding  
+		* label: Project Funding; machine name: project_funding
+	2. Add needed fields  
+		* label: Award URL; machine name: field_funder_award_url; type: Link
+		* label: Funder Award Number; machine name: field_funder_award_number; type: Text (plain)
+		* label: Funder Award Title; machine name: field_funder_award_title; type: Text (plain)
+		* label: Funder ID; machine name: field_funder_id; type: Text (plain)
+		* label: Funder Name; machine name: field_funder_name; type: Text (plain)
 
-         2. On the commandline inside the webroot of the new D8 website run 
+1. Add Content type Research Project  
+	1.  Add content Research Project
+		* label: Research Project; machine name: project
+    	2. Add needed fields
+	- **NTL**
+		* label: Body; machine name: body Text (formatted, long, with summary)
+		* label: Funding; machine name: field_project_funding; type: Entity reference
+		* label: Investigator; machine name: field_project_investigator; type: Entity reference
+		* label: LTER Keyword; machine name: field_project_lter_keyword; type: Entity reference
+		* label: NTL Keyword; machine name: field_project_ntl_keyword; type: Entity reference
+		* label: Timeline; machine name: field_project_timeline; type: Date range
+	- **ARC**
+		* label: Body; machine name: body; type: Text (formatted, long, with summary)
+		* label: Funding; machine name: field_project_funding; type: Entity reference
+		* label: Investigator; machine name: field_project_investigator; type: Entity reference
+		* label: LTER Keyword; machine name: field_project_lter_keyword; type: Entity reference
+		* label: ARC Keyword; machine name: field_project_arc_keyword; type: Entity reference
+		* label: Timeline; machine name: field_project_timeline; type: Date range
+		* label: Photos; machine name: field_project_photos; type: Image
+		* label: Abstract; machine name :field_project_abstract; type: Text (formatted, long)
+		* label: Project or Theme Keyword; machine name: field_project_or_theme_keyword; type: Entity reference
+    2. On the commandline inside the webroot of the new D8 website run 
 
-            ```
-         drush migrate:import deims_nodes_project   whatever the id name of the .yml file
-            ```
-    	* Currently the YML script relies on the fact that old DIEMS7 nids are being used in D8 and no migration_lookup is performed!
-    	* No funding information is in DEIMS7
+         `drush migrate:import deims_nodes_project`   or whatever the id name of the .yml file is.
+	 
+	 * Currently the YML script relies on the fact that old DIEMS7 nids are being used in D8 and no migration_lookup is performed!
+	 * No funding information is in DEIMS7. ARC has funding numbers in D7 projects. The numbers were exported and excel used to add Award title and funder name.
     	
 1. Migrate variable - this requires new content types and some R scripts. Detailed instructions are: [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables)
 
@@ -227,9 +216,12 @@ It is a good idea to do backups between imports.
     		* label: Variables; machine name: field_dsource_variables; type: Entity reference
     1. On the commandline inside the webroot of the new D8 website run `drush migrate:import deims_nodes_dsource`
     	* Currently the YML script relies on the fact that old DIEMS7 nids are being used in D8 and no migration_lookup is performed!
-    1. Use [SQL script](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportDataSourceIDs.sql) to get the new nid/vid mapping
-    1. See last point in [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables). Run [R script](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasourceVariablesReference.R) to make the upload file needed to link variables to each data source.
-    1. Manually upload file 'upload_dsourceVariablesReference.csv' to table: 'node__field_dsource_variables'
+    1. Use [SQL script](https://github.com/lter/Deims7-8-Migration/blob/master/SQLexport_queries/exportDataSourceIDs.sql) on the D8 site to get the new nid/vid mapping. Save it as 'exportDataSourceIDs.csv' with headers.
+    1. See last point in [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables). Run [R script](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasourceVariablesReference.R) to create the upload file needed to link variables to each data source.
+    1. Manually upload file 'upload_dsourceVariablesReference.csv' to table: 'node__field_dsource_variables', e.g. using sql LOAD DATA for a file that is comma delimited, column in quotes and terminated by windows newline. 
+    ```
+    LOAD DATA INFILE 'upload_dsourceVariablesReference.csv' INTO TABLE `node__field_dsource_variables` FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNOR L1 LINES (`bundle`, `entity_id`, `revision_id`, `langcode`, `delta`, `field_dsource_variables_target_id`
+    ```    
     1. Clear all caches in the D8 site and make sure the data sources look like they are supposed to:
     	* They have all variables linked
     	* They have the csv file linked
