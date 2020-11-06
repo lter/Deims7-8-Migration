@@ -220,7 +220,9 @@ It is a good idea to do backups between imports.
     1. See last point in [parseVariables](https://github.com/lter/Deims7-8-Migration/tree/master/documentation/parseVariables). Run [R script](https://github.com/lter/Deims7-8-Migration/blob/master/R%20scripts/datasourceVariablesReference.R) to create the upload file needed to link variables to each data source.
     1. Manually upload file 'upload_dsourceVariablesReference.csv' to table: 'node__field_dsource_variables', e.g. using sql LOAD DATA for a file that is comma delimited, column in quotes and terminated by windows newline. 
     ```
-    LOAD DATA INFILE 'upload_dsourceVariablesReference.csv' INTO TABLE `node__field_dsource_variables` FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNOR L1 LINES (`bundle`, `entity_id`, `revision_id`, `langcode`, `delta`, `field_dsource_variables_target_id`
+    LOAD DATA INFILE 'upload_dsourceVariablesReference.csv' INTO TABLE `node__field_dsource_variables` 
+    FIELDS TERMINATED BY ',' ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 LINES 
+    (`bundle`, `entity_id`, `revision_id`, `langcode`, `delta`, `field_dsource_variables_target_id`)
     ```    
     1. Clear all caches in the D8 site and make sure the data sources look like they are supposed to:
     	* They have all variables linked
