@@ -2,7 +2,7 @@ type: module
 name: 'Deims Migrate'
 description: 'Deims custom migrations'
 package: 'Deims Migrate'
-core: '8.x'
+core_version_requirement: ^8.8 || ^9
 dependencies:
  - drupal:migrate
  - drupal:migrate_plus
